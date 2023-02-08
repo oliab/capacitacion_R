@@ -1,6 +1,13 @@
-about
-usage
-render-book
-preview-book
+introducción-a-r.
+instalación-de-r-y-r-studio.
+instalar-r-en-mac.
+instalar-rstudio
+entorno-de-trabajo-de-rstudio.
+consola
+scripts
+entorno
+otros-recursos
+instalación-de-paquetes.
+ayuda-en-r.
 prueba
 aqui-va-ora-cosa

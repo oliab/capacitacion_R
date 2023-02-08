@@ -110,14 +110,14 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={A Minimal Book Example},
-  pdfauthor={John Doe},
+  pdftitle={AIS: Capacitación de R},
+  pdfauthor={Oliab Herrera Coria},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{A Minimal Book Example}
-\author{John Doe}
-\date{2023-02-07}
+\title{AIS: Capacitación de R}
+\author{Oliab Herrera Coria}
+\date{2023-02-08}
 
 \begin{document}
 \maketitle
@@ -126,53 +126,312 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{about}{%
-\chapter{About}\label{about}}
+\hypertarget{informaciuxf3n-del-curso}{%
+\chapter*{Información del curso}\label{informaciuxf3n-del-curso}}
+\addcontentsline{toc}{chapter}{Información del curso}
 
-This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports; for example, a math equation \(a^2 + b^2 = c^2\).
+\begin{itemize}
+\item
+  Este es un curso de Introducción a R.
+\item
+  Al final serán capaces de utilizar R para cargar datos, arreglarlos, hacer gráficos y tablas, e informes en Rmarkdown.
+\item
+  Intentaremos que el curso sea fundamentalmente práctico.
+\item
+  En lugar de presentar todos los pormenores de R de manera lineal, se irán presentando distintos aspectos de R conforme se vayan necesitando; es decir, no vamos a presentar R como un lenguaje de programación sino como una herramienta para hacer análisis estadísticos.
+\end{itemize}
 
-\hypertarget{usage}{%
-\section{Usage}\label{usage}}
+E- n la carpeta del curso están todos los materiales: tutoriales, algunos datos, etc\ldots.
 
-Each \textbf{bookdown} chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter \emph{must} start with a first-level heading: \texttt{\#\ A\ good\ chapter}, and can contain one (and only one) first-level heading.
+\hypertarget{ligas}{%
+\subsubsection*{Ligas}\label{ligas}}
+\addcontentsline{toc}{subsubsection}{Ligas}
 
-Use second-level and higher headings within chapters like: \texttt{\#\#\ A\ short\ section} or \texttt{\#\#\#\ An\ even\ shorter\ section}.
+Notas:\\
+Correo: \href{mailto:oliabherrera@gmail.com}{\nolinkurl{oliabherrera@gmail.com}}
 
-The \texttt{index.Rmd} file is required, and is also your first book chapter. It will be the homepage when you render the book.
-
-\hypertarget{render-book}{%
-\section{Render book}\label{render-book}}
-
-You can render the HTML version of this example book without changing anything:
+\hypertarget{temario}{%
+\section*{Temario}\label{temario}}
+\addcontentsline{toc}{section}{Temario}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\tightlist
 \item
-  Find the \textbf{Build} pane in the RStudio IDE, and
-\item
-  Click on \textbf{Build Book}, then select your output format, or select ``All formats'' if you'd like to use multiple formats from the same book source files.
+  \textbf{Introducción a R}
 \end{enumerate}
 
-Or build the book from the R console:
+\begin{itemize}
+\tightlist
+\item
+  Instalación de R y R Studio.
+\item
+  Entorno de trabajo de RStudio.
+\item
+  Instalación de paquetes.
+\item
+  Ayuda en R.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \textbf{Manipulación y visualización de datos}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Visualización de datos.
+\item
+  Manipulación y limpieza de datos.
+\item
+  Temas selectos de programación en R.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \textbf{Reportes POS}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Descarga de datos.
+\item
+  Scripts principales.
+\item
+  Proyecciones.
+\end{itemize}
+
+\hypertarget{software}{%
+\subsection*{Software}\label{software}}
+\addcontentsline{toc}{subsection}{Software}
+
+\begin{itemize}
+\tightlist
+\item
+  \url{https://www.r-project.org}
+\item
+  \url{https://www.rstudio.com}
+\end{itemize}
+
+\hypertarget{introducciuxf3n-a-r.}{%
+\chapter{Introducción a R.}\label{introducciuxf3n-a-r.}}
+
+El objetivo de este tutorial es familiarizarnos con el entorno de trabajo que proporciona R y RStudio. Al finalizar este tutorial también deberemos ser capaces de instalar y cargar los paquetes que vayamos a necesitar para realizar nuestros análisis de datos.
+
+\hypertarget{instalaciuxf3n-de-r-y-r-studio.}{%
+\section{Instalación de R y R Studio.}\label{instalaciuxf3n-de-r-y-r-studio.}}
+
+Para instalar R vamos a la página web de R project: \url{http://www.r-project.org}
+
+\begin{figure}
+\centering
+\includegraphics{imagenes/01.png}
+\caption{Figura 1}
+\end{figure}
+
+Para descargar la aplicación hacemos clic en Cran y pinchamos sobre el enlace del ``espejo'' más próximo a nuestra ubicación, México. Seleccionemos la URL de, por ejemplo (\url{https://cran.itam.mx/}).
+
+\begin{figure}
+\centering
+\includegraphics{imagenes/02.png}
+\caption{Figura 2}
+\end{figure}
+
+Ahora, en función del tu sistema operativo, seleccionar la correspondiente opción.
+
+\includegraphics{imagenes/03.png}
+\#\#\# Instalar R en Windows.
+
+Al hacer clic sobre Download R for Windows iremos a la página que se reproduce más abajo. Hacer clic sobre \emph{install R for the first time.}
+
+En la siguiente ventana, hacer clic sobre \emph{Download R 3.3.3 for Windows} y guardar el archivo de instalación.
+
+Ejecutar el archivo descargado para proceder a la instalación de R.
+
+\hypertarget{instalar-r-en-mac.}{%
+\subsection{Instalar R en Mac.}\label{instalar-r-en-mac.}}
+
+Al hacer clic sobre Download R for (Mac) OS X iremos a la página que se reproduce más abajo. Hacer clic sobre install R for the first time.
+
+\begin{figure}
+\centering
+\includegraphics{imagenes/04.png}
+\caption{Figura 4}
+\end{figure}
+
+Hacer clic sobre R-3.3.3.pkg y guardar el archivo de instalación. Ejecutar el archivo descargado para proceder a la instalación de R.
+
+\hypertarget{instalar-rstudio}{%
+\subsection{Instalar RStudio}\label{instalar-rstudio}}
+
+Descargamos la aplicación desde la página web de RStudio \href{https://posit.co/download/rstudio-desktop/}{aquí} según nuestra plataforma de trabajo:
+
+\begin{itemize}
+\item
+  RStudio 1.0.136 - Windows Vista/7/8/10.
+\item
+  RStudio 1.0.136 - Mac OS X 10.6+ (64-bit).
+\end{itemize}
+
+Una vez guardado el archivo, lo ejecutamos para instalar RStudio. Sigue las instrucciones de instalación.
+
+\hypertarget{entorno-de-trabajo-de-rstudio.}{%
+\section{Entorno de trabajo de RStudio.}\label{entorno-de-trabajo-de-rstudio.}}
+
+En general trabajamos con la interfaz de RStudio antes que con la de R porque la primera es ``más amigable''.
+
+Si abrimos RStudio vamos a ver algo parecido a lo que se muestra en la siguiente imagen:
+
+\begin{figure}
+\centering
+\includegraphics{imagenes/05.png}
+\caption{Figura 5}
+\end{figure}
+
+Una vez estamos en RStudio, podemos escribir y ejecutar las órdenes de varias formas:
+
+\begin{itemize}
+\item
+  directamente en la consola.
+\item
+  a través de un script (.R).
+\item
+  con ficheros Rmarkdown (.Rmd).
+\end{itemize}
+
+Como podemos ver, RStudio está (normalmente) dividido en 4 paneles.
+
+\hypertarget{consola}{%
+\subsection{Consola}\label{consola}}
+
+Por defecto, la consola se encuentra en el panel inferior-izquierdo. ¿Vemos la pestaña que pone Console? Inmediatamente debajo aparece un texto informativo y, finalmente, el símbolo ``\textgreater{}''. Aquí es donde R espera que le demos instrucciones. Para ejecutarlas y obtener el resultado pulsamos enter.
+
+Vamos a hacer este ejemplo:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{render\_book}\NormalTok{()}
+\DecValTok{2}\SpecialCharTok{+}\DecValTok{2}
 \end{Highlighting}
 \end{Shaded}
 
-To render this example to PDF as a \texttt{bookdown::pdf\_book}, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.org/tinytex/}.
-
-\hypertarget{preview-book}{%
-\section{Preview book}\label{preview-book}}
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in ``Preview book'', or from the R console:
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{serve\_book}\NormalTok{()}
+\DecValTok{5}\SpecialCharTok{*}\NormalTok{(}\DecValTok{3{-}1}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## [1] 20
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sqrt}\NormalTok{(}\DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\hypertarget{scripts}{%
+\subsection{Scripts}\label{scripts}}
+
+Trabajar en la consola es muy limitado ya que las instrucciones se han de introducir una a una. Lo habitual es trabajar con scripts o ficheros de instrucciones. Estos ficheros tienen extensión \textbf{.R}.
+
+Se puede crear una script con cualquier editor de texto (uno de los más populares es Tinn-R), pero nosotros lo haremos desde RStudio. Para ello, seleccionamos la siguiente ruta de menús: \textbf{File \textgreater{} New File \textgreater{} R script}
+
+\begin{figure}
+\centering
+\includegraphics{imagenes/06.png}
+\caption{Figura 5}
+\end{figure}
+
+El panel del script se sitúa en la parte superior-izquierda de RStudio. Ahora podemos escribir las instrucciones línea por línea. Las instrucciones las podemos ejecutar una a una o las podemos seleccionar y ejecutar en bloque. Para ejecutar las instrucciones tenemos varias alternativas:
+
+\begin{itemize}
+\item
+  Hacemos clic en el botón: \textbf{Run} (botón situado en la parte derecha de las opciones del panel de script)
+\item
+  Pulsamos Ctrl+r
+\item
+  Ejecutamos el código desde las opciones del menú Code. Sinceramente, esto nunca lo hemos utilizado. ¡Cuestión de comodidad!
+\end{itemize}
+
+Como se muestra en la imagen más abajo, vamos a escribir nuestro primer script.
+
+\includegraphics{imagenes/07.png}
+Para guardar el script:
+
+\begin{itemize}
+\item
+  File \textgreater{} Save as.. y seleccionar la ruta donde se quiere guardar el fichero.
+\item
+  Hacer clic en el botón Guardar que se encuentra en la parte izquierda de la cinta de opciones del script.
+\end{itemize}
+
+\hypertarget{entorno}{%
+\subsection{Entorno}\label{entorno}}
+
+El panel, llamémoslo, de entorno esta compuesto de dos pestañas: Environment y History.
+
+\begin{itemize}
+\tightlist
+\item
+  En el Environment se irán registrando los objetos que vayamos creando en la sesión de trabajo. También tenemos la opción de cargar y guardar una sesión de trabajo, importar datos y limpiar los objetos de la sesión. Estas opciones están accesibles a través de la cinta de opciones de la pestaña.
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics{imagenes/08.png}
+\caption{Figura 7}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  En la pestaña History se registran las instrucciones ejecutadas. Como opciones, podemos cargar y guardar el historial de la sesión, seleccionar una o más instrucciones y enviarlas bien a la consola bien al script, y limpiar el historial.
+\end{itemize}
+
+\hypertarget{otros-recursos}{%
+\subsection{Otros recursos}\label{otros-recursos}}
+
+Con el nombre de \textbf{Otros recursos} nos referimos al panel que se encuentra en la parte inferior-derecha del escritorio de RStudio. ¡No sabía cómo llamarlo!
+
+En este panel cabe destacar las siguientes pestañas, cada una con diferentes opciones:
+
+\begin{itemize}
+\item
+  Files: es una especie de explotador de ficheros.
+\item
+  Plots: donde se visualizan los gráficos que creamos. Entre las opciones disponibles se encuentran:
+\item
+  Zoom: para agrandar el gráfico y verlo en otra ventana.
+\item
+  Export: para exportar/guardar el gráfico. Se puede guardar el gráfico como imagen, pdf o copiarlo al portapapeles.
+\item
+  Packages: proporciona un listado de los paquetes instalados en R y los que han sido cargado en la sesión. A través de las opciones de esta pestaña podemos instalar nuevos paquetes o actualizar los existentes.
+\item
+  Help: Para obtener ayuda sobre una determinada función.
+\end{itemize}
+
+\hypertarget{instalaciuxf3n-de-paquetes.}{%
+\section{Instalación de paquetes.}\label{instalaciuxf3n-de-paquetes.}}
+
+\hypertarget{ayuda-en-r.}{%
+\section{Ayuda en R.}\label{ayuda-en-r.}}
 
 \hypertarget{prueba}{%
 \chapter{Prueba}\label{prueba}}

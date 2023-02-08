@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Introducción a R. | AIS: Capacitación de R</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Introducción a R. | AIS: Capacitación de R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Introducción a R. | AIS: Capacitación de R" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Oliab Herrera Coria" />
+
+
+<meta name="date" content="2023-02-08" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="prueba.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Información del curso</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#temario"><i class="fa fa-check"></i>Temario</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i>Software</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introducción-a-r..html"><a href="introducción-a-r..html"><i class="fa fa-check"></i><b>1</b> Introducción a R.</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introducción-a-r..html"><a href="introducción-a-r..html#instalación-de-r-y-r-studio."><i class="fa fa-check"></i><b>1.1</b> Instalación de R y R Studio.</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introducción-a-r..html"><a href="introducción-a-r..html#instalar-r-en-mac."><i class="fa fa-check"></i><b>1.1.1</b> Instalar R en Mac.</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introducción-a-r..html"><a href="introducción-a-r..html#instalar-rstudio"><i class="fa fa-check"></i><b>1.1.2</b> Instalar RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introducción-a-r..html"><a href="introducción-a-r..html#entorno-de-trabajo-de-rstudio."><i class="fa fa-check"></i><b>1.2</b> Entorno de trabajo de RStudio.</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introducción-a-r..html"><a href="introducción-a-r..html#consola"><i class="fa fa-check"></i><b>1.2.1</b> Consola</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introducción-a-r..html"><a href="introducción-a-r..html#scripts"><i class="fa fa-check"></i><b>1.2.2</b> Scripts</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introducción-a-r..html"><a href="introducción-a-r..html#entorno"><i class="fa fa-check"></i><b>1.2.3</b> Entorno</a></li>
+<li class="chapter" data-level="1.2.4" data-path="introducción-a-r..html"><a href="introducción-a-r..html#otros-recursos"><i class="fa fa-check"></i><b>1.2.4</b> Otros recursos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introducción-a-r..html"><a href="introducción-a-r..html#instalación-de-paquetes."><i class="fa fa-check"></i><b>1.3</b> Instalación de paquetes.</a></li>
+<li class="chapter" data-level="1.4" data-path="introducción-a-r..html"><a href="introducción-a-r..html#ayuda-en-r."><i class="fa fa-check"></i><b>1.4</b> Ayuda en R.</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="prueba.html"><a href="prueba.html"><i class="fa fa-check"></i><b>2</b> Prueba</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="prueba.html"><a href="prueba.html#aqui-va-ora-cosa"><i class="fa fa-check"></i><b>2.1</b> Aqui va ora cosa</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AIS: Capacitación de R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introducción-a-r." class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Introducción a R.<a href="introducción-a-r..html#introducción-a-r." class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>El objetivo de este tutorial es familiarizarnos con el entorno de trabajo que proporciona R y RStudio. Al finalizar este tutorial también deberemos ser capaces de instalar y cargar los paquetes que vayamos a necesitar para realizar nuestros análisis de datos.</p>
+<div id="instalación-de-r-y-r-studio." class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Instalación de R y R Studio.<a href="introducción-a-r..html#instalación-de-r-y-r-studio." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para instalar R vamos a la página web de R project: <a href="http://www.r-project.org">http://www.r-project.org</a></p>
+<div class="figure">
+<img src="imagenes/01.png" alt="" />
+<p class="caption">Figura 1</p>
+</div>
+<p>Para descargar la aplicación hacemos clic en Cran y pinchamos sobre el enlace del “espejo” más próximo a nuestra ubicación, México. Seleccionemos la URL de, por ejemplo (<a href="https://cran.itam.mx/" class="uri">https://cran.itam.mx/</a>).</p>
+<div class="figure">
+<img src="imagenes/02.png" alt="" />
+<p class="caption">Figura 2</p>
+</div>
+<p>Ahora, en función del tu sistema operativo, seleccionar la correspondiente opción.</p>
+<p><img src="imagenes/03.png" alt="Figura 3" />
+### Instalar R en Windows.</p>
+<p>Al hacer clic sobre Download R for Windows iremos a la página que se reproduce más abajo. Hacer clic sobre <em>install R for the first time.</em></p>
+<p>En la siguiente ventana, hacer clic sobre <em>Download R 3.3.3 for Windows</em> y guardar el archivo de instalación.</p>
+<p>Ejecutar el archivo descargado para proceder a la instalación de R.</p>
+<div id="instalar-r-en-mac." class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Instalar R en Mac.<a href="introducción-a-r..html#instalar-r-en-mac." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Al hacer clic sobre Download R for (Mac) OS X iremos a la página que se reproduce más abajo. Hacer clic sobre install R for the first time.</p>
+<div class="figure">
+<img src="imagenes/04.png" alt="" />
+<p class="caption">Figura 4</p>
+</div>
+<p>Hacer clic sobre R-3.3.3.pkg y guardar el archivo de instalación. Ejecutar el archivo descargado para proceder a la instalación de R.</p>
+</div>
+<div id="instalar-rstudio" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Instalar RStudio<a href="introducción-a-r..html#instalar-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Descargamos la aplicación desde la página web de RStudio <a href="https://posit.co/download/rstudio-desktop/">aquí</a> según nuestra plataforma de trabajo:</p>
+<ul>
+<li><p>RStudio 1.0.136 - Windows Vista/7/8/10.</p></li>
+<li><p>RStudio 1.0.136 - Mac OS X 10.6+ (64-bit).</p></li>
+</ul>
+<p>Una vez guardado el archivo, lo ejecutamos para instalar RStudio. Sigue las instrucciones de instalación.</p>
+</div>
+</div>
+<div id="entorno-de-trabajo-de-rstudio." class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Entorno de trabajo de RStudio.<a href="introducción-a-r..html#entorno-de-trabajo-de-rstudio." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En general trabajamos con la interfaz de RStudio antes que con la de R porque la primera es “más amigable”.</p>
+<p>Si abrimos RStudio vamos a ver algo parecido a lo que se muestra en la siguiente imagen:</p>
+<div class="figure">
+<img src="imagenes/05.png" alt="" />
+<p class="caption">Figura 5</p>
+</div>
+<p>Una vez estamos en RStudio, podemos escribir y ejecutar las órdenes de varias formas:</p>
+<ul>
+<li><p>directamente en la consola.</p></li>
+<li><p>a través de un script (.R).</p></li>
+<li><p>con ficheros Rmarkdown (.Rmd).</p></li>
+</ul>
+<p>Como podemos ver, RStudio está (normalmente) dividido en 4 paneles.</p>
+<div id="consola" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Consola<a href="introducción-a-r..html#consola" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Por defecto, la consola se encuentra en el panel inferior-izquierdo. ¿Vemos la pestaña que pone Console? Inmediatamente debajo aparece un texto informativo y, finalmente, el símbolo “&gt;”. Aquí es donde R espera que le demos instrucciones. Para ejecutarlas y obtener el resultado pulsamos enter.</p>
+<p>Vamos a hacer este ejemplo:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introducción-a-r..html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="introducción-a-r..html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">*</span>(<span class="dv">3-1</span>)<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 20</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="introducción-a-r..html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+</div>
+<div id="scripts" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Scripts<a href="introducción-a-r..html#scripts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Trabajar en la consola es muy limitado ya que las instrucciones se han de introducir una a una. Lo habitual es trabajar con scripts o ficheros de instrucciones. Estos ficheros tienen extensión <strong>.R</strong>.</p>
+<p>Se puede crear una script con cualquier editor de texto (uno de los más populares es Tinn-R), pero nosotros lo haremos desde RStudio. Para ello, seleccionamos la siguiente ruta de menús: <strong>File &gt; New File &gt; R script</strong></p>
+<div class="figure">
+<img src="imagenes/06.png" alt="" />
+<p class="caption">Figura 5</p>
+</div>
+<p>El panel del script se sitúa en la parte superior-izquierda de RStudio. Ahora podemos escribir las instrucciones línea por línea. Las instrucciones las podemos ejecutar una a una o las podemos seleccionar y ejecutar en bloque. Para ejecutar las instrucciones tenemos varias alternativas:</p>
+<ul>
+<li><p>Hacemos clic en el botón: <strong>Run</strong> (botón situado en la parte derecha de las opciones del panel de script)</p></li>
+<li><p>Pulsamos Ctrl+r</p></li>
+<li><p>Ejecutamos el código desde las opciones del menú Code. Sinceramente, esto nunca lo hemos utilizado. ¡Cuestión de comodidad!</p></li>
+</ul>
+<p>Como se muestra en la imagen más abajo, vamos a escribir nuestro primer script.</p>
+<p><img src="imagenes/07.png" alt="Figura 6" />
+Para guardar el script:</p>
+<ul>
+<li><p>File &gt; Save as.. y seleccionar la ruta donde se quiere guardar el fichero.</p></li>
+<li><p>Hacer clic en el botón Guardar que se encuentra en la parte izquierda de la cinta de opciones del script.</p></li>
+</ul>
+</div>
+<div id="entorno" class="section level3 hasAnchor" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Entorno<a href="introducción-a-r..html#entorno" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El panel, llamémoslo, de entorno esta compuesto de dos pestañas: Environment y History.</p>
+<ul>
+<li>En el Environment se irán registrando los objetos que vayamos creando en la sesión de trabajo. También tenemos la opción de cargar y guardar una sesión de trabajo, importar datos y limpiar los objetos de la sesión. Estas opciones están accesibles a través de la cinta de opciones de la pestaña.</li>
+</ul>
+<div class="figure">
+<img src="imagenes/08.png" alt="" />
+<p class="caption">Figura 7</p>
+</div>
+<ul>
+<li>En la pestaña History se registran las instrucciones ejecutadas. Como opciones, podemos cargar y guardar el historial de la sesión, seleccionar una o más instrucciones y enviarlas bien a la consola bien al script, y limpiar el historial.</li>
+</ul>
+</div>
+<div id="otros-recursos" class="section level3 hasAnchor" number="1.2.4">
+<h3><span class="header-section-number">1.2.4</span> Otros recursos<a href="introducción-a-r..html#otros-recursos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Con el nombre de <strong>Otros recursos</strong> nos referimos al panel que se encuentra en la parte inferior-derecha del escritorio de RStudio. ¡No sabía cómo llamarlo!</p>
+<p>En este panel cabe destacar las siguientes pestañas, cada una con diferentes opciones:</p>
+<ul>
+<li><p>Files: es una especie de explotador de ficheros.</p></li>
+<li><p>Plots: donde se visualizan los gráficos que creamos. Entre las opciones disponibles se encuentran:</p></li>
+<li><p>Zoom: para agrandar el gráfico y verlo en otra ventana.</p></li>
+<li><p>Export: para exportar/guardar el gráfico. Se puede guardar el gráfico como imagen, pdf o copiarlo al portapapeles.</p></li>
+<li><p>Packages: proporciona un listado de los paquetes instalados en R y los que han sido cargado en la sesión. A través de las opciones de esta pestaña podemos instalar nuevos paquetes o actualizar los existentes.</p></li>
+<li><p>Help: Para obtener ayuda sobre una determinada función.</p></li>
+</ul>
+</div>
+</div>
+<div id="instalación-de-paquetes." class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Instalación de paquetes.<a href="introducción-a-r..html#instalación-de-paquetes." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="ayuda-en-r." class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Ayuda en R.<a href="introducción-a-r..html#ayuda-en-r." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="prueba.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

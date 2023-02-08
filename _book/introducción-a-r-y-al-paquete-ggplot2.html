@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Introducción a R y al paquete ggplot2 | A Minimal Book Example</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Introducción a R y al paquete ggplot2 | A Minimal Book Example" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Introducción a R y al paquete ggplot2 | A Minimal Book Example" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="John Doe" />
+
+
+<meta name="date" content="2023-02-08" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introducción-a-visualización.html"/>
+<link rel="next" href="prueba.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Información del curso</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#temario"><i class="fa fa-check"></i>Temario</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i>Software</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introducción-a-visualización.html"><a href="introducción-a-visualización.html"><i class="fa fa-check"></i><b>1</b> Introducción a visualización</a>
+<ul>
+<li class="chapter" data-level="" data-path="introducción-a-visualización.html"><a href="introducción-a-visualización.html#el-cuarteto-de-ascombe"><i class="fa fa-check"></i>El cuarteto de Ascombe</a></li>
+<li class="chapter" data-level="1.1" data-path="introducción-a-visualización.html"><a href="introducción-a-visualización.html#introducción"><i class="fa fa-check"></i><b>1.1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="" data-path="introducción-a-visualización.html"><a href="introducción-a-visualización.html#visualización-de-datos-en-la-estadística"><i class="fa fa-check"></i>Visualización de datos en la estadística</a></li>
+<li class="chapter" data-level="" data-path="introducción-a-visualización.html"><a href="introducción-a-visualización.html#visualización-popular-de-datos"><i class="fa fa-check"></i>Visualización popular de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introducción-a-visualización.html"><a href="introducción-a-visualización.html#teoría-de-visualización-de-datos"><i class="fa fa-check"></i><b>1.2</b> Teoría de visualización de datos</a>
+<ul>
+<li class="chapter" data-level="" data-path="introducción-a-visualización.html"><a href="introducción-a-visualización.html#principios-generales-del-diseño-analítico"><i class="fa fa-check"></i>Principios generales del diseño analítico</a></li>
+<li class="chapter" data-level="" data-path="introducción-a-visualización.html"><a href="introducción-a-visualización.html#técnicas-de-visualización"><i class="fa fa-check"></i>Técnicas de visualización</a></li>
+<li class="chapter" data-level="" data-path="introducción-a-visualización.html"><a href="introducción-a-visualización.html#indicadores-de-calidad-gráfica"><i class="fa fa-check"></i>Indicadores de calidad gráfica</a></li>
+<li class="chapter" data-level="" data-path="introducción-a-visualización.html"><a href="introducción-a-visualización.html#factor-de-engaño-chartjunk-y-pies"><i class="fa fa-check"></i>Factor de engaño, chartjunk y pies</a></li>
+<li class="chapter" data-level="" data-path="introducción-a-visualización.html"><a href="introducción-a-visualización.html#series-de-tiempo-y-promedio-de-45"><i class="fa fa-check"></i>Series de tiempo y promedio de 45</a></li>
+<li class="chapter" data-level="" data-path="introducción-a-visualización.html"><a href="introducción-a-visualización.html#pequeños-múltiplos-y-densidad-gráfica"><i class="fa fa-check"></i>Pequeños múltiplos y densidad gráfica</a></li>
+<li class="chapter" data-level="" data-path="introducción-a-visualización.html"><a href="introducción-a-visualización.html#tinta-de-datos"><i class="fa fa-check"></i>Tinta de datos</a></li>
+<li class="chapter" data-level="" data-path="introducción-a-visualización.html"><a href="introducción-a-visualización.html#percepción-de-escala"><i class="fa fa-check"></i>Percepción de escala</a></li>
+<li class="chapter" data-level="" data-path="introducción-a-visualización.html"><a href="introducción-a-visualización.html#minard"><i class="fa fa-check"></i>Minard</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introducción-a-r-y-al-paquete-ggplot2.html"><a href="introducción-a-r-y-al-paquete-ggplot2.html"><i class="fa fa-check"></i><b>2</b> Introducción a R y al paquete ggplot2</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introducción-a-r-y-al-paquete-ggplot2.html"><a href="introducción-a-r-y-al-paquete-ggplot2.html#r-primeros-pasos"><i class="fa fa-check"></i><b>2.1</b> R: primeros pasos</a>
+<ul>
+<li class="chapter" data-level="" data-path="introducción-a-r-y-al-paquete-ggplot2.html"><a href="introducción-a-r-y-al-paquete-ggplot2.html#r-en-análisis-de-datos"><i class="fa fa-check"></i>R en análisis de datos</a></li>
+<li class="chapter" data-level="" data-path="introducción-a-r-y-al-paquete-ggplot2.html"><a href="introducción-a-r-y-al-paquete-ggplot2.html#paquetes-y-el-tidyverse"><i class="fa fa-check"></i>Paquetes y el Tidyverse</a></li>
+<li class="chapter" data-level="" data-path="introducción-a-r-y-al-paquete-ggplot2.html"><a href="introducción-a-r-y-al-paquete-ggplot2.html#recursos"><i class="fa fa-check"></i>Recursos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="introducción-a-r-y-al-paquete-ggplot2.html"><a href="introducción-a-r-y-al-paquete-ggplot2.html#visualización-con-ggplot2"><i class="fa fa-check"></i><b>2.2</b> Visualización con ggplot2</a>
+<ul>
+<li class="chapter" data-level="" data-path="introducción-a-r-y-al-paquete-ggplot2.html"><a href="introducción-a-r-y-al-paquete-ggplot2.html#recursos-1"><i class="fa fa-check"></i>Recursos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="prueba.html"><a href="prueba.html"><i class="fa fa-check"></i><b>3</b> Prueba</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="prueba.html"><a href="prueba.html#aqui-va-ora-cosa"><i class="fa fa-check"></i><b>3.1</b> Aqui va ora cosa</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introducción-a-r-y-al-paquete-ggplot2" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Introducción a R y al paquete ggplot2<a href="introducción-a-r-y-al-paquete-ggplot2.html#introducción-a-r-y-al-paquete-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="qué-es-r" class="section level5 unnumbered hasAnchor">
+<h5>¿Qué es R?<a href="introducción-a-r-y-al-paquete-ggplot2.html#qué-es-r" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<ul>
+<li>R es un lenguaje de programación y un ambiente de cómputo estadístico</li>
+<li>R es software libre (no dice qué puedes o no hacer con el software), de código
+abierto (todo el código de R se puede inspeccionar - y se inspecciona).</li>
+<li>Cuando instalamos R, instala la base de R. Mucha de la funcionalidad adicional
+está en <strong>paquetes</strong> (conjunto de funciones y datos documentados) que la
+comunidad contribuye.</li>
+</ul>
+</div>
+<div id="cómo-entender-r" class="section level5 unnumbered hasAnchor">
+<h5>¿Cómo entender R?<a href="introducción-a-r-y-al-paquete-ggplot2.html#cómo-entender-r" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<ul>
+<li>Hay una sesión de R corriendo. La consola de R es la interfaz
+entre R y nosotros.</li>
+<li>En la sesión hay objetos. Todo en R es un objeto: vectores, tablas,
+funciones, etc.</li>
+<li>Operamos aplicando funciones a los objetos y creando nuevos objetos.</li>
+</ul>
+</div>
+<div id="por-qué-r" class="section level5 unnumbered hasAnchor">
+<h5>¿Por qué R?<a href="introducción-a-r-y-al-paquete-ggplot2.html#por-qué-r" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<ul>
+<li>R funciona en casi todas las plataformas (Mac, Windows, Linux e incluso en Playstation 3).</li>
+<li>R es un lenguaje de programación completo, permite desarrollo de DSLs.</li>
+<li>R promueve la investigación reproducible.</li>
+<li>R está actualizado gracias a que tiene una activa comunidad. Solo en CRAN hay
+cerca de <span class="math inline">\(10,000\)</span> paquetes (funcionalidad adicional de R creadas creada por la
+comunidad).</li>
+<li>R se puede combinar con otras herramientas.</li>
+<li>R tiene capacidades gráficas muy sofisticadas.</li>
+<li>R es popular (<a href="http://blog.revolutionanalytics.com/popularity/">Revolutions blog</a>).</li>
+</ul>
+</div>
+<div id="r-primeros-pasos" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> R: primeros pasos<a href="introducción-a-r-y-al-paquete-ggplot2.html#r-primeros-pasos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para comenzar se debe descargar <a href="https://cran.r-project.org">R</a>, esta descarga
+incluye R básico y un editor de textos para escribir código. Después de
+descargar R se recomienda descargar
+<a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a> (gratis y libre).</p>
+<p>Rstudio es un ambiente de desarrollo integrado para R: incluye una consola,
+un editor de texto y un conjunto de herramientas para administrar el espacio de
+trabajo cuando se utiliza R.</p>
+<p>Algunos <em>shortcuts</em> útiles en RStudio son:</p>
+<p><strong>En el editor</strong></p>
+<ul>
+<li>command/ctrl + enter: enviar código a la consola<br />
+</li>
+<li>ctrl + 2: mover el cursor a la consola</li>
+</ul>
+<p><strong>En la consola</strong></p>
+<ul>
+<li>flecha hacia arriba: recuperar comandos pasados<br />
+</li>
+<li>ctrl + flecha hacia arriba: búsqueda en los comandos<br />
+</li>
+<li>ctrl + 1: mover el cursor al editor</li>
+</ul>
+<div id="r-en-análisis-de-datos" class="section level3 unnumbered hasAnchor">
+<h3>R en análisis de datos<a href="introducción-a-r-y-al-paquete-ggplot2.html#r-en-análisis-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El estándar científico para contestar preguntas o tomar decisiones es uno que
+se basa en el análisis de datos. Aquí consideramos técnicas cuantitativas:
+recolectar, organizar, entender, interpretar y extraer información de
+colecciones de datos predominantemente numéricos. Todas estas tareas son partes
+del análisis de datos, cuyo proceso podría resumirse con el siguiente diagrama:</p>
+<p><img src="imagenes/analisis.png" /></p>
+<p>Es importante la forma en que nos movemos dentro de estos procesos en el
+análisis de datos y en este curso buscamos dar herramientas para facilitar
+cumplir los siguientes principios:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Reproducibilidad</strong>. Debe ser posible reproducir el análisis en todos sus
+pasos, en cualquier momento.</p></li>
+<li><p><strong>Claridad</strong>. Los pasos del análisis deben estar documentados apropiadamente,
+de manera que las decisiones importantes puedan ser entendidas y explicadas
+claramente.</p></li>
+</ol>
+<p>Dedicaremos las primeras sesiones a aprender herramientas básicas para poder
+movernos agilmente a lo largo de las etapas de análisis utilizando R y nos
+enfocaremos en los paquetes que forman parte del
+<a href="http://tidyverse.org/">tidyverse</a>.</p>
+</div>
+<div id="paquetes-y-el-tidyverse" class="section level3 unnumbered hasAnchor">
+<h3>Paquetes y el Tidyverse<a href="introducción-a-r-y-al-paquete-ggplot2.html#paquetes-y-el-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La mejor manera de usar R para análisis de datos es aprovechando la gran
+cantidad de paquetes que aportan funcionalidad adicional. Desde
+Rstudio podemos instalar paquetes (Tools - &gt; Install packages o usar la
+función <code>install.packages("nombre_paquete")</code>). Una vez instalados, podemos
+cargarlos a nuestra sesión de R mediante <code>library</code>. Por ejemplo, para cargar el
+paquete <code>readr</code> hacemos:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print(read_csv)</span></span>
+<span id="cb1-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Error in print(read_csv) : object &#39;read_csv&#39; not found</span></span>
+<span id="cb1-3"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-5"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(read_csv)</span></code></pre></div>
+<pre><code>## function (file, col_names = TRUE, col_types = NULL, col_select = NULL, 
+##     id = NULL, locale = default_locale(), na = c(&quot;&quot;, &quot;NA&quot;), quoted_na = TRUE, 
+##     quote = &quot;\&quot;&quot;, comment = &quot;&quot;, trim_ws = TRUE, skip = 0, n_max = Inf, 
+##     guess_max = min(1000, n_max), name_repair = &quot;unique&quot;, num_threads = readr_threads(), 
+##     progress = show_progress(), show_col_types = should_show_types(), 
+##     skip_empty_rows = TRUE, lazy = should_read_lazy()) 
+## {
+##     if (edition_first()) {
+##         tokenizer &lt;- tokenizer_csv(na = na, quoted_na = quoted_na, 
+##             quote = quote, comment = comment, trim_ws = trim_ws, 
+##             skip_empty_rows = skip_empty_rows)
+##         return(read_delimited(file, tokenizer, col_names = col_names, 
+##             col_types = col_types, locale = locale, skip = skip, 
+##             skip_empty_rows = skip_empty_rows, comment = comment, 
+##             n_max = n_max, guess_max = guess_max, progress = progress, 
+##             show_col_types = show_col_types))
+##     }
+##     if (!missing(quoted_na)) {
+##         lifecycle::deprecate_soft(&quot;2.0.0&quot;, &quot;readr::read_csv(quoted_na = )&quot;)
+##     }
+##     vroom::vroom(file, delim = &quot;,&quot;, col_names = col_names, col_types = col_types, 
+##         col_select = {
+##             {
+##                 col_select
+##             }
+##         }, id = id, .name_repair = name_repair, skip = skip, 
+##         n_max = n_max, na = na, quote = quote, comment = comment, 
+##         skip_empty_rows = skip_empty_rows, trim_ws = trim_ws, 
+##         escape_double = TRUE, escape_backslash = FALSE, locale = locale, 
+##         guess_max = guess_max, show_col_types = show_col_types, 
+##         progress = progress, altrep = lazy, num_threads = num_threads)
+## }
+## &lt;bytecode: 0x7fa62d2c1040&gt;
+## &lt;environment: namespace:readr&gt;</code></pre>
+<p><code>read_csv</code> es una función que aporta el paquete <code>readr</code>, que a su vez está incluido en el
+<em>tidyverse</em>.</p>
+<p>Los paquetes se instalan una sola vez, sin embargo, se deben cargar
+(ejecutar <code>library(tidyverse)</code>) en cada sesión de R que los ocupemos.</p>
+<p>En estas notas utilizaremos la colección de paquetes incluídos en el
+<a href="https://www.tidyverse.org/">tidyverse</a>. Estos paquetes de R están
+diseñados para ciencia de datos, y para funcionar juntos como parte de un flujo
+de trabajo.</p>
+<p>La siguiente imagen tomada de <a href="https://rviews.rstudio.com/2017/06/08/what-is-the-tidyverse/">Why the tidyverse</a> (Joseph
+Rickert) indica que paquetes del tidyverse se utilizan para cada
+etapa del análisis de datos.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;imagenes/tidyverse.png&quot;</span>)</span></code></pre></div>
+<p><img src="imagenes/tidyverse.png" width="700px" /></p>
+</div>
+<div id="recursos" class="section level3 unnumbered hasAnchor">
+<h3>Recursos<a href="introducción-a-r-y-al-paquete-ggplot2.html#recursos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Existen muchos recursos gratuitos para aprender R, y resolver nuestras dudas,
+enlistamos algunos.</p>
+<ul>
+<li>Buscar ayuda: Google, <a href="http://stackoverflow.com/questions/tagged/r">StackOverflow</a>.<br />
+</li>
+<li>Para aprender más sobre un paquete o una función pueden visitar <a href="http://www.rdocumentation.org/">Rdocumentation.org</a>.<br />
+</li>
+<li>La referencia principal de estas notas es el libro <a href="http://r4ds.had.co.nz/">R for Data Science</a>
+de Hadley Wickham.<br />
+</li>
+<li>Para aprender los comandos básicos de R <a href="http://tryr.codeschool.com/"><em>Try R</em></a>
+y <a href="https://www.datacamp.com/">Datacamp</a> cuentan con excelentes cursos
+interactivos.<br />
+</li>
+<li>Para aprender programación avanzada en R, el libro gratuito
+<a href="http://adv-r.had.co.nz">Advanced R</a> de Hadley Wickham es una buena referencia.
+En particular es conveniente leer la <a href="http://adv-r.had.co.nz/Style.html">guía de estilo</a> (para todos: principiantes, intermedios y avanzados).<br />
+</li>
+<li>Para mantenerse al tanto de las noticias de la comunidad de R pueden visitar
+<a href="http://www.r-bloggers.com">R-bloggers</a>.<br />
+</li>
+<li>Más del tidyverse: <a href="https://rviews.rstudio.com/2017/06/08/what-is-the-tidyverse/">Why the tidyverse</a><br />
+</li>
+<li>Para aprovechar la funcionalidad de <a href="https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf">RStudio</a>.</li>
+</ul>
+</div>
+</div>
+<div id="visualización-con-ggplot2" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Visualización con ggplot2<a href="introducción-a-r-y-al-paquete-ggplot2.html#visualización-con-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Utilizaremos el paquete <code>ggplot2</code>, fue desarrollado por Hadley Wickham y es
+una implementación de la gramática de las gráficas <span class="citation">(<a href="#ref-wilkinson2005" role="doc-biblioref"><strong>wilkinson2005?</strong></a>)</span>.</p>
+<div id="gráficas-de-dispersión" class="section level4 unnumbered hasAnchor">
+<h4>Gráficas de dispersión<a href="introducción-a-r-y-al-paquete-ggplot2.html#gráficas-de-dispersión" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># Cargamos el paquete en nuestra sesión</span></span></code></pre></div>
+<p>Usaremos el conjunto de datos <em>mpg</em> que se incluye en R, puedes encontrar
+información de esta base de datos tecleando <code>?mpg</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mpg)</span>
+<span id="cb5-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb5-2" aria-hidden="true" tabindex="-1"></a>?mpg</span>
+<span id="cb5-3"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(mpg)</span></code></pre></div>
+<pre><code>## Rows: 234
+## Columns: 11
+## $ manufacturer &lt;chr&gt; &quot;audi&quot;, &quot;audi&quot;, &quot;audi&quot;, &quot;audi&quot;, &quot;audi&quot;, &quot;audi&quot;, &quot;audi&quot;, &quot;…
+## $ model        &lt;chr&gt; &quot;a4&quot;, &quot;a4&quot;, &quot;a4&quot;, &quot;a4&quot;, &quot;a4&quot;, &quot;a4&quot;, &quot;a4&quot;, &quot;a4 quattro&quot;, &quot;…
+## $ displ        &lt;dbl&gt; 1.8, 1.8, 2.0, 2.0, 2.8, 2.8, 3.1, 1.8, 1.8, 2.0, 2.0, 2.…
+## $ year         &lt;int&gt; 1999, 1999, 2008, 2008, 1999, 1999, 2008, 1999, 1999, 200…
+## $ cyl          &lt;int&gt; 4, 4, 4, 4, 6, 6, 6, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 8, 8, …
+## $ trans        &lt;chr&gt; &quot;auto(l5)&quot;, &quot;manual(m5)&quot;, &quot;manual(m6)&quot;, &quot;auto(av)&quot;, &quot;auto…
+## $ drv          &lt;chr&gt; &quot;f&quot;, &quot;f&quot;, &quot;f&quot;, &quot;f&quot;, &quot;f&quot;, &quot;f&quot;, &quot;f&quot;, &quot;4&quot;, &quot;4&quot;, &quot;4&quot;, &quot;4&quot;, &quot;4…
+## $ cty          &lt;int&gt; 18, 21, 20, 21, 16, 18, 18, 18, 16, 20, 19, 15, 17, 17, 1…
+## $ hwy          &lt;int&gt; 29, 29, 31, 30, 26, 26, 27, 26, 25, 28, 27, 25, 25, 25, 2…
+## $ fl           &lt;chr&gt; &quot;p&quot;, &quot;p&quot;, &quot;p&quot;, &quot;p&quot;, &quot;p&quot;, &quot;p&quot;, &quot;p&quot;, &quot;p&quot;, &quot;p&quot;, &quot;p&quot;, &quot;p&quot;, &quot;p…
+## $ class        &lt;chr&gt; &quot;compact&quot;, &quot;compact&quot;, &quot;compact&quot;, &quot;compact&quot;, &quot;compact&quot;, &quot;c…</code></pre>
+<p>Comencemos con nuestra primera gráfica:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg) <span class="sc">+</span> </span>
+<span id="cb7-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="480" /></p>
+<p>En <code>ggplot2</code> se inicia una gráfica con la instrucción <code>ggplot()</code>, debemos
+especificar explicitamente que base de datos usamos, este es el primer argumento
+en la función <code>ggplot()</code>. Una vez que creamos la base añadimos
+<em>capas</em>, y dentro de <em>aes()</em> escribimos las variables que queremos
+graficar y el atributo de la gráfica al que queremos mapearlas.</p>
+<p>La función <code>geom_point()</code> añade una capa de puntos, hay muchas funciones
+<em>geometrías</em> incluídas en <code>ggplot2</code>: <code>geom_line()</code>, <code>geom_boxplot()</code>,
+<code>geom_histogram</code>,… Cada una acepta distintos argumentos para mapear las
+variables en los datos a características estéticas de la gráfica. En el ejemplo
+de arriba mapeamos <code>displ</code> al eje x, <code>hwy</code> al eje y, pero <code>geom_point()</code> nos
+permite representar más variables usando la forma, color y/o tamaño del punto.
+Esta flexibilidad nos permite entender o descubrir patrones más interesantes en
+los datos.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg) <span class="sc">+</span> </span>
+<span id="cb8-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> class))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="528" /></p>
+<p><img src="imagenes/manicule2.jpg" /> Experimenta con los <em>aesthetics</em> color (color),
+tamaño (size) y forma (shape).</p>
+<p>            ¿Qué diferencia hay entre las variables categóricas y las continuas?</p>
+<p>            ¿Qué ocurre cuando combinas varios <em>aesthetics</em>?</p>
+<p>El mapeo de las propiedades estéticas se denomina escalamiento y depende del
+tipo de variable, las variables discretas (por ejemplo, genero, escolaridad,
+país) se mapean a distintas escalas que las variables continuas (variables
+numéricas como edad, estatura, etc.), los <em>defaults</em> para algunos atributos son
+(los escalamientos se pueden modificar):</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="42%" />
+<col width="27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>aes</th>
+<th>Discreta</th>
+<th>Continua</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Color (<code>color</code>)</td>
+<td>Arcoiris de colores</td>
+<td>Gradiente de colores</td>
+</tr>
+<tr class="even">
+<td>Tamaño (<code>size</code>)</td>
+<td>Escala discreta de tamaños</td>
+<td>Mapeo lineal entre el área y el valor</td>
+</tr>
+<tr class="odd">
+<td>Forma (<code>shape</code>)</td>
+<td>Distintas formas</td>
+<td>No aplica</td>
+</tr>
+<tr class="even">
+<td>Transparencia (<code>alpha</code>)</td>
+<td>No aplica</td>
+<td>Mapeo lineal a la transparencia</td>
+</tr>
+</tbody>
+</table>
+<p>Los <em><em>geoms</em></em> controlan el tipo de gráfica</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb9-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy))</span>
+<span id="cb9-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb9-2" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="co"># en este caso no es una buena gráfica</span></span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="480" /></p>
+<p>¿Qué problema tiene la siguiente gráfica?</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb10-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy))</span>
+<span id="cb10-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb10-2" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_point</span>() </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-9-1.png" width="480" /></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb11-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_jitter</span>() </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-9-2.png" width="480" /></p>
+<p><img src="imagenes/manicule2.jpg" /> ¿Cómo podemos mejorar la siguiente gráfica?</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> class, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb12-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="480" /></p>
+<p>Intentemos reodenar los niveles de la variable clase</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(class, hwy), <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb13-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="480" /></p>
+<p>Podemos probar otros geoms.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(class, hwy), <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb14-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>() </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="480" /></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(class, hwy), <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb15-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>() </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-12-2.png" width="480" /></p>
+<p>También podemos usar más de un geom!</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(class, hwy), <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb16-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
+<span id="cb16-3"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="480" /></p>
+<p><img src="imagenes/manicule2.jpg" /> Lee la ayuda de <em>reorder</em> y repite las gráficas
+anteriores ordenando por la mediana de <em>hwy</em>.</p>
+<p>            ¿Cómo harías
+para graficar los puntos encima de las cajas de boxplot?</p>
+</div>
+<div id="paneles" class="section level4 unnumbered hasAnchor">
+<h4>Paneles<a href="introducción-a-r-y-al-paquete-ggplot2.html#paneles" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Veamos ahora como hacer páneles de gráficas, la idea es hacer varios múltiplos
+de una gráfica donde cada múltiplo representa un subconjunto de los datos, es
+una práctica muy útil para explorar relaciones condicionales.</p>
+<p>En ggplot podemos usar <em>facet_wrap()</em> para hacer paneles dividiendo los datos
+de acuerdo a las categorías de una sola variable</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb17-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
+<span id="cb17-3"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> cyl)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="480" /></p>
+<p>También podemos hacer una cuadrícula de <span class="math inline">\(2\)</span> dimensiones usando
+<em>facet_grid(filas~columnas)</em></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb18-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
+<span id="cb18-3"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span> class)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="768" /></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb19-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>() <span class="sc">+</span></span>
+<span id="cb19-3"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(drv <span class="sc">~</span> class)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>Los páneles pueden ser muy útiles para entender relaciones en nuestros datos. En
+la siguiente gráfica es difícil entender si existe una relación entre radiación
+solar y ozono.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(airquality)</span>
+<span id="cb20-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(<span class="at">x =</span> Solar.R, <span class="at">y =</span> Ozone)) <span class="sc">+</span> </span>
+<span id="cb20-3"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code></pre></div>
+<pre><code>## Warning: Removed 42 rows containing missing values (`geom_point()`).</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="384" /></p>
+<p>Veamos que ocurre si realizamos páneles separando por velocidad del viento.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
+<span id="cb22-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb22-2" aria-hidden="true" tabindex="-1"></a>airquality<span class="sc">$</span>Wind.cat <span class="ot">&lt;-</span> <span class="fu">cut2</span>(airquality<span class="sc">$</span>Wind, <span class="at">g =</span> <span class="dv">3</span>) </span>
+<span id="cb22-3"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(<span class="at">x =</span> Solar.R, <span class="at">y =</span> Ozone)) <span class="sc">+</span> </span>
+<span id="cb22-4"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb22-5"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Wind.cat)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>Podemos agregar un suavizador (loess) para ver mejor la relación de las
+variables en cada panel.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(<span class="at">x =</span> Solar.R, <span class="at">y =</span> Ozone)) <span class="sc">+</span> </span>
+<span id="cb23-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb23-3"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Wind.cat) <span class="sc">+</span> </span>
+<span id="cb23-4"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="imagenes/manicule2.jpg" /> Escribe algunas preguntas que puedan contestar con
+estos datos.</p>
+<p>En ocasiones es necesario realizar transformaciones u obtener subconjuntos de
+los datos para poder responder preguntas de nuestro interés.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb25-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(babynames)</span>
+<span id="cb25-3"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(babynames)</span></code></pre></div>
+<pre><code>## Rows: 1,924,665
+## Columns: 5
+## $ year &lt;dbl&gt; 1880, 1880, 1880, 1880, 1880, 1880, 1880, 1880, 1880, 1880, 1880,…
+## $ sex  &lt;chr&gt; &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, &quot;F&quot;, …
+## $ name &lt;chr&gt; &quot;Mary&quot;, &quot;Anna&quot;, &quot;Emma&quot;, &quot;Elizabeth&quot;, &quot;Minnie&quot;, &quot;Margaret&quot;, &quot;Ida&quot;,…
+## $ n    &lt;int&gt; 7065, 2604, 2003, 1939, 1746, 1578, 1472, 1414, 1320, 1288, 1258,…
+## $ prop &lt;dbl&gt; 0.07238359, 0.02667896, 0.02052149, 0.01986579, 0.01788843, 0.016…</code></pre>
+<p>Supongamos que queremos ver la tendencia del nombre “John”, para ello debemos
+generar un subconjunto de la base de datos. ¿Qué ocurre en la siguiente gráfica?</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb27-1" aria-hidden="true" tabindex="-1"></a>babynames_John <span class="ot">&lt;-</span> <span class="fu">filter</span>(babynames, name <span class="sc">==</span> <span class="st">&quot;John&quot;</span>)</span>
+<span id="cb27-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(babynames_John, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> prop)) <span class="sc">+</span></span>
+<span id="cb27-3"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="480" /></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(babynames_John, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> prop, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb28-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="480" /></p>
+<p>La preparación de los datos es un aspecto muy importante del análisis y suele
+ser la fase que lleva más tiempo. Es por ello que el siguiente tema se enfocará
+en herramientas para hacer transformaciones de manera eficiente.</p>
+<p><img src="imagenes/manicule.jpg" /> Tarea. Explora la base de datos gapminder, estos
+datos están incluidos en el paquete del mismo nombre, para acceder a ellos basta
+con cargar el paquete:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(&quot;gapminder&quot;)</span></span>
+<span id="cb29-2"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb29-3"><a href="introducción-a-r-y-al-paquete-ggplot2.html#cb29-3" aria-hidden="true" tabindex="-1"></a>gapminder</span></code></pre></div>
+<pre><code>## # A tibble: 1,704 × 6
+##    country     continent  year lifeExp      pop gdpPercap
+##    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+##  1 Afghanistan Asia       1952    28.8  8425333      779.
+##  2 Afghanistan Asia       1957    30.3  9240934      821.
+##  3 Afghanistan Asia       1962    32.0 10267083      853.
+##  4 Afghanistan Asia       1967    34.0 11537966      836.
+##  5 Afghanistan Asia       1972    36.1 13079460      740.
+##  6 Afghanistan Asia       1977    38.4 14880372      786.
+##  7 Afghanistan Asia       1982    39.9 12881816      978.
+##  8 Afghanistan Asia       1987    40.8 13867957      852.
+##  9 Afghanistan Asia       1992    41.7 16317921      649.
+## 10 Afghanistan Asia       1997    41.8 22227415      635.
+## # … with 1,694 more rows</code></pre>
+<p>            realiza al
+menos <span class="math inline">\(3\)</span> gráficas y explica las relaciones que encuentres. Debes usar lo que
+revisamos en estas notas: al menos una de las gráficas debe ser de páneles,
+realiza una gráfica con datos de México, y (opcional)si lo consideras
+interesante, puedes crear una variable categórica utilizando la función <code>cut2</code>
+del paquete Hmisc.</p>
+</div>
+<div id="recursos-1" class="section level3 unnumbered hasAnchor">
+<h3>Recursos<a href="introducción-a-r-y-al-paquete-ggplot2.html#recursos-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>El libro <em>R for Data Science</em> <span class="citation">(<a href="#ref-r4ds" role="doc-biblioref"><strong>r4ds?</strong></a>)</span> tiene un capítulo de visualización.</li>
+<li>Google, <a href="https://stackoverflow.com/questions/tagged/ggplot2">stackoverflow</a>
+tiene un <em>tag</em> para ggplot2.<br />
+</li>
+<li>Documentación con ejemplos en la página de
+<a href="http://ggplot2.tidyverse.org/">ggplot2</a>.</li>
+<li>Otro recurso muy útil es el
+<a href="https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf">acordeón de ggplot</a>.<br />
+</li>
+<li>La teoría detrás de ggplot2 se explica en el libro de ggplot2 <span class="citation">(<a href="#ref-wickham2009" role="doc-biblioref"><strong>wickham2009?</strong></a>)</span>,</li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introducción-a-visualización.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="prueba.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

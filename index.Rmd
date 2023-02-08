@@ -1,6 +1,6 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
+title: "AIS: Capacitación de R"
+author: "Oliab Herrera Coria"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -15,46 +15,268 @@ link-citations: yes
 github-repo: rstudio/bookdown-demo
 ---
 
-# About
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+# Información del curso {-}
 
-## Usage 
+- Este es un curso de Introducción a R.
 
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
+- Al final serán capaces de utilizar R para cargar datos, arreglarlos, hacer gráficos y tablas, e informes en Rmarkdown.
 
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
+- Intentaremos que el curso sea fundamentalmente práctico.
 
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
+- En lugar de presentar todos los pormenores de R de manera lineal, se irán presentando distintos aspectos de R conforme se vayan necesitando; es decir, no vamos a presentar R como un lenguaje de programación sino como una herramienta para hacer análisis estadísticos.
 
-## Render book
+E- n la carpeta del curso están todos los materiales: tutoriales, algunos datos, etc….
 
-You can render the HTML version of this example book without changing anything:
+#### Ligas {-}
+Notas:   
+Correo: oliabherrera@gmail.com   
+ 
 
-1. Find the **Build** pane in the RStudio IDE, and
 
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
+</br>
 
-Or build the book from the R console:
 
-```{r, eval=FALSE}
-bookdown::render_book()
+
+
+## Temario {-}
+
+1. **Introducción a R**
+
+-   Instalación de R y R Studio.
+-   Entorno de trabajo de RStudio.
+-   Instalación de paquetes.
+-   Ayuda en R.  
+
+2. **Manipulación y visualización de datos**
+
+-   Visualización de datos.
+-   Manipulación y limpieza de datos.
+-   Temas selectos de programación en R.
+
+3. **Reportes POS**
+
+-   Descarga de datos.
+-   Scripts principales.
+-   Proyecciones.
+
+
+
+
+
+### Software {-}
+
+- https://www.r-project.org
+- https://www.rstudio.com
+
+# Introducción a R.
+
+El objetivo de este tutorial es familiarizarnos con el entorno de trabajo que proporciona R y RStudio. Al finalizar este tutorial también deberemos ser capaces de instalar y cargar los paquetes que vayamos a necesitar para realizar nuestros análisis de datos.
+
+## Instalación de R y R Studio.
+
+Para instalar R vamos a la página web de R project: [http://www.r-project.org](http://www.r-project.org)  
+
+![Figura 1](imagenes/01.png)
+
+Para descargar la aplicación hacemos clic en Cran y pinchamos sobre el enlace del “espejo” más próximo a nuestra ubicación, México. Seleccionemos la URL de, por ejemplo (https://cran.itam.mx/).
+
+![Figura 2](imagenes/02.png)
+
+Ahora, en función del tu sistema operativo, seleccionar la correspondiente opción.
+
+![Figura 3](imagenes/03.png)
+### Instalar R en Windows.
+
+Al hacer clic sobre Download R for Windows iremos a la página que se reproduce más abajo. Hacer clic sobre *install R for the first time.*
+
+En la siguiente ventana, hacer clic sobre *Download R 3.3.3 for Windows* y guardar el archivo de instalación.
+
+Ejecutar el archivo descargado para proceder a la instalación de R.
+
+
+### Instalar R en Mac.
+Al hacer clic sobre Download R for (Mac) OS X iremos a la página que se reproduce más abajo. Hacer clic sobre install R for the first time.
+
+![Figura 4](imagenes/04.png)
+
+Hacer clic sobre R-3.3.3.pkg y guardar el archivo de instalación. Ejecutar el archivo descargado para proceder a la instalación de R.
+
+
+### Instalar RStudio
+Descargamos la aplicación desde la página web de RStudio [aquí](https://posit.co/download/rstudio-desktop/) según nuestra plataforma de trabajo:
+
+-  RStudio 1.0.136 - Windows Vista/7/8/10.
+
+-  RStudio 1.0.136 - Mac OS X 10.6+ (64-bit).
+
+Una vez guardado el archivo, lo ejecutamos para instalar RStudio. Sigue las instrucciones de instalación.
+
+## Entorno de trabajo de RStudio.
+
+En general trabajamos con la interfaz de RStudio antes que con la de R porque la primera es “más amigable”.
+
+Si abrimos RStudio vamos a ver algo parecido a lo que se muestra en la siguiente imagen:
+
+![Figura 5](imagenes/05.png)
+
+Una vez estamos en RStudio, podemos escribir y ejecutar las órdenes de varias formas:
+
+- directamente en la consola.
+
+- a través de un script (.R).
+
+- con ficheros Rmarkdown (.Rmd).
+
+Como podemos ver, RStudio está (normalmente) dividido en 4 paneles.
+
+### Consola 
+Por defecto, la consola se encuentra en el panel inferior-izquierdo. ¿Vemos la pestaña que pone Console? Inmediatamente debajo aparece un texto informativo y, finalmente, el símbolo “>”. Aquí es donde R espera que le demos instrucciones. Para ejecutarlas y obtener el resultado pulsamos enter.
+
+Vamos a hacer este ejemplo:
+
+```{r setup, include = TRUE}
+2+2
+5*(3-1)^2
+sqrt(4)
+
 ```
 
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
+### Scripts
+Trabajar en la consola es muy limitado ya que las instrucciones se han de introducir una a una. Lo habitual es trabajar con scripts o ficheros de instrucciones. Estos ficheros tienen extensión **.R**.
 
-## Preview book
+Se puede crear una script con cualquier editor de texto (uno de los más populares es Tinn-R), pero nosotros lo haremos desde RStudio. Para ello, seleccionamos la siguiente ruta de menús: **File > New File > R script**
 
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
+![Figura 5](imagenes/06.png)
 
-```{r eval=FALSE}
-bookdown::serve_book()
+El panel del script se sitúa en la parte superior-izquierda de RStudio. Ahora podemos escribir las instrucciones línea por línea. Las instrucciones las podemos ejecutar una a una o las podemos seleccionar y ejecutar en bloque. Para ejecutar las instrucciones tenemos varias alternativas:
+
+- Hacemos clic en el botón: **Run** (botón situado en la parte derecha de las opciones del panel de script)
+
+- Pulsamos Ctrl+r
+
+- Ejecutamos el código desde las opciones del menú Code. Sinceramente, esto nunca lo hemos utilizado. ¡Cuestión de comodidad!
+
+Como se muestra en la imagen más abajo, vamos a escribir nuestro primer script.
+
+![Figura 6](imagenes/07.png)
+Para guardar el script:
+
+- File > Save as.. y seleccionar la ruta donde se quiere guardar el fichero.
+
+- Hacer clic en el botón Guardar que se encuentra en la parte izquierda de la cinta de opciones del script.
+
+### Entorno
+
+El panel, llamémoslo, de entorno esta compuesto de dos pestañas: Environment y History.
+
+- En el Environment se irán registrando los objetos que vayamos creando en la sesión de trabajo. También tenemos la opción de cargar y guardar una sesión de trabajo, importar datos y limpiar los objetos de la sesión. Estas opciones están accesibles a través de la cinta de opciones de la pestaña.
+
+![Figura 7](imagenes/08.png)
+
+- En la pestaña History se registran las instrucciones ejecutadas. Como opciones, podemos cargar y guardar el historial de la sesión, seleccionar una o más instrucciones y enviarlas bien a la consola bien al script, y limpiar el historial.
+
+### Otros recursos
+
+Con el nombre de **Otros recursos** nos referimos al panel que se encuentra en la parte inferior-derecha del escritorio de RStudio. ¡No sabía cómo llamarlo!
+
+En este panel cabe destacar las siguientes pestañas, cada una con diferentes opciones:
+
++ Files: es una especie de explotador de ficheros.
+
++ Plots: donde se visualizan los gráficos que creamos. Entre las opciones disponibles se encuentran:
+  - Zoom: para agrandar el gráfico y verlo en otra ventana.
+  - Export: para exportar/guardar el gráfico. Se puede guardar el gráfico como imagen, pdf o copiarlo al portapapeles.
+
++ Packages: proporciona un listado de los paquetes instalados en R y los que han sido cargado en la sesión. A través de las opciones de esta pestaña podemos instalar nuevos paquetes o actualizar los existentes.
+
++ Help: Para obtener ayuda sobre una determinada función.
+
+## Configuración del espacio de trabajo
+
+Antes de comenzar a trabajar debemos fijar el directorio donde queremos guardar nuestros ficheros. Básicamente, dos alternativas.
+
+### Opción 1: Fijar directorio
+Opción 1. Indicamos a R la ruta donde queremos trabajar y la fijamos con la función setwd().
+
+```{r setup, include = TRUE}
+setwd("C:/ruta del directorio de trabajo")
+
+```
+Para comprobar el directorio de trabajo utilizamos la función getwd():
+
+```{r setup, include = TRUE}
+getwd()
+
+```
+Para obtener un listado de los ficheros que contiene la ruta establecida se usa la función dir().
+
+
+```{r setup, include = TRUE}
+dir()
+
 ```
 
+## Opción 2 : Proyecto de R.
+Al crear un proyecto todos los ficheros quedan vinculados directamente al proyecto. Para crear un proyecto selección **File > New project...** Se abrirá la siguiente ventana:
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
+![Figura 8](imagenes/09.png)
+Para crear un proyecto en un nuevo directorio, hacemos clic en el botón New Directory. Seguidamente, seleccionamos el tipo de proyecto, en nuestro caso Empty Project. Ahora, asignamos un nombre al directorio (carpeta) que se va a crear y que al mismo tiempo será el nombre del proyecto de R. Para terminar, hacemos clic en el botón Create Project. Al seguir este proceso se habrá creado una carpeta en Documentos y un fichero nombre_carpeta.Rproj.
+
+Para crear un proyecto en una carpeta que ya existe, hacemos clic en el botón Existing Directory y después seleccionamos la carpeta ayudándonos del Browse.. si fuera necesario. Una vez elegida la carpeta, clicamos en Create Project.
+
+Para abrir un proyecto hacemos doble clic sobre el archivo con extensión .Rproj o lo abrimos desde el menú de RStudio: File > Open Project…
+
+Ventaja de los proyectos: cualquier fichero que creemos (script de R, documento de Rmarkdown, etc.) y guardemos se guardará en la carpeta del proyecto.
+
+## Instalación de paquetes.
+
+R está compuesto por un sistema base, pero para extender su funcionalidad es necesario instalar paquetes adicionales.
+
+Podemos instalar paquetes de varias formas:
+
+- A través del menú: Tools > Install packages…
+
+- En el escritorio de RStudio: Packages/Install. Vemos los paquetes que tenemos actualmente instalados y aquellos que se encuentran cargados.
+
+![Figura 9](imagenes/10.png)
+- Utilizando la función install.packages(). El nombre del paquete que queremos instalar debe ir entre comillas.
+
+
+```{r setup, include = TRUE}
+install.packages("dplyr") # dplyr es un paquete que se utiliza para manipular/gestionar datos
+
 ```
+Una vez instalado el paquete, hay que cargarlo para poderlo utilizar. Esto se hace con la función library().
+```{r setup, include = TRUE}
+library(dplyr)
+
+```
+
+## Ayuda en R.
+
+En muchas ocasiones necesitamos ayuda sobre cómo funciona una determinada función, cuáles son sus argumentos, etc. Hay varias formas de pedir la ayuda de R. Vamos a pedir la ayuda de la función mean().
+
+```{r setup, include = TRUE}
+help(mean)
+?mean
+
+```
+
+Si ejecutamos directamente la función library() se abrirá una ventana listando los paquetes que tenemos instalados en R. En el escritorio de RStudio, en la pestaña Packages también tenemos en listado de paquetes instalados (organizados en dos bloques: User Library y System Library)
+
+```{r setup, include = TRUE}
+library()
+
+```
+
+Para obtener ayuda sobre un determinado paquete…
+
+```{r setup, include = TRUE}
+library(help="foreign")
+
+```
+Pero sin duda, una de las mejores fuentes de ayuda en R nos la proporciona internet. Bien haciendo directamente en google la búsqueda sobre el tema que estamos interesados, bien acudiendo a algunas de las muchas webs que ofrecen ayuda. Algunas de las más populares y recomendables webs son:
+- [R-Bloggers](https://www.r-bloggers.com/)
+- [Stack Overflow](https://stackoverflow.com/)
+
