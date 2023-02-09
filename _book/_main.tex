@@ -228,6 +228,30 @@ Correo: \href{mailto:oliabherrera@gmail.com}{\nolinkurl{oliabherrera@gmail.com}}
 
 El objetivo de este tutorial es familiarizarnos con el entorno de trabajo que proporciona R y RStudio. Al finalizar este tutorial también deberemos ser capaces de instalar y cargar los paquetes que vayamos a necesitar para realizar nuestros análisis de datos.
 
+\hypertarget{un-poco-de-historia}{%
+\section{Un poco de historia}\label{un-poco-de-historia}}
+
+R tiene sus orígenes en S, un lenguaje de programación creado en los Laboratorios Bell de Estados Unidos. Sí, los mismos laboratorios que inventaron el transistor, el láser, el sistema operativo Unix y algunas otras cosas más.
+
+Dado que S y sus estándares son propiedad de los Laboratorios Bell, lo cual restringe su uso, Ross Ihaka y Robert Gentleman, de la Universidad de Auckland en Nueva Zelanda, decidieron crear una implementación abierta y gratuita de S. Este trabajo, que culminaría en la creación de R inició en 1992, teniendo una versión inicial del lenguaje en 1995 y en el 2000 una versión final estable.
+
+En el presente, el mantenimiento y desarrollo de R es realizado por el R Development Core Team, un equipo de especialistas en ciencias computacionales y estadística provenientes de diferentes instituciones y lugares alrededor del mundo. La versión de R mantenida por este equipo es conocida como ``base'' y como su nombre indica, es sobre aquella que se crean otras implementaciones de R así como los paquetes que expanden su funcionalidad.
+
+\hypertarget{quiuxe9n-usa-r}{%
+\section{¿Quién usa R?}\label{quiuxe9n-usa-r}}
+
+La adopción de R se debe en gran medida a que permite responder preguntas mediante el uso de datos de forma efectiva, y como es un lenguaje abierto y gratuito, se facilita compartir código, crear herramientas para solucionar problemas comunes y que todo tipo de personas interesadas en análisis estadísticos puedan participar y contribuir al desarrollo y uso de R, no sólo aquellas que tengan acceso a licencias de software cerrado.
+
+Incluso compañías e instituciones que no tendrían ninguna dificultad para financiar el costo de licencias de software cerrado utilizan R.
+
+R, por citar un ejemplo, es usado por \textbf{Facebook} para analizar la manera en que sus usuarios interactúan con sus muros de publicaciones para así determinar qué contenido mostrarles. Esta es una tarea muy importante en Facebook, pues las interacciones de los usuarios con publicidad y contenido pagado son la principal fuente de ingreso de esta compañía. Además de que su división de recursos humanos emplea esta herramienta para estudiar las interacciones entre sus trabajadores.
+
+\textbf{Google} usa R para analizar la efectividad las campañas de publicidad implementadas en sus servicios, por ejemplo, los anuncios pagados que te aparecen cuando ``googleas'' algo. Nuevamente, esta es la principal fuente de ingresos de esta compañía. R También es usado para hacer predicciones económicas y otras actividades.
+
+\textbf{Microsoft} adquirió y ahora desarrolla una versión propia de R llamada OpenR, que ha hecho disponible para uso general del público. OpenR es empleada para realizar todo tipo de análisis estadísticos, por ejemplo, para empatar a jugadores en la plataforma de videojuegos XBOX Live (así que puedes culpar a R cuando te tocan partidas contra jugadores mucho más hábiles que tú).
+
+Otras compañías que usan R de modo cotidiano son American Express, IBM, Ford, Citibank, HP y Roche, entre muchas más (Bhalla, 2016; Level, 2017; Microsoft, 2014).
+
 \hypertarget{instalaciuxf3n-de-r-y-r-studio.}{%
 \section{Instalación de R y R Studio.}\label{instalaciuxf3n-de-r-y-r-studio.}}
 
@@ -398,7 +422,7 @@ Para guardar el script:
 \hypertarget{entorno}{%
 \subsection{Entorno}\label{entorno}}
 
-El panel, llamémoslo, de entorno esta compuesto de dos pestañas: Environment y History.
+El panel de entorno esta compuesto de dos pestañas: Environment y History.
 
 \begin{itemize}
 \tightlist
@@ -3996,7 +4020,7 @@ paquete \texttt{readr} hacemos:
 ##         guess_max = guess_max, show_col_types = show_col_types, 
 ##         progress = progress, altrep = lazy, num_threads = num_threads)
 ## }
-## <bytecode: 0x7f7b860d0870>
+## <bytecode: 0x7f8484ec9fa8>
 ## <environment: namespace:readr>
 \end{verbatim}
 

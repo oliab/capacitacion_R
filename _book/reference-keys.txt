@@ -1,4 +1,6 @@
 introducción-a-r.
+un-poco-de-historia
+quién-usa-r
 instalación-de-r-y-r-studio.
 instalar-r-en-windows.
 instalar-r-en-mac.

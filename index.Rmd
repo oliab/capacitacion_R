@@ -196,7 +196,7 @@ Para guardar el script:
 
 ### Entorno
 
-El panel, llamémoslo, de entorno esta compuesto de dos pestañas: Environment y History.
+El panel de entorno esta compuesto de dos pestañas: Environment y History.
 
 - En el Environment se irán registrando los objetos que vayamos creando en la sesión de trabajo. También tenemos la opción de cargar y guardar una sesión de trabajo, importar datos y limpiar los objetos de la sesión. Estas opciones están accesibles a través de la cinta de opciones de la pestaña.
 
