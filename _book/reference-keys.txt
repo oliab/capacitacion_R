@@ -24,5 +24,11 @@ cómo-crear-y-trabajar-con-matrices
 seleccionando-elementos-de-una-matriz
 listas
 data-frame
-importar-y-exportar-datos
+ver-el-contenido-de-un-data-frame-head-y-tail.
+nombres-de-filascolumnas
+eliminando-valores-na
+selección-de-datos-subsetting
 manipulación-y-limpieza-de-datos.
+manipulación-y-agrupación-de-datos
+transformación-de-datos
+datos-limpios

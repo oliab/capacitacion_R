@@ -914,7 +914,65 @@ datos11 <- subset(datos, Month !=5 & Day <=15)
 ```
 
 
-
-
-### Importar y exportar datos
 ## Manipulación y limpieza de datos.
+
+El estándar científico para contestar preguntas o tomar decisiones es uno que
+se basa en el análisis de datos. Aquí consideramos técnicas cuantitativas: 
+recolectar, organizar, entender, interpretar y extraer información de 
+colecciones de datos predominantemente numéricos. Todas estas tareas son partes 
+del análisis de datos, cuyo proceso podría resumirse con el siguiente diagrama:
+
+![](imagenes/analisis.png)
+
+Es importante la forma en que nos movemos dentro de estos procesos en el 
+análisis de datos y en este curso buscamos dar herramientas para facilitar 
+cumplir los siguientes principios:
+
+1. **Reproducibilidad**. Debe ser posible reproducir el análisis en todos sus 
+pasos, en cualquier momento.
+
+2. **Claridad**. Los pasos del análisis deben estar documentados apropiadamente, 
+de manera que las decisiones importantes puedan ser entendidas y explicadas 
+claramente.
+
+Dedicaremos las primeras sesiones a aprender herramientas básicas para poder 
+movernos agilmente a lo largo de las etapas de análisis utilizando R y nos 
+enfocaremos en los paquetes que forman parte del 
+[tidyverse](http://tidyverse.org/).
+
+### Paquetes y el Tidyverse {-}
+
+La mejor manera de usar R para análisis de datos es aprovechando la gran
+cantidad de paquetes que aportan funcionalidad adicional. Desde
+Rstudio podemos instalar paquetes (Tools - > Install packages o usar la 
+función `install.packages("nombre_paquete")`). Una vez instalados, podemos
+cargarlos a nuestra sesión de R mediante `library`. Por ejemplo, para cargar el
+paquete `readr` hacemos:
+
+```{r paquetes, message=FALSE}
+# print(read_csv)
+# Error in print(read_csv) : object 'read_csv' not found
+library(tidyverse)
+print(read_csv)
+```
+
+`read_csv` es una función que aporta el paquete `readr`, que a su vez está incluido en el 
+*tidyverse*. 
+
+Los paquetes se instalan una sola vez, sin embargo, se deben cargar 
+(ejecutar `library(tidyverse)`) en cada sesión de R que los ocupemos.
+
+En estas notas utilizaremos la colección de paquetes incluídos en el 
+[tidyverse](https://www.tidyverse.org/). Estos paquetes de R están
+diseñados para ciencia de datos, y para funcionar juntos como parte de un flujo
+de trabajo. 
+
+La siguiente imagen tomada de [Why the tidyverse](https://rviews.rstudio.com/2017/06/08/what-is-the-tidyverse/) (Joseph 
+Rickert) indica que paquetes del tidyverse se utilizan para cada
+etapa del análisis de datos.
+
+```{r}
+knitr::include_graphics("imagenes/tidyverse.png")
+```
+
+
