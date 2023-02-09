@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Manipulación y visualización de datos | AIS: Capacitación de R</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Manipulación y visualización de datos | AIS: Capacitación de R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Manipulación y visualización de datos | AIS: Capacitación de R" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Oliab Herrera Coria" />
+
+
+<meta name="date" content="2023-02-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introducción-a-r..html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Información del curso</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#temario"><i class="fa fa-check"></i>Temario</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software"><i class="fa fa-check"></i>Software</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introducción-a-r..html"><a href="introducción-a-r..html"><i class="fa fa-check"></i><b>1</b> Introducción a R.</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introducción-a-r..html"><a href="introducción-a-r..html#instalación-de-r-y-r-studio."><i class="fa fa-check"></i><b>1.1</b> Instalación de R y R Studio.</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introducción-a-r..html"><a href="introducción-a-r..html#instalar-r-en-mac."><i class="fa fa-check"></i><b>1.1.1</b> Instalar R en Mac.</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introducción-a-r..html"><a href="introducción-a-r..html#instalar-rstudio"><i class="fa fa-check"></i><b>1.1.2</b> Instalar RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introducción-a-r..html"><a href="introducción-a-r..html#entorno-de-trabajo-de-rstudio."><i class="fa fa-check"></i><b>1.2</b> Entorno de trabajo de RStudio.</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introducción-a-r..html"><a href="introducción-a-r..html#consola"><i class="fa fa-check"></i><b>1.2.1</b> Consola</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introducción-a-r..html"><a href="introducción-a-r..html#scripts"><i class="fa fa-check"></i><b>1.2.2</b> Scripts</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introducción-a-r..html"><a href="introducción-a-r..html#entorno"><i class="fa fa-check"></i><b>1.2.3</b> Entorno</a></li>
+<li class="chapter" data-level="1.2.4" data-path="introducción-a-r..html"><a href="introducción-a-r..html#otros-recursos"><i class="fa fa-check"></i><b>1.2.4</b> Otros recursos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introducción-a-r..html"><a href="introducción-a-r..html#configuración-del-espacio-de-trabajo"><i class="fa fa-check"></i><b>1.3</b> Configuración del espacio de trabajo</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="introducción-a-r..html"><a href="introducción-a-r..html#opción-1-fijar-directorio"><i class="fa fa-check"></i><b>1.3.1</b> Opción 1: Fijar directorio</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introducción-a-r..html"><a href="introducción-a-r..html#opción-2-proyecto-de-r."><i class="fa fa-check"></i><b>1.4</b> Opción 2 : Proyecto de R.</a></li>
+<li class="chapter" data-level="1.5" data-path="introducción-a-r..html"><a href="introducción-a-r..html#instalación-de-paquetes."><i class="fa fa-check"></i><b>1.5</b> Instalación de paquetes.</a></li>
+<li class="chapter" data-level="1.6" data-path="introducción-a-r..html"><a href="introducción-a-r..html#ayuda-en-r."><i class="fa fa-check"></i><b>1.6</b> Ayuda en R.</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="manipulación-y-visualización-de-datos.html"><a href="manipulación-y-visualización-de-datos.html"><i class="fa fa-check"></i><b>2</b> Manipulación y visualización de datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="manipulación-y-visualización-de-datos.html"><a href="manipulación-y-visualización-de-datos.html#comandos-básicos-de-r."><i class="fa fa-check"></i><b>2.1</b> Comandos básicos de R.</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="manipulación-y-visualización-de-datos.html"><a href="manipulación-y-visualización-de-datos.html#introducción"><i class="fa fa-check"></i><b>2.1.1</b> Introducción</a></li>
+<li class="chapter" data-level="2.1.2" data-path="manipulación-y-visualización-de-datos.html"><a href="manipulación-y-visualización-de-datos.html#vectores"><i class="fa fa-check"></i><b>2.1.2</b> Vectores</a></li>
+<li class="chapter" data-level="2.1.3" data-path="manipulación-y-visualización-de-datos.html"><a href="manipulación-y-visualización-de-datos.html#tipos-de-objetos"><i class="fa fa-check"></i><b>2.1.3</b> Tipos de objetos</a></li>
+<li class="chapter" data-level="2.1.4" data-path="manipulación-y-visualización-de-datos.html"><a href="manipulación-y-visualización-de-datos.html#listas"><i class="fa fa-check"></i><b>2.1.4</b> Listas</a></li>
+<li class="chapter" data-level="2.1.5" data-path="manipulación-y-visualización-de-datos.html"><a href="manipulación-y-visualización-de-datos.html#data-frame"><i class="fa fa-check"></i><b>2.1.5</b> Data Frame</a></li>
+<li class="chapter" data-level="2.1.6" data-path="manipulación-y-visualización-de-datos.html"><a href="manipulación-y-visualización-de-datos.html#importar-y-exportar-datos"><i class="fa fa-check"></i><b>2.1.6</b> Importar y exportar datos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="manipulación-y-visualización-de-datos.html"><a href="manipulación-y-visualización-de-datos.html#manipulación-y-limpieza-de-datos."><i class="fa fa-check"></i><b>2.2</b> Manipulación y limpieza de datos.</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AIS: Capacitación de R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="manipulación-y-visualización-de-datos" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Manipulación y visualización de datos<a href="manipulación-y-visualización-de-datos.html#manipulación-y-visualización-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="comandos-básicos-de-r." class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Comandos básicos de R.<a href="manipulación-y-visualización-de-datos.html#comandos-básicos-de-r." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="introducción" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Introducción<a href="manipulación-y-visualización-de-datos.html#introducción" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El objetivo de este tutorial es familiarizarnos con los conceptos básicos de R. ¿Qué es un objeto en R? ¿Con qué clases/tipos de objetos se trabaja en R?
+Aprenderemos a definir vectores y operar con ellos; a crear matrices, listas y data frames; a seleccionar elementos, añadir filas y columnas, etc. Como lo que se pretende es que se entienda la filosofía y la práctica del trabajo con R, todos los conceptos que se introducen se ilustran con ejemplos muy sencillos. No obstante, la selección de funciones que se realiza en este tutorial tienen una aplicación directa en el tratamiento real de datos.</p>
+<p>Vamos a realizar paso a paso este sencillo ejercicio para introducir algunos conceptos importantes.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="manipulación-y-visualización-de-datos.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code></pre></div>
+<pre><code>## [1] 7</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="manipulación-y-visualización-de-datos.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7</span></span>
+<span id="cb22-2"><a href="manipulación-y-visualización-de-datos.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## [1] 2.302585</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="manipulación-y-visualización-de-datos.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2.302585</span></span>
+<span id="cb24-2"><a href="manipulación-y-visualización-de-datos.html#cb24-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">+</span><span class="dv">4</span>  </span>
+<span id="cb24-3"><a href="manipulación-y-visualización-de-datos.html#cb24-3" aria-hidden="true" tabindex="-1"></a>x  <span class="co"># x es un vector cuya primera componente es 7. Enseguida vamos con los vectores!</span></span></code></pre></div>
+<pre><code>## [1] 7</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="manipulación-y-visualización-de-datos.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7</span></span>
+<span id="cb26-2"><a href="manipulación-y-visualización-de-datos.html#cb26-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="dv">2</span><span class="sc">+</span><span class="dv">6</span></span>
+<span id="cb26-3"><a href="manipulación-y-visualización-de-datos.html#cb26-3" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="manipulación-y-visualización-de-datos.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 8</span></span>
+<span id="cb28-2"><a href="manipulación-y-visualización-de-datos.html#cb28-2" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(x,y)</span>
+<span id="cb28-3"><a href="manipulación-y-visualización-de-datos.html#cb28-3" aria-hidden="true" tabindex="-1"></a>z</span></code></pre></div>
+<pre><code>## [1] 7 8</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="manipulación-y-visualización-de-datos.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7 8</span></span>
+<span id="cb30-2"><a href="manipulación-y-visualización-de-datos.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(z)</span></code></pre></div>
+<pre><code>## [1] 7.5</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="manipulación-y-visualización-de-datos.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7.5</span></span>
+<span id="cb32-2"><a href="manipulación-y-visualización-de-datos.html#cb32-2" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">mean</span>(z)</span>
+<span id="cb32-3"><a href="manipulación-y-visualización-de-datos.html#cb32-3" aria-hidden="true" tabindex="-1"></a>w</span></code></pre></div>
+<pre><code>## [1] 7.5</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="manipulación-y-visualización-de-datos.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 7.5</span></span>
+<span id="cb34-2"><a href="manipulación-y-visualización-de-datos.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(w, <span class="at">digits=</span><span class="dv">0</span>)</span></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="manipulación-y-visualización-de-datos.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 8</span></span></code></pre></div>
+<p>R utiliza funciones para realizar operaciones. Una función es, por ejemplo, mean(). Para utilizar una función deben especificarse unos argumentos, que es lo que escribimos dentro de los paréntesis. En el caso de la función round() hemos especificado dos argumentos: el vector que queremos redondear (w) y el número de decimales del redondeo (digits).</p>
+<p><strong>El símbolo &lt;- es el operador para asignar. También se puede utilizar = (o menos frecuente -&gt;), aunque es preferible utilizar el &lt;-.</strong></p>
+<p>El símbolo <strong>#</strong> se utiliza para introducir un comentario. <strong>Todo lo que quede a la derecha de # no se ejecutará.</strong></p>
+<p>Cuando se realiza una asignación se obtiene un objeto. Podemos ver el resultado o contenido de un objeto de varias formas. Por ejemplo, para ver qué es el objeto x podemos escribir en la consola:</p>
+<ul>
+<li><p>x</p></li>
+<li><p>print(x)</p></li>
+<li><p>(x &lt;- 3+4)</p></li>
+</ul>
+</div>
+<div id="vectores" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Vectores<a href="manipulación-y-visualización-de-datos.html#vectores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Básicamente R trabaja con los siguientes tipos de objetos:</p>
+<ul>
+<li><p>VECTORES</p></li>
+<li><p>MATRICES y ARRAYS (variables indexadas)</p></li>
+<li><p>LISTAS</p></li>
+<li><p>FACTORES</p></li>
+<li><p>DATA FRAMES</p></li>
+<li><p>FUNCIONES</p></li>
+</ul>
+<p>Empezaremos viendo los objetos más sencillos, los vectores. Poco a poco iremos viendo el resto de objetos.</p>
+<p>La mayoría de las operaciones (+, -, *, /) y funciones en R están definidas con carácter vectorial. ¿Qué significa esto? Que R opera componente a componente.</p>
+<p>Antes de entender el concepto “caracter vectorial”, vamos a ver cómo se define/crea un vector.</p>
+<p>Para crear un vector se utiliza la función c() (c de concatenate). Por ejemplo:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="manipulación-y-visualización-de-datos.html#cb37-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb37-2"><a href="manipulación-y-visualización-de-datos.html#cb37-2" aria-hidden="true" tabindex="-1"></a>x                  <span class="co"># x es un vector que tiene cuatro componentes</span></span></code></pre></div>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="manipulación-y-visualización-de-datos.html#cb39-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>)</span>
+<span id="cb39-2"><a href="manipulación-y-visualización-de-datos.html#cb39-2" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
+<pre><code>## [1] 5 6 7 8</code></pre>
+<p>Volvemos sobre el tema del carácter vectorial, es decir, se opera componente a componente. Pensemos, si</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="manipulación-y-visualización-de-datos.html#cb41-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span></code></pre></div>
+<p>¿Qué resultado espero obtener para z?</p>
+<p>Exacto!!! Como la operación se realiza vectorialmente (componente a componente, muy importante!) el resultado es:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="manipulación-y-visualización-de-datos.html#cb42-1" aria-hidden="true" tabindex="-1"></a>z</span></code></pre></div>
+<pre><code>## [1]  6  8 10 12</code></pre>
+<p>Vamos a ver si lo entendemos de verdad. Supongamos que x e y son los siguientes vectores:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="manipulación-y-visualización-de-datos.html#cb44-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb44-2"><a href="manipulación-y-visualización-de-datos.html#cb44-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span></code></pre></div>
+<p>¿Qué longitud tienen los vectores x e y? Aquí la respuesta está clara, pero en aplicaciones reales utilizaríamos la función length().</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="manipulación-y-visualización-de-datos.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)                <span class="co"># esta función es muy útil, conviene recordarla.</span></span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="manipulación-y-visualización-de-datos.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 4</span></span>
+<span id="cb47-2"><a href="manipulación-y-visualización-de-datos.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(y)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="manipulación-y-visualización-de-datos.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 3</span></span></code></pre></div>
+<p>Los vectores no tienen la misma longitud, entonces.. ¿Cuál será el resultado de z &lt;- x + y?</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="manipulación-y-visualización-de-datos.html#cb50-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> x<span class="sc">+</span>y</span></code></pre></div>
+<pre><code>## Warning in x + y: longer object length is not a multiple of shorter object
+## length</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="manipulación-y-visualización-de-datos.html#cb52-1" aria-hidden="true" tabindex="-1"></a>z</span></code></pre></div>
+<pre><code>## [1] 2 4 6 5</code></pre>
+<p>R nos da un mensaje de aviso (warning), no es lo mismo que un error. Nos avisa que hay algo que no cuadra pero…realiza la operación que nosotros queremos.</p>
+<p>Una cuestión muy importante que siempre tenemos que tener en cuenta cuando trabajamos con vectores es que en un vector sólo podemos concatenar elementos del mismo tipo. ¿Qué tipos/clases de elementos (o datos) tenemos en R?</p>
+<ul>
+<li><p>Carácter</p></li>
+<li><p>Numéricos</p></li>
+<li><p>Enteros</p></li>
+<li><p>Complejos</p></li>
+<li><p>Lógicos</p></li>
+</ul>
+<p>Veamos algunos ejemplos…</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="manipulación-y-visualización-de-datos.html#cb54-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)    <span class="co"># creamos el vector x</span></span>
+<span id="cb54-2"><a href="manipulación-y-visualización-de-datos.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x)           <span class="co"># devuelve el tipo de objeto</span></span></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="manipulación-y-visualización-de-datos.html#cb56-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>,<span class="st">&quot;b&quot;</span>)</span>
+<span id="cb56-2"><a href="manipulación-y-visualización-de-datos.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(y)</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="manipulación-y-visualización-de-datos.html#cb58-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(1L,2L,3L)   <span class="co"># escribimos L detrás del número para obligar a que sea entero</span></span>
+<span id="cb58-2"><a href="manipulación-y-visualización-de-datos.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(z)</span></code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="manipulación-y-visualización-de-datos.html#cb60-1" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, F)    <span class="co"># en general, puede escribirse TRUE/FALSE o T/F</span></span>
+<span id="cb60-2"><a href="manipulación-y-visualización-de-datos.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(w)</span></code></pre></div>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="manipulación-y-visualización-de-datos.html#cb62-1" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">+</span>2i, <span class="dv">1</span><span class="sc">+</span>3i)</span>
+<span id="cb62-2"><a href="manipulación-y-visualización-de-datos.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(t)</span></code></pre></div>
+<pre><code>## [1] &quot;complex&quot;</code></pre>
+<p>En los ejemplos anteriores hemos definido un vector en el que todos sus elementos eran del mismo tipo. Pero….¿qué pasa si tenemos los siguientes vectores?</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="manipulación-y-visualización-de-datos.html#cb64-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="st">&quot;a&quot;</span>)</span>
+<span id="cb64-2"><a href="manipulación-y-visualización-de-datos.html#cb64-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="dv">1</span>)</span>
+<span id="cb64-3"><a href="manipulación-y-visualización-de-datos.html#cb64-3" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>,T)</span></code></pre></div>
+<p>¿De qué tipo son ahora los vectores x, y, z?</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="manipulación-y-visualización-de-datos.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x)</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="manipulación-y-visualización-de-datos.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span>
+<span id="cb67-2"><a href="manipulación-y-visualización-de-datos.html#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(y)</span></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="manipulación-y-visualización-de-datos.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;numeric&quot;</span></span>
+<span id="cb69-2"><a href="manipulación-y-visualización-de-datos.html#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(z)</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="manipulación-y-visualización-de-datos.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span></code></pre></div>
+<p>R ha forzado a que todos los elementos del vector sean del mismo tipo. A esto se le llama implicit coercion. Fijémonos cúal es el resultado de los vectores que hemos definido antes.</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="manipulación-y-visualización-de-datos.html#cb72-1" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;a&quot;</code></pre>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="manipulación-y-visualización-de-datos.html#cb74-1" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
+<pre><code>## [1] 0 1</code></pre>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="manipulación-y-visualización-de-datos.html#cb76-1" aria-hidden="true" tabindex="-1"></a>z</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot;    &quot;TRUE&quot;</code></pre>
+<p>En ocasiones somos nosotros los que estamos interesados en forzar que todos los elementos del vector sean del mismo tipo (esto es la explicit coercion). Para ello utilizamos las funciones as.numeric() , as.character(), as.logical() … Si el resultado no tiene sentido R producirá un mensaje de error o warning. Un ejemplo:</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="manipulación-y-visualización-de-datos.html#cb78-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="st">&quot;a&quot;</span>)</span>
+<span id="cb78-2"><a href="manipulación-y-visualización-de-datos.html#cb78-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;a&quot;</code></pre>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="manipulación-y-visualización-de-datos.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;1&quot; &quot;2&quot; &quot;a&quot;</span></span>
+<span id="cb80-2"><a href="manipulación-y-visualización-de-datos.html#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.numeric</span>(x)</span></code></pre></div>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre><code>## [1]  1  2 NA</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="manipulación-y-visualización-de-datos.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  1  2 NA</span></span>
+<span id="cb83-2"><a href="manipulación-y-visualización-de-datos.html#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.character</span>(x)</span></code></pre></div>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;a&quot;</code></pre>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="manipulación-y-visualización-de-datos.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;1&quot; &quot;2&quot; &quot;a&quot;</span></span></code></pre></div>
+<p>Por último, podemos evaluar el tipo/clase de objeto con las funciones is.numeric(), is.character(), etc.</p>
+<div id="acceder-a-un-elemento-de-un-objeto" class="section level4 hasAnchor" number="2.1.2.1">
+<h4><span class="header-section-number">2.1.2.1</span> Acceder a un elemento de un objeto<a href="manipulación-y-visualización-de-datos.html#acceder-a-un-elemento-de-un-objeto" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para seleccionar/acceder a un elemento de un objeto se suelen emplear: <strong>[], $, [[]].</strong></p>
+<p>Vamos a crear el objeto x que será un vector de cuatro componentes formado por los cuatro primeros números pares. Así:</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="manipulación-y-visualización-de-datos.html#cb86-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>)</span></code></pre></div>
+<p>Si queremos acceder/seleccionar/extraer al/el segundo componente de x</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="manipulación-y-visualización-de-datos.html#cb87-1" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+</div>
+<div id="enlistar-y-borrar-objetos" class="section level4 hasAnchor" number="2.1.2.2">
+<h4><span class="header-section-number">2.1.2.2</span> Enlistar y borrar objetos<a href="manipulación-y-visualización-de-datos.html#enlistar-y-borrar-objetos" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Las funciones ls() y objects() hacen lo mismo: listan los objetos que hemos definido en la sesión.</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="manipulación-y-visualización-de-datos.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;t&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="manipulación-y-visualización-de-datos.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">objects</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;t&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
+<p>Si queremos borrar objetos utilizamos la función rm()</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="manipulación-y-visualización-de-datos.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(z)  <span class="co"># borramos el objeto z</span></span>
+<span id="cb93-2"><a href="manipulación-y-visualización-de-datos.html#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;t&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot;</code></pre>
+<p>y si estamos interesados en borrar todos los objetos que hemos definido:</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="manipulación-y-visualización-de-datos.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>()) <span class="co"># o también rm(list=objects())</span></span>
+<span id="cb95-2"><a href="manipulación-y-visualización-de-datos.html#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code></pre></div>
+<pre><code>## character(0)</code></pre>
+</div>
+</div>
+<div id="tipos-de-objetos" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Tipos de objetos<a href="manipulación-y-visualización-de-datos.html#tipos-de-objetos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="matrices" class="section level4 hasAnchor" number="2.1.3.1">
+<h4><span class="header-section-number">2.1.3.1</span> Matrices<a href="manipulación-y-visualización-de-datos.html#matrices" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La función matrix() permite organizar los datos en una matriz con tantas filas y columnas como se indiquen.</p>
+<p>Vamos a pedir ayuda a R sobre la función matrix()</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="manipulación-y-visualización-de-datos.html#cb97-1" aria-hidden="true" tabindex="-1"></a>?matrix <span class="co"># una forma de obtener ayuda en R es escribiendo ? delante de la función de la que solicitamos ayuda</span></span></code></pre></div>
+<div id="cómo-crear-y-trabajar-con-matrices" class="section level5 hasAnchor" number="2.1.3.1.1">
+<h5><span class="header-section-number">2.1.3.1.1</span> Cómo crear y trabajar con matrices<a href="manipulación-y-visualización-de-datos.html#cómo-crear-y-trabajar-con-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Una vez hemos leído en la ayuda cómo usar la función matrix, vamos a practicarlo con el siguiente ejemplo. Pero antes de ejecutarlo, pensemos en qué es lo que queremos hacer y, sobre todo, pensemos en cuál es el resultado que esperamos obtener.</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="manipulación-y-visualización-de-datos.html#cb98-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span> (<span class="at">data=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">ncol=</span><span class="dv">2</span>) <span class="co"># o x &lt;- matrix (c(1,2,3,4), nrow=2, ncol=2)</span></span>
+<span id="cb98-2"><a href="manipulación-y-visualización-de-datos.html#cb98-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4</code></pre>
+<p>Observemos que se ha creado una matrix de 2x2 (2 filas y 2 columnas) y, además, muy importante, ¿cómo se ha completado la matriz? ¡Exacto! La matriz se ha rellenado por columnas. Si queremos que se rellene por filas hay que incluir el argumento byrow en los argumentos de la función.</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="manipulación-y-visualización-de-datos.html#cb100-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">matrix</span> (<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="at">nrow=</span><span class="dv">2</span>, <span class="at">ncol=</span><span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb100-2"><a href="manipulación-y-visualización-de-datos.html#cb100-2" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    1    2
+## [2,]    3    4</code></pre>
+<p>Fíjense en la diferencia entre los objetos x e y.</p>
+<p>Una forma más simple para definir una matrix es:</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="manipulación-y-visualización-de-datos.html#cb102-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">matrix</span> (<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="dv">2</span>, <span class="dv">2</span>, <span class="at">byrow=</span>T)</span>
+<span id="cb102-2"><a href="manipulación-y-visualización-de-datos.html#cb102-2" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    1    2
+## [2,]    3    4</code></pre>
+<p>aunque también podíamos haber omitido el argumento relativo al número de filas o de columnas, porque conocida una dimensión R completaría la matrix dados los datos con los que se trabaja.</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="manipulación-y-visualización-de-datos.html#cb104-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">matrix</span> (<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="dv">2</span>, <span class="at">byrow=</span>T)  <span class="co"># no especificamos nrow porque por defecto es el primer argumento después de los datos</span></span>
+<span id="cb104-2"><a href="manipulación-y-visualización-de-datos.html#cb104-2" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    1    2
+## [2,]    3    4</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="manipulación-y-visualización-de-datos.html#cb106-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>), <span class="at">ncol=</span><span class="dv">3</span>)</span>
+<span id="cb106-2"><a href="manipulación-y-visualización-de-datos.html#cb106-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6</code></pre>
+</div>
+</div>
+<div id="seleccionando-elementos-de-una-matriz" class="section level4 hasAnchor" number="2.1.3.2">
+<h4><span class="header-section-number">2.1.3.2</span> Seleccionando elementos de una matriz<a href="manipulación-y-visualización-de-datos.html#seleccionando-elementos-de-una-matriz" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Lo primero, vamos a crear el objeto A que será una matriz.</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="manipulación-y-visualización-de-datos.html#cb108-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>,<span class="dv">4</span>,<span class="dv">4</span>)</span>
+<span id="cb108-2"><a href="manipulación-y-visualización-de-datos.html#cb108-2" aria-hidden="true" tabindex="-1"></a>A</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    5    9   13
+## [2,]    2    6   10   14
+## [3,]    3    7   11   15
+## [4,]    4    8   12   16</code></pre>
+<p>Para seleccionar elementos de una matriz utilizamos el símbolo de los corchetes: [].</p>
+<p>Pensemos un momento en el posible resultado de estos ejemplos antes de efectuarlos.</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="manipulación-y-visualización-de-datos.html#cb110-1" aria-hidden="true" tabindex="-1"></a>A[<span class="dv">2</span>,<span class="dv">3</span>]</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="manipulación-y-visualización-de-datos.html#cb112-1" aria-hidden="true" tabindex="-1"></a>A[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>)]</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    5   13
+## [2,]    6   14</code></pre>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="manipulación-y-visualización-de-datos.html#cb114-1" aria-hidden="true" tabindex="-1"></a>A[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    5    9   13
+## [2,]    6   10   14
+## [3,]    7   11   15</code></pre>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="manipulación-y-visualización-de-datos.html#cb116-1" aria-hidden="true" tabindex="-1"></a>A[<span class="dv">1</span>,]</span></code></pre></div>
+<pre><code>## [1]  1  5  9 13</code></pre>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="manipulación-y-visualización-de-datos.html#cb118-1" aria-hidden="true" tabindex="-1"></a>A[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    5    9   13
+## [2,]    2    6   10   14</code></pre>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="manipulación-y-visualización-de-datos.html#cb120-1" aria-hidden="true" tabindex="-1"></a>A[,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    5    9
+## [2,]    6   10
+## [3,]    7   11
+## [4,]    8   12</code></pre>
+</div>
+</div>
+<div id="listas" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Listas<a href="manipulación-y-visualización-de-datos.html#listas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A diferencia de los vectores o matrices, las listas pueden contener elementos/componentes de distinto tipo. Observemos esta lista que tiene 5 componentes (pueden ser matrices, vectores, dataframes,..).</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="manipulación-y-visualización-de-datos.html#cb122-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="st">&quot;Curso&quot;</span>, F, <span class="dv">1</span><span class="sc">+</span>2i, 3L,A)</span>
+<span id="cb122-2"><a href="manipulación-y-visualización-de-datos.html#cb122-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 1 2 3 4
+## 
+## [[2]]
+## [1] &quot;Curso&quot;
+## 
+## [[3]]
+## [1] FALSE
+## 
+## [[4]]
+## [1] 1+2i
+## 
+## [[5]]
+## [1] 3
+## 
+## [[6]]
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    5    9   13
+## [2,]    2    6   10   14
+## [3,]    3    7   11   15
+## [4,]    4    8   12   16</code></pre>
+<p>Utilizamos el doble corchete [[]] para acceder al contenido concreto de una lista.</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="manipulación-y-visualización-de-datos.html#cb124-1" aria-hidden="true" tabindex="-1"></a>x[[<span class="dv">3</span>]]  <span class="co"># accedemos al tercer componente de la lista</span></span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="manipulación-y-visualización-de-datos.html#cb126-1" aria-hidden="true" tabindex="-1"></a>x[[<span class="dv">1</span>]][<span class="dv">2</span>] <span class="co"># accedemos al segundo elemento del primer componente de la lista</span></span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="manipulación-y-visualización-de-datos.html#cb128-1" aria-hidden="true" tabindex="-1"></a>x[[<span class="dv">6</span>]][<span class="dv">1</span>,<span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<p>Vamos a crear otra lista para practicar.</p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="manipulación-y-visualización-de-datos.html#cb130-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">list</span>( <span class="at">Titulacion =</span> <span class="fu">c</span>(<span class="st">&quot;Economía&quot;</span>, <span class="st">&quot;Sociología&quot;</span>, <span class="st">&quot;Derecho&quot;</span>), <span class="at">Edad =</span><span class="fu">c</span>(<span class="dv">25</span>,<span class="dv">26</span>,<span class="dv">27</span>))</span>
+<span id="cb130-2"><a href="manipulación-y-visualización-de-datos.html#cb130-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-3"><a href="manipulación-y-visualización-de-datos.html#cb130-3" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
+<pre><code>## $Titulacion
+## [1] &quot;Economía&quot;   &quot;Sociología&quot; &quot;Derecho&quot;   
+## 
+## $Edad
+## [1] 25 26 27</code></pre>
+<p>Fijémonos en la diferencia de presentación de las listas x e y. Como en la lista y hemos nombrado los componentes, estos aparecen al ejecutar el objeto precedidos del símbolo $. Ahora también podemos acceder a un componente de la lista por su nombre.</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="manipulación-y-visualización-de-datos.html#cb132-1" aria-hidden="true" tabindex="-1"></a>y<span class="sc">$</span>Titulacion</span></code></pre></div>
+<pre><code>## [1] &quot;Economía&quot;   &quot;Sociología&quot; &quot;Derecho&quot;</code></pre>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="manipulación-y-visualización-de-datos.html#cb134-1" aria-hidden="true" tabindex="-1"></a>y[[<span class="dv">1</span>]]</span></code></pre></div>
+<pre><code>## [1] &quot;Economía&quot;   &quot;Sociología&quot; &quot;Derecho&quot;</code></pre>
+<p>Evidentemente, también podemos realizar operaciones con listas.</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="manipulación-y-visualización-de-datos.html#cb136-1" aria-hidden="true" tabindex="-1"></a>y[[<span class="dv">2</span>]]<span class="sc">*</span><span class="dv">3</span></span></code></pre></div>
+<pre><code>## [1] 75 78 81</code></pre>
+</div>
+<div id="data-frame" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> Data Frame<a href="manipulación-y-visualización-de-datos.html#data-frame" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los data frame se usan para almacenar datos en forma de tablas (filas / columnas), como estamos habituados en Excel, Spss, etc.</p>
+<p>Los data frame pueden almacenar objetos/datos de distinto tipo: numéricos, carácter, … En las matrices todos los elementos tenían que ser enteros o numéricos.</p>
+<p>Los data frame pueden entenderse como un tipo especial de lista donde cada elemento de la lista tiene que tener la misma longitud. Cada elemento de la lista sería una columna y la longitud de cada elemento de la lista serían las filas.</p>
+<p><strong>Aunque normalmente los data frame los creamos al cargar/leer una base de datos (ver el tutorial), vamos crear una data frame para ver su estructura.</strong></p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="manipulación-y-visualización-de-datos.html#cb138-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Titulacion =</span> <span class="fu">c</span>(<span class="st">&quot;Economía&quot;</span>, <span class="st">&quot;ADE&quot;</span>, <span class="st">&quot;Sociología&quot;</span>, <span class="st">&quot;Magisterio&quot;</span>), <span class="at">Edad =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">27</span>, <span class="dv">25</span>, <span class="dv">24</span>))</span>
+<span id="cb138-2"><a href="manipulación-y-visualización-de-datos.html#cb138-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>##   Titulacion Edad
+## 1   Economía   25
+## 2        ADE   27
+## 3 Sociología   25
+## 4 Magisterio   24</code></pre>
+</div>
+<div id="importar-y-exportar-datos" class="section level3 hasAnchor" number="2.1.6">
+<h3><span class="header-section-number">2.1.6</span> Importar y exportar datos<a href="manipulación-y-visualización-de-datos.html#importar-y-exportar-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="manipulación-y-limpieza-de-datos." class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Manipulación y limpieza de datos.<a href="manipulación-y-visualización-de-datos.html#manipulación-y-limpieza-de-datos." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introducción-a-r..html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

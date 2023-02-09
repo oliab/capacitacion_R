@@ -29,7 +29,7 @@ github-repo: rstudio/bookdown-demo
 E- n la carpeta del curso están todos los materiales: tutoriales, algunos datos, etc….
 
 #### Ligas {-}
-Notas:   
+Notas: https://fastidious-brioche-36f6dd.netlify.app/
 Correo: oliabherrera@gmail.com   
  
 
@@ -50,8 +50,9 @@ Correo: oliabherrera@gmail.com
 
 2. **Manipulación y visualización de datos**
 
--   Visualización de datos.
+-   Comandos básicos de R.
 -   Manipulación y limpieza de datos.
+-   Visualización de datos.
 -   Temas selectos de programación en R.
 
 3. **Reportes POS**
@@ -135,7 +136,7 @@ Por defecto, la consola se encuentra en el panel inferior-izquierdo. ¿Vemos la 
 
 Vamos a hacer este ejemplo:
 
-```{r setup, include = TRUE}
+```{r, include = TRUE}
 2+2
 5*(3-1)^2
 sqrt(4)
@@ -199,20 +200,20 @@ Antes de comenzar a trabajar debemos fijar el directorio donde queremos guardar 
 ### Opción 1: Fijar directorio
 Opción 1. Indicamos a R la ruta donde queremos trabajar y la fijamos con la función setwd().
 
-```{r setup, include = TRUE}
-setwd("C:/ruta del directorio de trabajo")
+```{r , include = TRUE}
+#setwd("C:/ruta del directorio de trabajo")
 
 ```
 Para comprobar el directorio de trabajo utilizamos la función getwd():
 
-```{r setup, include = TRUE}
+```{r , include = TRUE}
 getwd()
 
 ```
 Para obtener un listado de los ficheros que contiene la ruta establecida se usa la función dir().
 
 
-```{r setup, include = TRUE}
+```{r , include = TRUE}
 dir()
 
 ```
@@ -243,12 +244,12 @@ Podemos instalar paquetes de varias formas:
 - Utilizando la función install.packages(). El nombre del paquete que queremos instalar debe ir entre comillas.
 
 
-```{r setup, include = TRUE}
-install.packages("dplyr") # dplyr es un paquete que se utiliza para manipular/gestionar datos
+```{r , include = TRUE}
+#install.packages("dplyr") # dplyr es un paquete que se utiliza para manipular/gestionar datos
 
 ```
 Una vez instalado el paquete, hay que cargarlo para poderlo utilizar. Esto se hace con la función library().
-```{r setup, include = TRUE}
+```{r , include = TRUE}
 library(dplyr)
 
 ```
@@ -257,7 +258,7 @@ library(dplyr)
 
 En muchas ocasiones necesitamos ayuda sobre cómo funciona una determinada función, cuáles son sus argumentos, etc. Hay varias formas de pedir la ayuda de R. Vamos a pedir la ayuda de la función mean().
 
-```{r setup, include = TRUE}
+```{r , include = TRUE}
 help(mean)
 ?mean
 
@@ -265,18 +266,655 @@ help(mean)
 
 Si ejecutamos directamente la función library() se abrirá una ventana listando los paquetes que tenemos instalados en R. En el escritorio de RStudio, en la pestaña Packages también tenemos en listado de paquetes instalados (organizados en dos bloques: User Library y System Library)
 
-```{r setup, include = TRUE}
+```{r , include = TRUE}
 library()
 
 ```
 
 Para obtener ayuda sobre un determinado paquete…
 
-```{r setup, include = TRUE}
+```{r , include = TRUE}
 library(help="foreign")
 
 ```
 Pero sin duda, una de las mejores fuentes de ayuda en R nos la proporciona internet. Bien haciendo directamente en google la búsqueda sobre el tema que estamos interesados, bien acudiendo a algunas de las muchas webs que ofrecen ayuda. Algunas de las más populares y recomendables webs son:
+
 - [R-Bloggers](https://www.r-bloggers.com/)
+
 - [Stack Overflow](https://stackoverflow.com/)
 
+# Manipulación y visualización de datos
+
+## Comandos básicos de R.
+
+### Introducción
+El objetivo de este tutorial es familiarizarnos con los conceptos básicos de R. ¿Qué es un objeto en R? ¿Con qué clases/tipos de objetos se trabaja en R? 
+Aprenderemos a definir vectores y operar con ellos; a crear matrices, listas y data frames; a seleccionar elementos, añadir filas y columnas, etc. Como lo que se pretende es que se entienda la filosofía y la práctica del trabajo con R, todos los conceptos que se introducen se ilustran con ejemplos muy sencillos. No obstante, la selección de funciones que se realiza en este tutorial tienen una aplicación directa en el tratamiento real de datos.
+
+Vamos a realizar paso a paso este sencillo ejercicio para introducir algunos conceptos importantes.
+
+```{r , include = TRUE}
+
+3+4
+## [1] 7
+log(10)
+## [1] 2.302585
+x <- 3+4  
+x  # x es un vector cuya primera componente es 7. Enseguida vamos con los vectores!
+## [1] 7
+y = 2+6
+y
+## [1] 8
+z <- c(x,y)
+z
+## [1] 7 8
+mean(z)
+## [1] 7.5
+w <- mean(z)
+w
+## [1] 7.5
+round(w, digits=0)
+## [1] 8
+```
+R utiliza funciones para realizar operaciones. Una función es, por ejemplo, mean(). Para utilizar una función deben especificarse unos argumentos, que es lo que escribimos dentro de los paréntesis. En el caso de la función round() hemos especificado dos argumentos: el vector que queremos redondear (w) y el número de decimales del redondeo (digits).
+
+**El símbolo <- es el operador para asignar. También se puede utilizar = (o menos frecuente ->), aunque es preferible utilizar el <-.**
+
+El símbolo **#** se utiliza para introducir un comentario. **Todo lo que quede a la derecha de # no se ejecutará.**
+
+Cuando se realiza una asignación se obtiene un objeto. Podemos ver el resultado o contenido de un objeto de varias formas. Por ejemplo, para ver qué es el objeto x podemos escribir en la consola:
+
+- x
+
+- print(x)
+
+- (x <- 3+4)
+
+
+
+
+
+### Vectores
+
+Básicamente R trabaja con los siguientes tipos de objetos:
+
+- VECTORES
+
+- MATRICES y ARRAYS (variables indexadas)
+
+- LISTAS
+
+- FACTORES
+
+- DATA FRAMES
+
+- FUNCIONES
+
+Empezaremos viendo los objetos más sencillos, los vectores. Poco a poco iremos viendo el resto de objetos.
+
+La mayoría de las operaciones (+, -, *, /) y funciones en R están definidas con carácter vectorial. ¿Qué significa esto? Que R opera componente a componente.
+
+Antes de entender el concepto “caracter vectorial”, vamos a ver cómo se define/crea un vector.
+
+Para crear un vector se utiliza la función c() (c de concatenate). Por ejemplo:
+
+```{r , include = TRUE}
+x <- c(1,2,3,4)
+x                  # x es un vector que tiene cuatro componentes
+
+```
+```{r}
+y <- c(5,6,7,8)
+y
+```
+
+Volvemos sobre el tema del carácter vectorial, es decir, se opera componente a componente. Pensemos, si
+
+
+```{r}
+z <- x + y
+```
+
+¿Qué resultado espero obtener para z?
+
+Exacto!!! Como la operación se realiza vectorialmente (componente a componente, muy importante!) el resultado es:
+
+```{r}
+z
+```
+
+
+Vamos a ver si lo entendemos de verdad. Supongamos que x e y son los siguientes vectores:
+
+
+```{r}
+x <- c(1,2,3,4)
+y <- c(1,2,3)
+```
+
+¿Qué longitud tienen los vectores x e y? Aquí la respuesta está clara, pero en aplicaciones reales utilizaríamos la función length().
+
+
+```{r}
+length(x)                # esta función es muy útil, conviene recordarla.
+## [1] 4
+length(y)
+## [1] 3
+```
+
+
+Los vectores no tienen la misma longitud, entonces.. ¿Cuál será el resultado de z <- x + y?
+
+```{r}
+z <- x+y
+
+z
+```
+
+R nos da un mensaje de aviso (warning), no es lo mismo que un error. Nos avisa que hay algo que no cuadra pero…realiza la operación que nosotros queremos.
+
+Una cuestión muy importante que siempre tenemos que tener en cuenta cuando trabajamos con vectores es que en un vector sólo podemos concatenar elementos del mismo tipo. ¿Qué tipos/clases de elementos (o datos) tenemos en R?
+
+- Carácter 
+
+- Numéricos 
+- Enteros 
+- Complejos 
+- Lógicos 
+
+Veamos algunos ejemplos…
+
+```{r}
+x <- c(1,2,3,4)    # creamos el vector x
+class(x)           # devuelve el tipo de objeto
+```
+
+```{r}
+y <- c("a","b")
+class(y)
+```
+
+
+```{r}
+z <- c(1L,2L,3L)   # escribimos L detrás del número para obligar a que sea entero
+class(z)
+```
+
+```{r}
+w <- c(TRUE, F)    # en general, puede escribirse TRUE/FALSE o T/F
+class(w)
+```
+
+
+```{r}
+t <- c(1+2i, 1+3i)
+class(t)
+```
+
+En los ejemplos anteriores hemos definido un vector en el que todos sus elementos eran del mismo tipo. Pero….¿qué pasa si tenemos los siguientes vectores?
+
+```{r}
+x <- c(1,2,"a")
+y <- c(FALSE, 1)
+z <- c("a",T)
+```
+
+
+
+¿De qué tipo son ahora los vectores x, y, z?
+
+```{r}
+class(x)
+## [1] "character"
+class(y)
+## [1] "numeric"
+class(z)
+## [1] "character"
+```
+
+R ha forzado a que todos los elementos del vector sean del mismo tipo. A esto se le llama implicit coercion. Fijémonos cúal es el resultado de los vectores que hemos definido antes.
+
+
+```{r}
+
+x
+y
+z
+
+```
+
+En ocasiones somos nosotros los que estamos interesados en forzar que todos los elementos del vector sean del mismo tipo (esto es la explicit coercion). Para ello utilizamos las funciones as.numeric() , as.character(), as.logical() … Si el resultado no tiene sentido R producirá un mensaje de error o warning. Un ejemplo:
+
+
+
+```{r}
+x <- c(1,2,"a")
+x
+## [1] "1" "2" "a"
+as.numeric(x)
+## [1]  1  2 NA
+as.character(x)
+## [1] "1" "2" "a"
+```
+
+
+
+Por último, podemos evaluar el tipo/clase de objeto con las funciones is.numeric(), is.character(), etc.
+
+#### Acceder a un elemento de un objeto
+
+Para seleccionar/acceder a un elemento de un objeto se suelen emplear: **[], $, [[]].**
+
+Vamos a crear el objeto x que será un vector de cuatro componentes formado por los cuatro primeros números pares. Así:
+
+```{r}
+x <- c(2,4,6,8)
+```
+
+Si queremos acceder/seleccionar/extraer al/el segundo componente de x
+
+```{r}
+x[2]
+```
+
+#### Enlistar y borrar objetos 
+
+Las funciones ls() y objects() hacen lo mismo: listan los objetos que hemos definido en la sesión.
+
+```{r}
+ls()
+```
+
+
+```{r}
+objects()
+```
+
+Si queremos borrar objetos utilizamos la función rm()
+
+```{r}
+rm(z)  # borramos el objeto z
+ls()
+```
+y si estamos interesados en borrar todos los objetos que hemos definido:
+
+```{r}
+rm(list=ls()) # o también rm(list=objects())
+ls()
+```
+
+## Tipos de objetos
+
+### Matrices
+
+La función matrix() permite organizar los datos en una matriz con tantas filas y columnas como se indiquen.
+
+Vamos a pedir ayuda a R sobre la función matrix()
+
+```{r}
+
+?matrix # una forma de obtener ayuda en R es escribiendo ? delante de la función de la que solicitamos ayuda
+```
+
+
+#### Cómo crear y trabajar con matrices
+Una vez hemos leído en la ayuda cómo usar la función matrix, vamos a practicarlo con el siguiente ejemplo. Pero antes de ejecutarlo, pensemos en qué es lo que queremos hacer y, sobre todo, pensemos en cuál es el resultado que esperamos obtener.
+
+```{r}
+x <- matrix (data= c(1,2,3,4), nrow=2, ncol=2) # o x <- matrix (c(1,2,3,4), nrow=2, ncol=2)
+x
+
+```
+
+
+Observemos que se ha creado una matrix de 2x2 (2 filas y 2 columnas) y, además, muy importante, ¿cómo se ha completado la matriz? ¡Exacto! La matriz se ha rellenado por columnas. Si queremos que se rellene por filas hay que incluir el argumento byrow en los argumentos de la función.
+
+```{r}
+y <- matrix (c(1,2,3,4), nrow=2, ncol=2, byrow=T)
+y
+
+
+```
+
+
+Fíjense en la diferencia entre los objetos x e y.
+
+Una forma más simple para definir una matrix es:
+
+```{r}
+y <- matrix (c(1,2,3,4), 2, 2, byrow=T)
+y
+
+```
+
+
+
+aunque también podíamos haber omitido el argumento relativo al número de filas o de columnas, porque conocida una dimensión R completaría la matrix dados los datos con los que se trabaja.
+
+```{r}
+y <- matrix (c(1,2,3,4), 2, byrow=T)  # no especificamos nrow porque por defecto es el primer argumento después de los datos
+y
+```
+
+```{r}
+x <- matrix(c(1,2,3,4,5,6), ncol=3)
+x
+```
+#### Seleccionando elementos de una matriz
+
+Lo primero, vamos a crear el objeto A que será una matriz.
+
+```{r}
+A <- matrix(1:16,4,4)
+A
+```
+
+
+
+Para seleccionar elementos de una matriz utilizamos el símbolo de los corchetes: [].
+
+Pensemos un momento en el posible resultado de estos ejemplos antes de efectuarlos.
+
+```{r}
+A[2,3]
+A[c(1,2),c(2,4)]
+A[1:3,2:4]
+A[1,]
+A[1:2,]
+A[,2:3]
+
+```
+
+### Listas
+
+A diferencia de los vectores o matrices, las listas pueden contener elementos/componentes de distinto tipo. Observemos esta lista que tiene 5 componentes (pueden ser matrices, vectores, dataframes,..).
+
+```{r}
+x <- list(c(1,2,3,4), "Curso", F, 1+2i, 3L,A)
+x
+```
+
+
+Utilizamos el doble corchete [[]] para acceder al contenido concreto de una lista.
+
+```{r}
+x[[3]]  # accedemos al tercer componente de la lista
+```
+
+
+```{r}
+x[[1]][2] # accedemos al segundo elemento del primer componente de la lista
+```
+
+```{r}
+x[[6]][1,2]
+```
+Vamos a crear otra lista para practicar.
+
+```{r}
+y <- list( Titulacion = c("Economía", "Sociología", "Derecho"), Edad =c(25,26,27))
+
+y
+```
+
+Fijémonos en la diferencia de presentación de las listas x e y. Como en la lista y hemos nombrado los componentes, estos aparecen al ejecutar el objeto precedidos del símbolo $. Ahora también podemos acceder a un componente de la lista por su nombre.
+
+
+```{r}
+y$Titulacion
+```
+
+```{r}
+y[[1]]
+```
+
+
+Evidentemente, también podemos realizar operaciones con listas.
+
+```{r}
+y[[2]]*3
+```
+
+
+### Data Frame
+
+Los data frame se usan para almacenar datos en forma de tablas (filas / columnas), como estamos habituados en Excel, Spss, etc.
+
+Los data frame pueden almacenar objetos/datos de distinto tipo: numéricos, carácter, … En las matrices todos los elementos tenían que ser enteros o numéricos.
+
+Los data frame pueden entenderse como un tipo especial de lista donde cada elemento de la lista tiene que tener la misma longitud. Cada elemento de la lista sería una columna y la longitud de cada elemento de la lista serían las filas.
+
+**Aunque normalmente los data frame los creamos al cargar/leer una base de datos (ver el tutorial), vamos crear una data frame para ver su estructura.**
+
+```{r}
+x <- data.frame(Titulacion = c("Economía", "ADE", "Sociología", "Magisterio"), Edad = c(25, 27, 25, 24))
+x
+
+```
+
+¿Cuál es la dimensión del objeto x (que es una data frame)?
+
+```{r}
+nrow(x) # número de filas
+
+ncol(x) # número de columnas
+
+dim(x)  # número de filas y columnas
+
+```
+
+
+Para acceder a los elementos de un data frame utilizamos los símbolos $ o []. La forma de proceder es similar a la que se ha visto con vectores o matrices.
+
+Si queremos seleccionar la variable Titulacion del objeto x (que es un data frame):
+
+
+```{r}
+x$Titulacion
+```
+
+```{r}
+x[1]
+```
+
+y para seleccionar sus dos primeros elementos:
+
+```{r}
+x$Titulacion[1:2]
+```
+
+Por avanzar alguna cosas que veremos más adelante en la práctica, podemos incluir directamente una nueva variable a nuestro data frame. Por ejemplo, vamos a añadir la variable id (de identificador) al objeto x. Esto lo podemos hacer directamente utilizando el símbolo $.
+
+```{r}
+x$id <- 1:4
+x
+```
+o podemos crear la nueva variable, por ejemplo la variable obs (de observación) y después combinarla con nuestro data frame x.
+
+```{r}
+obs <- 1:4
+x <- cbind(obs,x)
+x
+```
+
+#### Ver el contenido de un data frame: head y tail.
+
+Normalmente los data frames con los que trabajamos tienen muchas filas (individuos) y muchas columnas (variables). Si directamente escribimos el nombre del objeto (data frame) para ver su contenido lo que ocurrirá es que veremos poca cosa, apenas si observaremos como R nos lista todo el contenido de forma continua. Para entender lo que queremos decir, vamos a ver el siguiente ejemplo en el que cargamos los datos EuStockMarkets. Estos datos hacen referencia al precio de cierre diario entre los años 1991 y 1998 de las principales bolsas europeas.
+
+```{r}
+data(EuStockMarkets)        # cargamos los datos EuStockMarkets
+EuStockMarkets              # para ver el contenido del objeto
+```
+
+¿Hemos visto algo?
+
+Para echar un vistazo al contenido de un data frame (en este caso EuStockMarket) suelen utilizarse las funciones head() y tail(). Por defecto, la primera permite ver las 6 primeras observaciones y la segunda las 6 últimas. También podemos indicar el número de observaciones que queremos visualizar
+
+```{r}
+head(EuStockMarkets)
+```
+
+```{r}
+tail(EuStockMarkets)
+```
+
+```{r}
+head(EuStockMarkets,10)
+```
+
+#### Nombres de filas/columnas
+En los data frame que hemos creado las columnas representarían variables y las filas representarían individuos (observaciones).
+
+Si las columnas de un data frame no tienen nombres (en nuestro ejemplo son Titulación y Edad), podemos incluirlos utilizando la función names(). Para incluir nombres a las filas se utiliza la función row.names()
+
+```{r}
+lista2 <- list(c("Economía", "ADE", "Sociología", "Magisterio"), c(25, 27, 25, 24))
+z <- data.frame(lista2)
+z
+
+```
+
+```{r}
+# Para incluir los nombre a las columnas:
+colnames(z) <- c("Titulación", "Edad")
+z
+```
+
+```{r}
+colnames(z)
+colnames(z)[1]
+colnames(z)[1]<-"Carrera"
+
+```
+
+```{r}
+z
+```
+
+#### Eliminando valores NA
+En R los valores perdidos se denotan por NA (Not Available). Cuando trabajamos con datos, una de las tareas más importantes que hay que realizar es la de limpiar la base de datos y prepararla para los posteriores análisis (lo veremos más adelante).
+
+Vamos a hacer una breve introducción a cómo eliminar los valores NA a través del siguiente ejemplo:
+
+```{r}
+x <- c(1,2,NA,NA,5)
+malos <- is.na(x)  # identificamos los NA. La función is.na() es una función lógica.
+malos
+```
+
+```{r}
+x[!malos]  # el símbolo ! equivale a "lo contrario". Por tanto, en esta línea estamos diciendo "de x, selecciona lo contrario de malos"
+```
+```{r}
+x
+```
+
+Ahora supongamos que tenemos dos objetos (dos vectores), que tienen NAs, y nos queremos quedar únicamente con los casos completos. Esta situación se ilustra en el siguiente ejemplo:
+
+```{r}
+x <- c(1,2,NA,4,NA,6)
+y <- c("a","b",NA,"d",NA,"f" )
+
+completos <- complete.cases(x,y) # complete.cases() es una función lógica
+completos
+```
+
+```{r}
+x[completos]
+```
+
+```{r}
+y[completos]
+```
+
+Por último, vamos a ver lo anterior aplicado a un caso más práctico. Cargamos los datos airquality que se encuentran en el paquete datasets y vamos a seleccionar únicamente los casos que están completos.
+
+```{r}
+data("airquality")
+head(airquality)
+```
+
+
+```{r}
+length(airquality) # nos dará el número de variables
+```
+
+```{r}
+dim(airquality) # indicará el número de observaciones (filas) y de variables (columnas)
+```
+
+```{r}
+summary(airquality)  # la función summary() proporciona un resumen de todas las variables de la base de datos
+```
+
+```{r}
+completos <- complete.cases(airquality)  # nos dirá si tenemos datos de todas las variables para cada individuo
+head(completos)
+```
+
+```{r}
+datos <- airquality[completos,] # de airquality, selecciona todas las columnas de los casos completos 
+head(datos)
+```
+
+```{r}
+dim(datos) # observad que han sido eliminados 42 casos.
+```
+
+#### Selección de datos (Subsetting)
+Vamos a aprovechar que hemos cargado los datos de airquality para recordar algunas ideas sobre la selección de datos (observaciones y/o variables) en un data frame e introducir algunas otras.
+
+En primer lugar, seleccionamos las variables: Ozone, Solar.R y Wind.
+
+```{r}
+datos2 <- datos[,1:3]
+```
+
+
+Ahora, seleccionamos del objeto datos las variables: Ozone, Solar.R y Temp.
+
+```{r}
+datos3 <- datos[,c(1,2,4)]
+```
+
+
+Sin en lugar de seleccionar variables (columnas) estamos interesados en seleccionar individuos/observaciones (filas):
+
+```{r}
+datos4 <- datos[1:6,]
+datos5 <- datos[seq(1,nrow(datos),5),] # ¿qué observaciones estamos seleccionando?
+```
+
+
+Para seleccionar tanto observaciones como variables no tenemos más que combinar las estrategias anteriores:
+
+```{r}
+datos6 <- datos[seq(1,nrow(datos),5), c(1,2,4)] 
+```
+
+
+
+En ocasiones estamos interesados en seleccionar los casos para los que cierta variable toma determinado valor. Por ejemplo, queremos seleccionar las variables Ozone y Temp para todas las observaciones en las que la variable Wind satisfaga un valor:
+
+```{r}
+datos7 <- datos[datos$Wind<=4, c(1,2)] 
+
+datos8 <- datos[datos$Wind>=2 & datos$Wind<=5.1, c(1,2)] 
+
+datos9 <- datos[datos$Wind==4 , c(1,2)] 
+```
+
+
+Para seleccionar subconjuntos de datos en un data frame también podemos utilizar la función subset().
+
+```{r}
+datos10 <- subset(datos, Month==5 & Day<=15, select=c(Ozone,Solar.R,Temp))
+
+datos11 <- subset(datos, Month !=5 & Day <=15)
+```
+
+
+
+
+### Importar y exportar datos
+## Manipulación y limpieza de datos.
