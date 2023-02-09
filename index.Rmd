@@ -26,7 +26,7 @@ github-repo: rstudio/bookdown-demo
 
 - En lugar de presentar todos los pormenores de R de manera lineal, se irán presentando distintos aspectos de R conforme se vayan necesitando; es decir, no vamos a presentar R como un lenguaje de programación sino como una herramienta para hacer análisis estadísticos.
 
-E- n la carpeta del curso están todos los materiales: tutoriales, algunos datos, etc….
+En la carpeta del curso están todos los materiales: tutoriales, algunos datos, etc….
 
 #### Ligas {-}
 Notas: https://fastidious-brioche-36f6dd.netlify.app/
@@ -80,13 +80,15 @@ Para instalar R vamos a la página web de R project: [http://www.r-project.org](
 
 ![Figura 1](imagenes/01.png)
 
-Para descargar la aplicación hacemos clic en Cran y pinchamos sobre el enlace del “espejo” más próximo a nuestra ubicación, México. Seleccionemos la URL de, por ejemplo (https://cran.itam.mx/).
+Para descargar la aplicación hacemos clic en Cran y hacemos clic sobre el enlace del “espejo” más próximo a nuestra ubicación, México. Seleccionemos la URL de, por ejemplo (https://cran.itam.mx/).
 
 ![Figura 2](imagenes/02.png)
 
 Ahora, en función del tu sistema operativo, seleccionar la correspondiente opción.
 
 ![Figura 3](imagenes/03.png)
+
+
 ### Instalar R en Windows.
 
 Al hacer clic sobre Download R for Windows iremos a la página que se reproduce más abajo. Hacer clic sobre *install R for the first time.*
@@ -105,7 +107,7 @@ Hacer clic sobre R-3.3.3.pkg y guardar el archivo de instalación. Ejecutar el a
 
 
 ### Instalar RStudio
-Descargamos la aplicación desde la página web de RStudio [aquí](https://posit.co/download/rstudio-desktop/) según nuestra plataforma de trabajo:
+Descargamos la aplicación desde la página web de RStudio [aquí](https://posit.co/download/rstudio-desktop/) según nuestro sistema operativo de trabajo:
 
 -  RStudio 1.0.136 - Windows Vista/7/8/10.
 
@@ -127,7 +129,7 @@ Una vez estamos en RStudio, podemos escribir y ejecutar las órdenes de varias f
 
 - a través de un script (.R).
 
-- con ficheros Rmarkdown (.Rmd).
+- con archivos Rmarkdown (.Rmd).
 
 Como podemos ver, RStudio está (normalmente) dividido en 4 paneles.
 
@@ -144,7 +146,7 @@ sqrt(4)
 ```
 
 ### Scripts
-Trabajar en la consola es muy limitado ya que las instrucciones se han de introducir una a una. Lo habitual es trabajar con scripts o ficheros de instrucciones. Estos ficheros tienen extensión **.R**.
+Trabajar en la consola es muy limitado ya que las instrucciones se han de introducir una a una. Lo habitual es trabajar con scripts o archivos de instrucciones. Estos archivos tienen extensión **.R**.
 
 Se puede crear una script con cualquier editor de texto (uno de los más populares es Tinn-R), pero nosotros lo haremos desde RStudio. Para ello, seleccionamos la siguiente ruta de menús: **File > New File > R script**
 
@@ -156,11 +158,12 @@ El panel del script se sitúa en la parte superior-izquierda de RStudio. Ahora p
 
 - Pulsamos Ctrl+r
 
-- Ejecutamos el código desde las opciones del menú Code. Sinceramente, esto nunca lo hemos utilizado. ¡Cuestión de comodidad!
+- Ejecutamos el código desde las opciones del menú Code. Sinceramente, esto nunca lo hemos utilizado.
 
 Como se muestra en la imagen más abajo, vamos a escribir nuestro primer script.
 
 ![Figura 6](imagenes/07.png)
+
 Para guardar el script:
 
 - File > Save as.. y seleccionar la ruta donde se quiere guardar el fichero.
@@ -179,11 +182,11 @@ El panel, llamémoslo, de entorno esta compuesto de dos pestañas: Environment y
 
 ### Otros recursos
 
-Con el nombre de **Otros recursos** nos referimos al panel que se encuentra en la parte inferior-derecha del escritorio de RStudio. ¡No sabía cómo llamarlo!
+Con el nombre de **Otros recursos** nos referimos al panel que se encuentra en la parte inferior-derecha del escritorio de RStudio. 
 
 En este panel cabe destacar las siguientes pestañas, cada una con diferentes opciones:
 
-+ Files: es una especie de explotador de ficheros.
++ Files: es una especie de explorador de archivos.
 
 + Plots: donde se visualizan los gráficos que creamos. Entre las opciones disponibles se encuentran:
   - Zoom: para agrandar el gráfico y verlo en otra ventana.
@@ -195,7 +198,7 @@ En este panel cabe destacar las siguientes pestañas, cada una con diferentes op
 
 ## Configuración del espacio de trabajo
 
-Antes de comenzar a trabajar debemos fijar el directorio donde queremos guardar nuestros ficheros. Básicamente, dos alternativas.
+Antes de comenzar a trabajar debemos fijar el directorio donde queremos guardar nuestros archivos. Básicamente, dos alternativas.
 
 ### Opción 1: Fijar directorio
 Opción 1. Indicamos a R la ruta donde queremos trabajar y la fijamos con la función setwd().
@@ -210,7 +213,7 @@ Para comprobar el directorio de trabajo utilizamos la función getwd():
 getwd()
 
 ```
-Para obtener un listado de los ficheros que contiene la ruta establecida se usa la función dir().
+Para obtener un listado de los archivos que contiene la ruta establecida se usa la función dir().
 
 
 ```{r , include = TRUE}
@@ -219,10 +222,12 @@ dir()
 ```
 
 ## Opción 2 : Proyecto de R.
-Al crear un proyecto todos los ficheros quedan vinculados directamente al proyecto. Para crear un proyecto selección **File > New project...** Se abrirá la siguiente ventana:
+Al crear un proyecto todos los archivos quedan vinculados directamente al proyecto. Para crear un proyecto selección **File > New project...** Se abrirá la siguiente ventana:
 
 ![Figura 8](imagenes/09.png)
-Para crear un proyecto en un nuevo directorio, hacemos clic en el botón New Directory. Seguidamente, seleccionamos el tipo de proyecto, en nuestro caso Empty Project. Ahora, asignamos un nombre al directorio (carpeta) que se va a crear y que al mismo tiempo será el nombre del proyecto de R. Para terminar, hacemos clic en el botón Create Project. Al seguir este proceso se habrá creado una carpeta en Documentos y un fichero nombre_carpeta.Rproj.
+
+
+Para crear un proyecto en un nuevo directorio, hacemos clic en el botón New Directory. En seguida, seleccionamos el tipo de proyecto, en nuestro caso Empty Project. Ahora, asignamos un nombre al directorio (carpeta) que se va a crear y que al mismo tiempo será el nombre del proyecto de R. Para terminar, hacemos clic en el botón Create Project. Al seguir este proceso se habrá creado una carpeta en Documentos y un fichero nombre_carpeta.Rproj.
 
 Para crear un proyecto en una carpeta que ya existe, hacemos clic en el botón Existing Directory y después seleccionamos la carpeta ayudándonos del Browse.. si fuera necesario. Una vez elegida la carpeta, clicamos en Create Project.
 
@@ -241,6 +246,8 @@ Podemos instalar paquetes de varias formas:
 - En el escritorio de RStudio: Packages/Install. Vemos los paquetes que tenemos actualmente instalados y aquellos que se encuentran cargados.
 
 ![Figura 9](imagenes/10.png)
+
+
 - Utilizando la función install.packages(). El nombre del paquete que queremos instalar debe ir entre comillas.
 
 
@@ -249,6 +256,7 @@ Podemos instalar paquetes de varias formas:
 
 ```
 Una vez instalado el paquete, hay que cargarlo para poderlo utilizar. Esto se hace con la función library().
+
 ```{r , include = TRUE}
 library(dplyr)
 
@@ -277,17 +285,17 @@ Para obtener ayuda sobre un determinado paquete…
 library(help="foreign")
 
 ```
-Pero sin duda, una de las mejores fuentes de ayuda en R nos la proporciona internet. Bien haciendo directamente en google la búsqueda sobre el tema que estamos interesados, bien acudiendo a algunas de las muchas webs que ofrecen ayuda. Algunas de las más populares y recomendables webs son:
+Pero sin duda, una de las mejores fuentes de ayuda en R nos la proporciona internet. Bien haciendo directamente en google la búsqueda sobre el tema que estamos interesados, bien acudiendo a algunas de las muchas webs que ofrecen ayuda. Algunas de las más populares y recomendables son:
 
 - [R-Bloggers](https://www.r-bloggers.com/)
 
 - [Stack Overflow](https://stackoverflow.com/)
 
-# Manipulación y visualización de datos
 
-## Comandos básicos de R.
+# Comandos básicos de R.
 
-### Introducción
+## Introducción
+
 El objetivo de este tutorial es familiarizarnos con los conceptos básicos de R. ¿Qué es un objeto en R? ¿Con qué clases/tipos de objetos se trabaja en R? 
 Aprenderemos a definir vectores y operar con ellos; a crear matrices, listas y data frames; a seleccionar elementos, añadir filas y columnas, etc. Como lo que se pretende es que se entienda la filosofía y la práctica del trabajo con R, todos los conceptos que se introducen se ilustran con ejemplos muy sencillos. No obstante, la selección de funciones que se realiza en este tutorial tienen una aplicación directa en el tratamiento real de datos.
 
@@ -334,7 +342,7 @@ Cuando se realiza una asignación se obtiene un objeto. Podemos ver el resultado
 
 
 
-### Vectores
+## Vectores
 
 Básicamente R trabaja con los siguientes tipos de objetos:
 
@@ -501,7 +509,7 @@ as.character(x)
 
 Por último, podemos evaluar el tipo/clase de objeto con las funciones is.numeric(), is.character(), etc.
 
-#### Acceder a un elemento de un objeto
+### Acceder a un elemento de un objeto
 
 Para seleccionar/acceder a un elemento de un objeto se suelen emplear: **[], $, [[]].**
 
@@ -517,7 +525,7 @@ Si queremos acceder/seleccionar/extraer al/el segundo componente de x
 x[2]
 ```
 
-#### Enlistar y borrar objetos 
+### Enlistar y borrar objetos 
 
 Las funciones ls() y objects() hacen lo mismo: listan los objetos que hemos definido en la sesión.
 
@@ -542,6 +550,21 @@ y si estamos interesados en borrar todos los objetos que hemos definido:
 rm(list=ls()) # o también rm(list=objects())
 ls()
 ```
+
+#### Ejercicios
+
+- Crea un vector x con 5 elementos numéricos. 
+- Crea un vector y con 5 elementos de tipo caractér. 
+- ¿De qué tipo es el siguiente vector?: 
+
+```{r}
+z <- c("32","52","6","82","12")
+```
+
+- Suma el vector x y el vector z ¿Tienes que hacer alguna transformación? 
+- Multiplica el vector z por 3 y después súmalo al vector x. 
+
+
 
 ## Tipos de objetos
 
@@ -674,6 +697,17 @@ Evidentemente, también podemos realizar operaciones con listas.
 ```{r}
 y[[2]]*3
 ```
+
+#### Ejercicios
+
+- Crea dos matrices A y B de dimensión 3x3.
+- Suma las dos matrices ¿Qué obtuviste? 
+- Multiplica las  las dos matrices ¿Qué obtuviste? 
+- Trata de definir una matriz con valores tipo caractér. 
+- Crea una lista con los siguientes elementos: un número, un vector, una matrix y una palabra. 
+- Obten el elemento de la lista que es una matriz y multiplícalo por la matriz B.
+
+
 
 
 ### Data Frame
@@ -912,6 +946,21 @@ datos10 <- subset(datos, Month==5 & Day<=15, select=c(Ozone,Solar.R,Temp))
 
 datos11 <- subset(datos, Month !=5 & Day <=15)
 ```
+
+#### Ejercicio
+
+- Carga la siguiente base de datos. 
+```{r}
+data <- mtcars
+```
+
+- Crea la columna "carro" y asignala al tipo de carro. Hint: utiliza la función row.names() 
+- Haz un subset que contenga las variables: carro, hp, mpg, cyl. 
+- Encuentra qué carros tienen un 6 o más cilindros (cyl). 
+- Encuentra el promedio de caballos de fuerza (hp). 
+- Encuentra qué carros tienen el mayor y el menor rendimiento (mpg). 
+- Utiliza el siguiente comando `plot(data$cyl, data$mpg)`. ¿Cómo lo interpretas? 
+
 
 
 ## Manipulación y limpieza de datos.

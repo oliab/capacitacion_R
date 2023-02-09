@@ -141,7 +141,7 @@
   En lugar de presentar todos los pormenores de R de manera lineal, se irán presentando distintos aspectos de R conforme se vayan necesitando; es decir, no vamos a presentar R como un lenguaje de programación sino como una herramienta para hacer análisis estadísticos.
 \end{itemize}
 
-E- n la carpeta del curso están todos los materiales: tutoriales, algunos datos, etc\ldots.
+En la carpeta del curso están todos los materiales: tutoriales, algunos datos, etc\ldots.
 
 \hypertarget{ligas}{%
 \subsubsection*{Ligas}\label{ligas}}
@@ -239,7 +239,7 @@ Para instalar R vamos a la página web de R project: \url{http://www.r-project.o
 \caption{Figura 1}
 \end{figure}
 
-Para descargar la aplicación hacemos clic en Cran y pinchamos sobre el enlace del ``espejo'' más próximo a nuestra ubicación, México. Seleccionemos la URL de, por ejemplo (\url{https://cran.itam.mx/}).
+Para descargar la aplicación hacemos clic en Cran y hacemos clic sobre el enlace del ``espejo'' más próximo a nuestra ubicación, México. Seleccionemos la URL de, por ejemplo (\url{https://cran.itam.mx/}).
 
 \begin{figure}
 \centering
@@ -249,8 +249,14 @@ Para descargar la aplicación hacemos clic en Cran y pinchamos sobre el enlace d
 
 Ahora, en función del tu sistema operativo, seleccionar la correspondiente opción.
 
+\begin{figure}
+\centering
 \includegraphics{imagenes/03.png}
-\#\#\# Instalar R en Windows.
+\caption{Figura 3}
+\end{figure}
+
+\hypertarget{instalar-r-en-windows.}{%
+\subsection{Instalar R en Windows.}\label{instalar-r-en-windows.}}
 
 Al hacer clic sobre Download R for Windows iremos a la página que se reproduce más abajo. Hacer clic sobre \emph{install R for the first time.}
 
@@ -274,7 +280,7 @@ Hacer clic sobre R-3.3.3.pkg y guardar el archivo de instalación. Ejecutar el a
 \hypertarget{instalar-rstudio}{%
 \subsection{Instalar RStudio}\label{instalar-rstudio}}
 
-Descargamos la aplicación desde la página web de RStudio \href{https://posit.co/download/rstudio-desktop/}{aquí} según nuestra plataforma de trabajo:
+Descargamos la aplicación desde la página web de RStudio \href{https://posit.co/download/rstudio-desktop/}{aquí} según nuestro sistema operativo de trabajo:
 
 \begin{itemize}
 \item
@@ -306,7 +312,7 @@ Una vez estamos en RStudio, podemos escribir y ejecutar las órdenes de varias f
 \item
   a través de un script (.R).
 \item
-  con ficheros Rmarkdown (.Rmd).
+  con archivos Rmarkdown (.Rmd).
 \end{itemize}
 
 Como podemos ver, RStudio está (normalmente) dividido en 4 paneles.
@@ -351,7 +357,7 @@ Vamos a hacer este ejemplo:
 \hypertarget{scripts}{%
 \subsection{Scripts}\label{scripts}}
 
-Trabajar en la consola es muy limitado ya que las instrucciones se han de introducir una a una. Lo habitual es trabajar con scripts o ficheros de instrucciones. Estos ficheros tienen extensión \textbf{.R}.
+Trabajar en la consola es muy limitado ya que las instrucciones se han de introducir una a una. Lo habitual es trabajar con scripts o archivos de instrucciones. Estos archivos tienen extensión \textbf{.R}.
 
 Se puede crear una script con cualquier editor de texto (uno de los más populares es Tinn-R), pero nosotros lo haremos desde RStudio. Para ello, seleccionamos la siguiente ruta de menús: \textbf{File \textgreater{} New File \textgreater{} R script}
 
@@ -369,12 +375,17 @@ El panel del script se sitúa en la parte superior-izquierda de RStudio. Ahora p
 \item
   Pulsamos Ctrl+r
 \item
-  Ejecutamos el código desde las opciones del menú Code. Sinceramente, esto nunca lo hemos utilizado. ¡Cuestión de comodidad!
+  Ejecutamos el código desde las opciones del menú Code. Sinceramente, esto nunca lo hemos utilizado.
 \end{itemize}
 
 Como se muestra en la imagen más abajo, vamos a escribir nuestro primer script.
 
+\begin{figure}
+\centering
 \includegraphics{imagenes/07.png}
+\caption{Figura 6}
+\end{figure}
+
 Para guardar el script:
 
 \begin{itemize}
@@ -410,13 +421,13 @@ El panel, llamémoslo, de entorno esta compuesto de dos pestañas: Environment y
 \hypertarget{otros-recursos}{%
 \subsection{Otros recursos}\label{otros-recursos}}
 
-Con el nombre de \textbf{Otros recursos} nos referimos al panel que se encuentra en la parte inferior-derecha del escritorio de RStudio. ¡No sabía cómo llamarlo!
+Con el nombre de \textbf{Otros recursos} nos referimos al panel que se encuentra en la parte inferior-derecha del escritorio de RStudio.
 
 En este panel cabe destacar las siguientes pestañas, cada una con diferentes opciones:
 
 \begin{itemize}
 \item
-  Files: es una especie de explotador de ficheros.
+  Files: es una especie de explorador de archivos.
 \item
   Plots: donde se visualizan los gráficos que creamos. Entre las opciones disponibles se encuentran:
 
@@ -436,7 +447,7 @@ En este panel cabe destacar las siguientes pestañas, cada una con diferentes op
 \hypertarget{configuraciuxf3n-del-espacio-de-trabajo}{%
 \section{Configuración del espacio de trabajo}\label{configuraciuxf3n-del-espacio-de-trabajo}}
 
-Antes de comenzar a trabajar debemos fijar el directorio donde queremos guardar nuestros ficheros. Básicamente, dos alternativas.
+Antes de comenzar a trabajar debemos fijar el directorio donde queremos guardar nuestros archivos. Básicamente, dos alternativas.
 
 \hypertarget{opciuxf3n-1-fijar-directorio}{%
 \subsection{Opción 1: Fijar directorio}\label{opciuxf3n-1-fijar-directorio}}
@@ -461,7 +472,7 @@ Para comprobar el directorio de trabajo utilizamos la función getwd():
 ## [1] "/Users/user/Documents/proyectos/capacitacion/capacitacion_R"
 \end{verbatim}
 
-Para obtener un listado de los ficheros que contiene la ruta establecida se usa la función dir().
+Para obtener un listado de los archivos que contiene la ruta establecida se usa la función dir().
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -471,21 +482,25 @@ Para obtener un listado de los ficheros que contiene la ruta establecida se usa 
 
 \begin{verbatim}
 ##  [1] "_book"               "_bookdown_files"     "_bookdown.yml"      
-##  [4] "_main_files"         "_main.log"           "_main.pdf"          
-##  [7] "_main.Rmd"           "_main.tex"           "_output.yml"        
-## [10] "01_manipulacion.Rmd" "book.bib"            "capacitacion.Rproj" 
-## [13] "css"                 "data"                "imagenes"           
-## [16] "index.Rmd"           "packages.bib"        "preamble.tex"       
-## [19] "README.md"           "style.css"
+##  [4] "_main_files"         "_main.log"           "_main.Rmd"          
+##  [7] "_output.yml"         "01_manipulacion.Rmd" "book.bib"           
+## [10] "capacitacion.Rproj"  "css"                 "data"               
+## [13] "imagenes"            "index.Rmd"           "packages.bib"       
+## [16] "preamble.tex"        "README.md"           "style.css"
 \end{verbatim}
 
 \hypertarget{opciuxf3n-2-proyecto-de-r.}{%
 \section{Opción 2 : Proyecto de R.}\label{opciuxf3n-2-proyecto-de-r.}}
 
-Al crear un proyecto todos los ficheros quedan vinculados directamente al proyecto. Para crear un proyecto selección \textbf{File \textgreater{} New project\ldots{}} Se abrirá la siguiente ventana:
+Al crear un proyecto todos los archivos quedan vinculados directamente al proyecto. Para crear un proyecto selección \textbf{File \textgreater{} New project\ldots{}} Se abrirá la siguiente ventana:
 
+\begin{figure}
+\centering
 \includegraphics{imagenes/09.png}
-Para crear un proyecto en un nuevo directorio, hacemos clic en el botón New Directory. Seguidamente, seleccionamos el tipo de proyecto, en nuestro caso Empty Project. Ahora, asignamos un nombre al directorio (carpeta) que se va a crear y que al mismo tiempo será el nombre del proyecto de R. Para terminar, hacemos clic en el botón Create Project. Al seguir este proceso se habrá creado una carpeta en Documentos y un fichero nombre\_carpeta.Rproj.
+\caption{Figura 8}
+\end{figure}
+
+Para crear un proyecto en un nuevo directorio, hacemos clic en el botón New Directory. En seguida, seleccionamos el tipo de proyecto, en nuestro caso Empty Project. Ahora, asignamos un nombre al directorio (carpeta) que se va a crear y que al mismo tiempo será el nombre del proyecto de R. Para terminar, hacemos clic en el botón Create Project. Al seguir este proceso se habrá creado una carpeta en Documentos y un fichero nombre\_carpeta.Rproj.
 
 Para crear un proyecto en una carpeta que ya existe, hacemos clic en el botón Existing Directory y después seleccionamos la carpeta ayudándonos del Browse.. si fuera necesario. Una vez elegida la carpeta, clicamos en Create Project.
 
@@ -507,8 +522,17 @@ Podemos instalar paquetes de varias formas:
   En el escritorio de RStudio: Packages/Install. Vemos los paquetes que tenemos actualmente instalados y aquellos que se encuentran cargados.
 \end{itemize}
 
+\begin{figure}
+\centering
 \includegraphics{imagenes/10.png}
-- Utilizando la función install.packages(). El nombre del paquete que queremos instalar debe ir entre comillas.
+\caption{Figura 9}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  Utilizando la función install.packages(). El nombre del paquete que queremos instalar debe ir entre comillas.
+\end{itemize}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -569,7 +593,7 @@ Para obtener ayuda sobre un determinado paquete\ldots{}
 \end{Highlighting}
 \end{Shaded}
 
-Pero sin duda, una de las mejores fuentes de ayuda en R nos la proporciona internet. Bien haciendo directamente en google la búsqueda sobre el tema que estamos interesados, bien acudiendo a algunas de las muchas webs que ofrecen ayuda. Algunas de las más populares y recomendables webs son:
+Pero sin duda, una de las mejores fuentes de ayuda en R nos la proporciona internet. Bien haciendo directamente en google la búsqueda sobre el tema que estamos interesados, bien acudiendo a algunas de las muchas webs que ofrecen ayuda. Algunas de las más populares y recomendables son:
 
 \begin{itemize}
 \item
@@ -578,14 +602,11 @@ Pero sin duda, una de las mejores fuentes de ayuda en R nos la proporciona inter
   \href{https://stackoverflow.com/}{Stack Overflow}
 \end{itemize}
 
-\hypertarget{manipulaciuxf3n-y-visualizaciuxf3n-de-datos}{%
-\chapter{Manipulación y visualización de datos}\label{manipulaciuxf3n-y-visualizaciuxf3n-de-datos}}
-
 \hypertarget{comandos-buxe1sicos-de-r.}{%
-\section{Comandos básicos de R.}\label{comandos-buxe1sicos-de-r.}}
+\chapter{Comandos básicos de R.}\label{comandos-buxe1sicos-de-r.}}
 
 \hypertarget{introducciuxf3n}{%
-\subsection{Introducción}\label{introducciuxf3n}}
+\section{Introducción}\label{introducciuxf3n}}
 
 El objetivo de este tutorial es familiarizarnos con los conceptos básicos de R. ¿Qué es un objeto en R? ¿Con qué clases/tipos de objetos se trabaja en R?
 Aprenderemos a definir vectores y operar con ellos; a crear matrices, listas y data frames; a seleccionar elementos, añadir filas y columnas, etc. Como lo que se pretende es que se entienda la filosofía y la práctica del trabajo con R, todos los conceptos que se introducen se ilustran con ejemplos muy sencillos. No obstante, la selección de funciones que se realiza en este tutorial tienen una aplicación directa en el tratamiento real de datos.
@@ -707,7 +728,7 @@ Cuando se realiza una asignación se obtiene un objeto. Podemos ver el resultado
 \end{itemize}
 
 \hypertarget{vectores}{%
-\subsection{Vectores}\label{vectores}}
+\section{Vectores}\label{vectores}}
 
 Básicamente R trabaja con los siguientes tipos de objetos:
 
@@ -1043,7 +1064,7 @@ En ocasiones somos nosotros los que estamos interesados en forzar que todos los 
 Por último, podemos evaluar el tipo/clase de objeto con las funciones is.numeric(), is.character(), etc.
 
 \hypertarget{acceder-a-un-elemento-de-un-objeto}{%
-\subsubsection{Acceder a un elemento de un objeto}\label{acceder-a-un-elemento-de-un-objeto}}
+\subsection{Acceder a un elemento de un objeto}\label{acceder-a-un-elemento-de-un-objeto}}
 
 Para seleccionar/acceder a un elemento de un objeto se suelen emplear: \textbf{{[}{]}, \$, {[}{[}{]}{]}.}
 
@@ -1068,7 +1089,7 @@ Si queremos acceder/seleccionar/extraer al/el segundo componente de x
 \end{verbatim}
 
 \hypertarget{enlistar-y-borrar-objetos}{%
-\subsubsection{Enlistar y borrar objetos}\label{enlistar-y-borrar-objetos}}
+\subsection{Enlistar y borrar objetos}\label{enlistar-y-borrar-objetos}}
 
 Las funciones ls() y objects() hacen lo mismo: listan los objetos que hemos definido en la sesión.
 
@@ -1117,6 +1138,33 @@ y si estamos interesados en borrar todos los objetos que hemos definido:
 \begin{verbatim}
 ## character(0)
 \end{verbatim}
+
+\hypertarget{ejercicios}{%
+\subsubsection{Ejercicios}\label{ejercicios}}
+
+\begin{itemize}
+\tightlist
+\item
+  Crea un vector x con 5 elementos numéricos.
+\item
+  Crea un vector y con 5 elementos de tipo caractér.
+\item
+  ¿De qué tipo es el siguiente vector?:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"32"}\NormalTok{,}\StringTok{"52"}\NormalTok{,}\StringTok{"6"}\NormalTok{,}\StringTok{"82"}\NormalTok{,}\StringTok{"12"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Suma el vector x y el vector z ¿Tienes que hacer alguna transformación?
+\item
+  Multiplica el vector z por 3 y después súmalo al vector x.
+\end{itemize}
 
 \hypertarget{tipos-de-objetos}{%
 \section{Tipos de objetos}\label{tipos-de-objetos}}
@@ -1426,6 +1474,25 @@ Evidentemente, también podemos realizar operaciones con listas.
 \begin{verbatim}
 ## [1] 75 78 81
 \end{verbatim}
+
+\hypertarget{ejercicios-1}{%
+\subsubsection{Ejercicios}\label{ejercicios-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Crea dos matrices A y B de dimensión 3x3.
+\item
+  Suma las dos matrices ¿Qué obtuviste?
+\item
+  Multiplica las las dos matrices ¿Qué obtuviste?
+\item
+  Trata de definir una matriz con valores tipo caractér.
+\item
+  Crea una lista con los siguientes elementos: un número, un vector, una matrix y una palabra.
+\item
+  Obten el elemento de la lista que es una matriz y multiplícalo por la matriz B.
+\end{itemize}
 
 \hypertarget{data-frame}{%
 \subsection{Data Frame}\label{data-frame}}
@@ -3814,6 +3881,37 @@ Para seleccionar subconjuntos de datos en un data frame también podemos utiliza
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{ejercicio}{%
+\subsubsection{Ejercicio}\label{ejercicio}}
+
+\begin{itemize}
+\tightlist
+\item
+  Carga la siguiente base de datos.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ mtcars}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Crea la columna ``carro'' y asignala al tipo de carro. Hint: utiliza la función row.names()
+\item
+  Haz un subset que contenga las variables: carro, hp, mpg, cyl.
+\item
+  Encuentra qué carros tienen un 6 o más cilindros (cyl).
+\item
+  Encuentra el promedio de caballos de fuerza (hp).
+\item
+  Encuentra qué carros tienen el mayor y el menor rendimiento (mpg).
+\item
+  Utiliza el siguiente comando \texttt{plot(data\$cyl,\ data\$mpg)}. ¿Cómo lo interpretas?
+\end{itemize}
+
 \hypertarget{manipulaciuxf3n-y-limpieza-de-datos.}{%
 \section{Manipulación y limpieza de datos.}\label{manipulaciuxf3n-y-limpieza-de-datos.}}
 
@@ -3898,7 +3996,7 @@ paquete \texttt{readr} hacemos:
 ##         guess_max = guess_max, show_col_types = show_col_types, 
 ##         progress = progress, altrep = lazy, num_threads = num_threads)
 ## }
-## <bytecode: 0x7fd57ede42f8>
+## <bytecode: 0x7f7b860d0870>
 ## <environment: namespace:readr>
 \end{verbatim}
 
@@ -5050,7 +5148,7 @@ construir gráficas y resúmenes.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-116-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-118-1} \end{center}
 
 Podemos hacer gráficas más interesantes si creamos nuevas variables:
 
@@ -5082,7 +5180,7 @@ Podemos hacer gráficas más interesantes si creamos nuevas variables:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-117-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-119-1} \end{center}
 
 En el código de arriba utilizamos las funciones \texttt{group\_by}, \texttt{filter} y \texttt{mutate}
 que estudiaremos más adelante. Por ahora concentremonos en \texttt{gather} y \texttt{spread}.
@@ -5204,7 +5302,7 @@ Nuevamente, podemos hacer gráficas facilmente.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-121-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-123-1} \end{center}
 
 \hypertarget{una-columna-asociada-a-muxe1s-de-una-variable}{%
 \subsection*{Una columna asociada a más de una variable}\label{una-columna-asociada-a-muxe1s-de-una-variable}}
