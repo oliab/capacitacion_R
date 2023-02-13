@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>AIS: Capacitación de R</title>
+  <title>Chapter 4 Tarea 1 | AIS: Capacitación de R</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="AIS: Capacitación de R" />
+  <meta property="og:title" content="Chapter 4 Tarea 1 | AIS: Capacitación de R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
@@ -19,7 +19,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="AIS: Capacitación de R" />
+  <meta name="twitter:title" content="Chapter 4 Tarea 1 | AIS: Capacitación de R" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="manipulación-y-agrupación-de-datos.html"/>
 
-<link rel="next" href="introducción-a-r..html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -244,61 +244,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">AIS: Capacitación de R</h1>
-<p class="author"><em>Oliab Herrera Coria</em></p>
-<p class="date"><em>2023-02-13</em></p>
-</div>
-<div id="información-del-curso" class="section level1 unnumbered hasAnchor">
-<h1>Información del curso<a href="index.html#información-del-curso" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="tarea-1" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Tarea 1<a href="tarea-1.html#tarea-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="estructuras-de-datos" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Estructuras de Datos<a href="tarea-1.html#estructuras-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><p>Este es un curso de Introducción a R.</p></li>
-<li><p>Al final serán capaces de utilizar R para cargar datos, arreglarlos, hacer gráficos y tablas, e informes en Rmarkdown.</p></li>
-<li><p>Intentaremos que el curso sea fundamentalmente práctico.</p></li>
-<li><p>En lugar de presentar todos los pormenores de R de manera lineal, se irán presentando distintos aspectos de R conforme se vayan necesitando; es decir, no vamos a presentar R como un lenguaje de programación sino como una herramienta para hacer análisis estadísticos.</p></li>
+<li>Crea un Script nuevo y llámalo “Tarea_tunombre.R”.</li>
+<li>Descarga el archivo “crimen_mexico.csv” dándo clic en esta <a href="https://www.dropbox.com/s/nq3sg9gnvis3ezy/crimen_mexico.csv?dl=1">liga</a> .<br />
+</li>
+<li>Carga la librería <strong>readr</strong>.</li>
+<li>Utiliza la función <strong>read_csv</strong> para cargar el archivo “crimen_mexico.csv”. Ojo: recuerda asignarlo a una variable <strong>datos &lt;- read_csv(“path al archivo”)</strong>.</li>
+<li>Utiliza la función <strong>summary()</strong> para ver qué variables tienen NA.</li>
+<li>Usa lo visto en clase para quitar las filas con variables faltantes.</li>
+<li>Contesta las siguientes preguntas:</li>
+<li>¿De qué años hay información?</li>
+<li>¿Cuál fue el total de crimenes en 2022 y 2021?</li>
+<li>Haz un subset de datos considerando solamente los datos de 2022.</li>
+<li>¿Cuál fue el total de delitos por estado?</li>
+<li>¿Cuál fue el promedio de delitos por mes?</li>
+<li>¿Cuál fue el tipo de delitos con mayor y menor incidencia?</li>
 </ul>
-<p>En la carpeta del curso están todos los materiales: tutoriales, algunos datos, etc….</p>
-<div id="ligas" class="section level4 unnumbered hasAnchor">
-<h4>Ligas<a href="index.html#ligas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Notas: <a href="https://fastidious-brioche-36f6dd.netlify.app/" class="uri">https://fastidious-brioche-36f6dd.netlify.app/</a>
-Correo: <a href="mailto:oliabherrera@gmail.com" class="email">oliabherrera@gmail.com</a></p>
-<p></br></p>
-</div>
-<div id="temario" class="section level2 unnumbered hasAnchor">
-<h2>Temario<a href="index.html#temario" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li><strong>Introducción a R</strong></li>
-</ol>
-<ul>
-<li>Instalación de R y R Studio.</li>
-<li>Entorno de trabajo de RStudio.</li>
-<li>Instalación de paquetes.</li>
-<li>Ayuda en R.</li>
-</ul>
-<ol start="2" style="list-style-type: decimal">
-<li><strong>Manipulación y visualización de datos</strong></li>
-</ol>
-<ul>
-<li>Comandos básicos de R.</li>
-<li>Manipulación y limpieza de datos.</li>
-<li>Visualización de datos.</li>
-<li>Temas selectos de programación en R.</li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li><strong>Reportes POS</strong></li>
-</ol>
-<ul>
-<li>Descarga de datos.</li>
-<li>Scripts principales.</li>
-<li>Proyecciones.</li>
-</ul>
-<div id="software" class="section level3 unnumbered hasAnchor">
-<h3>Software<a href="index.html#software" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><a href="https://www.r-project.org" class="uri">https://www.r-project.org</a></li>
-<li><a href="https://www.rstudio.com" class="uri">https://www.rstudio.com</a></li>
-</ul>
-</div>
+
 </div>
 </div>
             </section>
@@ -306,8 +272,8 @@ Correo: <a href="mailto:oliabherrera@gmail.com" class="email">oliabherrera@gmail
           </div>
         </div>
       </div>
+<a href="manipulación-y-agrupación-de-datos.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="introducción-a-r..html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -338,7 +304,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02_tarea.Rmd",
 "text": "Edit"
 },
 "history": {

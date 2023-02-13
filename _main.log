@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.8)  9 FEB 2023 12:41
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.8)  13 FEB 2023 11:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -754,13 +754,13 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 497--497
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 514--514
+Overfull \hbox (6.75pt too wide) in paragraph at lines 515--515
 []\TU/lmtt/m/n/10 ##  [1] "_book"               "_bookdown_files"     "_bookdown.yml"[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 514--514
-[]\TU/lmtt/m/n/10 ## [13] "imagenes"            "index.Rmd"           "packages.bib"[] 
+Overfull \hbox (1.5pt too wide) in paragraph at lines 515--515
+[]\TU/lmtt/m/n/10 ##  [7] "_output.yml"         "01_manipulacion.Rmd" "02_tarea.Rmd"[] 
  []
 
 File: imagenes/09.png Graphic file (type bmp)
@@ -768,78 +768,78 @@ File: imagenes/09.png Graphic file (type bmp)
 [16]
 File: imagenes/10.png Graphic file (type bmp)
 <imagenes/10.png>
-[17] [18] [19] [20
-
-]
+[17] [18] [19] [20]
 Chapter 2.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 652.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 653.
 
 LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 652.
+(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 653.
 
-[21] [22] [23]
-Overfull \hbox (59.25pt too wide) in paragraph at lines 875--875
+[21
+
+] [22] [23]
+Overfull \hbox (59.25pt too wide) in paragraph at lines 876--876
 []\TU/lmtt/m/n/10 ## Warning in x + y: longer object length is not a multiple of shorter object[] 
  []
 
 [24] [25] [26]
-Underfull \hbox (badness 1354) in paragraph at lines 1088--1089
+Underfull \hbox (badness 1354) in paragraph at lines 1089--1090
 []\TU/lmr/m/n/10 Por último, podemos evaluar el tipo/clase de objeto con las funciones
  []
 
 [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76]
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3613--3613
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3614--3614
 []\TU/lmtt/m/n/10 ##   c..Economía....ADE....Sociología....Magisterio.. c.25..27..25..24.[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3613--3613
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3614--3614
 []\TU/lmtt/m/n/10 ## 1                                         Economía                25[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3613--3613
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3614--3614
 []\TU/lmtt/m/n/10 ## 2                                              ADE                27[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3613--3613
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3614--3614
 []\TU/lmtt/m/n/10 ## 3                                       Sociología                25[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3613--3613
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3614--3614
 []\TU/lmtt/m/n/10 ## 4                                       Magisterio                24[] 
  []
 
 [77] [78] [79]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 3808--3808
+Overfull \hbox (6.75pt too wide) in paragraph at lines 3809--3809
 []\TU/lmtt/m/n/10 ##  Min.   :  1.00   Min.   :  7.0   Min.   : 1.700   Min.   :56.00[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 3808--3808
+Overfull \hbox (6.75pt too wide) in paragraph at lines 3809--3809
 []\TU/lmtt/m/n/10 ##  1st Qu.: 18.00   1st Qu.:115.8   1st Qu.: 7.400   1st Qu.:72.00[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 3808--3808
+Overfull \hbox (6.75pt too wide) in paragraph at lines 3809--3809
 []\TU/lmtt/m/n/10 ##  Median : 31.50   Median :205.0   Median : 9.700   Median :79.00[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 3808--3808
+Overfull \hbox (6.75pt too wide) in paragraph at lines 3809--3809
 []\TU/lmtt/m/n/10 ##  Mean   : 42.13   Mean   :185.9   Mean   : 9.958   Mean   :77.88[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 3808--3808
+Overfull \hbox (6.75pt too wide) in paragraph at lines 3809--3809
 []\TU/lmtt/m/n/10 ##  3rd Qu.: 63.25   3rd Qu.:258.8   3rd Qu.:11.500   3rd Qu.:85.00[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 3808--3808
+Overfull \hbox (6.75pt too wide) in paragraph at lines 3809--3809
 []\TU/lmtt/m/n/10 ##  Max.   :168.00   Max.   :334.0   Max.   :20.700   Max.   :97.00[] 
  []
 
@@ -847,99 +847,99 @@ Overfull \hbox (6.75pt too wide) in paragraph at lines 3808--3808
 File: imagenes/analisis.png Graphic file (type bmp)
 <imagenes/analisis.png>
 [82]
-Underfull \hbox (badness 2126) in paragraph at lines 3974--3980
+Underfull \hbox (badness 2126) in paragraph at lines 3975--3981
 \TU/lmtt/m/n/10 install.packages("nombre_paquete")\TU/lmr/m/n/10 ). Una vez instalados, podemos
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (38.25pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ## function (file, col_names = TRUE, col_types = NULL, col_select = NULL,[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (75.0pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ##     id = NULL, locale = default_locale(), na = c("", "NA"), quoted_na = TRUE,[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (38.25pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ##     quote = "\"", comment = "", trim_ws = TRUE, skip = 0, n_max = Inf,[] 
  []
 
 
-Overfull \hbox (132.75pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (132.75pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ##     guess_max = min(1000, n_max), name_repair = "unique", num_threads = readr_threads(),[] 
  []
 
 
-Overfull \hbox (33.0pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (33.0pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ##     progress = show_progress(), show_col_types = should_show_types(),[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (17.25pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ##         tokenizer <- tokenizer_csv(na = na, quoted_na = quoted_na,[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (6.75pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ##             quote = quote, comment = comment, trim_ws = trim_ws,[] 
  []
 
 
-Overfull \hbox (33.0pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (33.0pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ##         return(read_delimited(file, tokenizer, col_names = col_names,[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (6.75pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ##             col_types = col_types, locale = locale, skip = skip,[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ##             skip_empty_rows = skip_empty_rows, comment = comment,[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (38.25pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ##             n_max = n_max, guess_max = guess_max, progress = progress,[] 
  []
 
 [83]
-Overfull \hbox (64.5pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (64.5pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ##         lifecycle::deprecate_soft("2.0.0", "readr::read_csv(quoted_na = )")[] 
  []
 
 
-Overfull \hbox (96.0pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (96.0pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ##     vroom::vroom(file, delim = ",", col_names = col_names, col_types = col_types,[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ##         n_max = n_max, na = na, quote = quote, comment = comment,[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (48.75pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ##         escape_double = TRUE, escape_backslash = FALSE, locale = locale,[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (1.5pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ##         guess_max = guess_max, show_col_types = show_col_types,[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 4025--4025
+Overfull \hbox (38.25pt too wide) in paragraph at lines 4026--4026
 []\TU/lmtt/m/n/10 ##         progress = progress, altrep = lazy, num_threads = num_threads)[] 
  []
 
 File: imagenes/tidyverse.png Graphic file (type bmp)
 <imagenes/tidyverse.png>
 
-Overfull \hbox (693.37077pt too wide) in paragraph at lines 4048--4049
+Overfull \hbox (693.37077pt too wide) in paragraph at lines 4049--4050
 [][] 
  []
 
@@ -951,15 +951,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Chapter 3.
 
-Package natbib Warning: Citation `plyr' on page 87 undefined on input line 4081.
+Package natbib Warning: Citation `plyr' on page 87 undefined on input line 4082.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4091--4093
+Underfull \hbox (badness 10000) in paragraph at lines 4092--4094
 
  []
 
 [87]
-Underfull \hbox (badness 10000) in paragraph at lines 4093--4095
+Underfull \hbox (badness 10000) in paragraph at lines 4094--4096
 
  []
 
@@ -969,26 +969,26 @@ File: imagenes/split-apply-combine.png Graphic file (type bmp)
 File: imagenes/importar_RStudio.png Graphic file (type bmp)
 <imagenes/importar_RStudio.png>
 [89]
-Underfull \vbox (badness 10000) detected at line 4256
+Underfull \vbox (badness 10000) detected at line 4257
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4256
+Underfull \vbox (badness 10000) detected at line 4257
  []
 
 [90]
-Underfull \vbox (badness 10000) detected at line 4256
+Underfull \vbox (badness 10000) detected at line 4257
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4256
+Underfull \vbox (badness 10000) detected at line 4257
  []
 
 [91] [92]
 File: imagenes/transform-logical.png Graphic file (type bmp)
 <imagenes/transform-logical.png>
 
-Overfull \hbox (212.88542pt too wide) in paragraph at lines 4369--4369
+Overfull \hbox (212.88542pt too wide) in paragraph at lines 4370--4370
  [] 
  []
 
@@ -1008,7 +1008,7 @@ File: imagenes/manicule2.jpg Graphic file (type bmp)
 File: imagenes/manicule2.jpg Graphic file (type bmp)
 <imagenes/manicule2.jpg>
 
-Underfull \hbox (badness 10000) in paragraph at lines 4678--4683
+Underfull \hbox (badness 10000) in paragraph at lines 4679--4684
 \TU/lmtt/m/n/10 este  orden, de manera que un parámetro que precede a la función
  []
 
@@ -1016,41 +1016,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 4678--4683
 File: imagenes/manicule2.jpg Graphic file (type bmp)
 <imagenes/manicule2.jpg>
 [100] [101]
-Underfull \vbox (badness 10000) detected at line 4852
+Underfull \vbox (badness 10000) detected at line 4853
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4852
+Underfull \vbox (badness 10000) detected at line 4853
  []
 
 [102] [103]
 File: imagenes/manicule2.jpg Graphic file (type bmp)
 <imagenes/manicule2.jpg>
 
-Package natbib Warning: Citation `tidy' on page 104 undefined on input line 4934.
+Package natbib Warning: Citation `tidy' on page 104 undefined on input line 4935.
 
 [104]
-Underfull \hbox (badness 10000) in paragraph at lines 5015--5018
+Underfull \hbox (badness 10000) in paragraph at lines 5016--5019
 
  []
 
 [105]
-Underfull \hbox (badness 10000) in paragraph at lines 5046--5049
+Underfull \hbox (badness 10000) in paragraph at lines 5047--5050
 
  []
 
 [106]
-Underfull \hbox (badness 10000) in paragraph at lines 5118--5120
+Underfull \hbox (badness 10000) in paragraph at lines 5119--5121
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5120--5123
+Underfull \hbox (badness 10000) in paragraph at lines 5121--5124
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5123--5126
+Underfull \hbox (badness 10000) in paragraph at lines 5124--5127
 
  []
 
@@ -1061,7 +1061,7 @@ File: _main_files/figure-latex/unnamed-chunk-118-1.pdf Graphic file (type pdf)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [108]
-Overfull \vbox (1.45401pt too high) detected at line 5205
+Overfull \vbox (1.45401pt too high) detected at line 5206
  []
 
 [109]
@@ -1079,7 +1079,16 @@ File: imagenes/manicule2.jpg Graphic file (type bmp)
 [114] [115]
 Underfull \vbox (badness 1048) has occurred while \output is active []
 
-[116] [117] [118] [119] (./_main.bbl [120] [121] [122
+[116] [117] [118] [119] [120] [121] [122
+
+]
+Chapter 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 5765--5767
+
+ []
+
+(./_main.bbl [123] [124
 
 ]
 
@@ -1089,17 +1098,17 @@ Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
 Package natbib Warning: There were undefined citations.
 
-[123] (./_main.aux)
+[125] (./_main.aux)
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 9CA724B5DAA6851ADA8F14CE64BD60C2;3136.
+(rerunfilecheck)             Checksum: 73A983805635DB6E0C3D52FD5436CFD6;3379.
  ) 
 Here is how much of TeX's memory you used:
- 17658 strings out of 478687
- 325140 string characters out of 5848403
+ 17661 strings out of 478687
+ 325182 string characters out of 5848403
  1873007 words of memory out of 5000000
- 37499 multiletter control sequences out of 15000+600000
+ 37502 multiletter control sequences out of 15000+600000
  518778 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,6n,121p,581b,474s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.pdf (123 pages).
+Output written on _main.pdf (125 pages).

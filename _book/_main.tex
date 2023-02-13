@@ -117,7 +117,7 @@
 
 \title{AIS: Capacitación de R}
 \author{Oliab Herrera Coria}
-\date{2023-02-09}
+\date{2023-02-13}
 
 \begin{document}
 \maketitle
@@ -507,10 +507,11 @@ Para obtener un listado de los archivos que contiene la ruta establecida se usa 
 \begin{verbatim}
 ##  [1] "_book"               "_bookdown_files"     "_bookdown.yml"      
 ##  [4] "_main_files"         "_main.log"           "_main.Rmd"          
-##  [7] "_output.yml"         "01_manipulacion.Rmd" "book.bib"           
-## [10] "capacitacion.Rproj"  "css"                 "data"               
-## [13] "imagenes"            "index.Rmd"           "packages.bib"       
-## [16] "preamble.tex"        "README.md"           "style.css"
+##  [7] "_output.yml"         "01_manipulacion.Rmd" "02_tarea.Rmd"       
+## [10] "book.bib"            "capacitacion.Rproj"  "css"                
+## [13] "data"                "imagenes"            "index.Rmd"          
+## [16] "packages.bib"        "preamble.tex"        "README.md"          
+## [19] "style.css"
 \end{verbatim}
 
 \hypertarget{opciuxf3n-2-proyecto-de-r.}{%
@@ -4020,7 +4021,7 @@ paquete \texttt{readr} hacemos:
 ##         guess_max = guess_max, show_col_types = show_col_types, 
 ##         progress = progress, altrep = lazy, num_threads = num_threads)
 ## }
-## <bytecode: 0x7f8484ec9fa8>
+## <bytecode: 0x7fd033fdf7b0>
 ## <environment: namespace:readr>
 \end{verbatim}
 
@@ -5748,6 +5749,42 @@ En las buenas prácticas es importante tomar en cuenta los siguientes puntos:
 \item
   \href{https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf}{Data Transformation Cheat Sheet},
   RStudio.
+\end{itemize}
+
+\hypertarget{tarea-1}{%
+\chapter{Tarea 1}\label{tarea-1}}
+
+\hypertarget{estructuras-de-datos}{%
+\section{Estructuras de Datos}\label{estructuras-de-datos}}
+
+\begin{itemize}
+\tightlist
+\item
+  Crea un Script nuevo y llámalo ``Tarea\_tunombre.R''.
+\item
+  Descarga el archivo ``crimen\_mexico.csv'' dándo clic en esta \href{https://www.dropbox.com/s/nq3sg9gnvis3ezy/crimen_mexico.csv?dl=1}{liga} .\\
+\item
+  Carga la librería \textbf{readr}.
+\item
+  Utiliza la función \textbf{read\_csv} para cargar el archivo ``crimen\_mexico.csv''. Ojo: recuerda asignarlo a una variable \textbf{datos \textless- read\_csv(``path al archivo'')}.
+\item
+  Utiliza la función \textbf{summary()} para ver qué variables tienen NA.
+\item
+  Usa lo visto en clase para quitar las filas con variables faltantes.
+\item
+  Contesta las siguientes preguntas:
+\item
+  ¿De qué años hay información?
+\item
+  ¿Cuál fue el total de crimenes en 2022 y 2021?
+\item
+  Haz un subset de datos considerando solamente los datos de 2022.
+\item
+  ¿Cuál fue el total de delitos por estado?
+\item
+  ¿Cuál fue el promedio de delitos por mes?
+\item
+  ¿Cuál fue el tipo de delitos con mayor y menor incidencia?
 \end{itemize}
 
   \bibliography{book.bib,packages.bib}

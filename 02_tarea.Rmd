@@ -1,0 +1,17 @@
+# Tarea 1
+
+## Estructuras de Datos
+
+- Crea un Script nuevo y llámalo "Tarea_tunombre.R". 
+- Descarga el archivo "crimen_mexico.csv" dándo clic en esta [liga](https://www.dropbox.com/s/nq3sg9gnvis3ezy/crimen_mexico.csv?dl=1) .  
+- Carga la librería **readr**. 
+- Utiliza la función **read_csv** para cargar el archivo "crimen_mexico.csv". Ojo: recuerda asignarlo a una variable **datos <- read_csv("path al archivo")**. 
+- Utiliza la función **summary()** para ver qué variables tienen NA. 
+- Usa lo visto en clase para quitar las filas con variables faltantes. 
+- Contesta las siguientes preguntas: 
++ ¿De qué años hay información?
++ ¿Cuál fue el total de crimenes en 2022 y 2021?
++ Haz un subset de datos considerando solamente los datos de 2022. 
++ ¿Cuál fue el total de delitos por estado?
++ ¿Cuál fue el promedio de delitos por mes?
++ ¿Cuál fue el tipo de delitos con mayor y menor incidencia?
