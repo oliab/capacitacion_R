@@ -2,6 +2,7 @@
 
 ```{r setup, include = FALSE}
 library(tidyverse)
+library(readr)
 knitr::opts_chunk$set(
   comment = "#>",
   collapse = TRUE,
@@ -29,6 +30,60 @@ estas tareas, y entender que estructura en los datos es más conveniente para
 trabajar.
 
 ## Transformación de datos
+
+### Datos Tidy {-}
+
+Una base de datos tidy es una base de datos en la cuál:
+
+- **Cada vararible que se medida debe estar en una columna.** 
+- **Cada observación distinta de esa variable debe estar en una fila diferente.** 
+- **Cada valor debe de estar en su propia celda**
+
+En general, la forma en que representaríamos una base de datos tidy en R es usando un data frame.
+
+![](imagenes/tidy.png)
+
+Por ejemplo, los datos del Secretariado ejecutivo:
+
+- Datos con la misma variable en diferentes columnas
+```{r echo = F, results = 'show'}
+
+datos <-  read_csv(
+    "data/estatal.csv",
+    locale = readr::locale(encoding = "latin1"),
+    show_col_types = FALSE
+  ) %>% filter(Año==2021)
+
+
+print(head(datos))
+
+```
+
+```{r echo = F, results = 'show'}
+print(datos %>% 
+  gather("mes","total_delitos",Enero:Diciembre) %>% 
+  head(20))
+```
+
+```{r echo = F, results = 'show'}
+datos %>% 
+  gather("mes","total_delitos",Enero:Diciembre) %>% 
+  group_by(Entidad,`Tipo de delito`) %>% 
+  slice(1) %>% 
+  select(Entidad,`Tipo de delito`, total_delitos ) %>% 
+  unique() %>% 
+  spread(Entidad,total_delitos)
+```
+
+```{r echo = F, results = 'show'}
+
+estado <- c("Estado de México","Estado de México","Estado de México", NA,NA,NA)
+municipio <- c(NA,NA,NA,"Toluca","Toluca","Toluca")
+mes <- c("Enero", "Febrero","Marzo","Enero", "Febrero","Marzo")
+total_delitos<-c(143,234,532,12,4,55)
+
+data.frame(estado,municipio, mes, total_delitos)
+```
 
 ### Separa-aplica-combina (_split-apply-combine_) {-}
 

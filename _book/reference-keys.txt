@@ -37,5 +37,6 @@ manipulación-y-limpieza-de-datos.
 manipulación-y-agrupación-de-datos
 transformación-de-datos
 datos-limpios
-tarea-1
-estructuras-de-datos
+tarea
+tarea-1-estructuras-de-datos
+respuesta-tarea-1-estructuras-de-datos

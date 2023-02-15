@@ -117,7 +117,7 @@
 
 \title{AIS: Capacitación de R}
 \author{Oliab Herrera Coria}
-\date{2023-02-13}
+\date{2023-02-15}
 
 \begin{document}
 \maketitle
@@ -4021,7 +4021,7 @@ paquete \texttt{readr} hacemos:
 ##         guess_max = guess_max, show_col_types = show_col_types, 
 ##         progress = progress, altrep = lazy, num_threads = num_threads)
 ## }
-## <bytecode: 0x7fd033fdf7b0>
+## <bytecode: 0x7fb0f71c16f8>
 ## <environment: namespace:readr>
 \end{verbatim}
 
@@ -4073,6 +4073,53 @@ trabajar.
 
 \hypertarget{transformaciuxf3n-de-datos}{%
 \section{Transformación de datos}\label{transformaciuxf3n-de-datos}}
+
+\hypertarget{datos-tidy}{%
+\subsection*{Datos Tidy}\label{datos-tidy}}
+\addcontentsline{toc}{subsection}{Datos Tidy}
+
+Una base de datos tidy es una base de datos en la cuál:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Cada vararible que se medida debe estar en una columna.}
+\item
+  \textbf{Cada observación distinta de esa variable debe estar en una fila diferente.}
+\item
+  \textbf{Cada valor debe de estar en su propia celda}
+\end{itemize}
+
+En general, la forma en que representaríamos una base de datos tidy en R es usando un data frame.
+
+\includegraphics{imagenes/tidy.png}
+
+Por ejemplo, los datos del Secretariado ejecutivo:
+
+\begin{verbatim}
+#> # A tibble: 6 x 19
+#>     Año Clave_Ent Entidad    Bien ~1 Tipo ~2 Subti~3 Modal~4 Enero Febrero Marzo
+#>   <dbl>     <dbl> <chr>      <chr>   <chr>   <chr>   <chr>   <dbl>   <dbl> <dbl>
+#> 1  2015         1 Aguascali~ La vid~ Homici~ Homici~ Con ar~     3       0     2
+#> 2  2015         1 Aguascali~ La vid~ Homici~ Homici~ Con ar~     1       1     0
+#> 3  2015         1 Aguascali~ La vid~ Homici~ Homici~ Con ot~     0       0     2
+#> 4  2015         1 Aguascali~ La vid~ Homici~ Homici~ No esp~     2       0     0
+#> 5  2015         1 Aguascali~ La vid~ Homici~ Homici~ Con ar~     0       0     0
+#> 6  2015         1 Aguascali~ La vid~ Homici~ Homici~ Con ar~     0       0     0
+#> # ... with 9 more variables: Abril <dbl>, Mayo <dbl>, Junio <dbl>, Julio <dbl>,
+#> #   Agosto <dbl>, Septiembre <dbl>, Octubre <dbl>, Noviembre <dbl>,
+#> #   Diciembre <dbl>, and abbreviated variable names
+#> #   1: `Bien jurídico afectado`, 2: `Tipo de delito`, 3: `Subtipo de delito`,
+#> #   4: Modalidad
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(datos }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{gather}\NormalTok{(}\StringTok{"mes"}\NormalTok{,}\StringTok{"total\_delitos"}\NormalTok{,Enero}\SpecialCharTok{:}\NormalTok{Diciembre) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{head}\NormalTok{(}\DecValTok{20}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{separa-aplica-combina-split-apply-combine}{%
 \subsection*{\texorpdfstring{Separa-aplica-combina (\emph{split-apply-combine})}{Separa-aplica-combina (split-apply-combine)}}\label{separa-aplica-combina-split-apply-combine}}
@@ -5173,7 +5220,7 @@ construir gráficas y resúmenes.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-118-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-120-1} \end{center}
 
 Podemos hacer gráficas más interesantes si creamos nuevas variables:
 
@@ -5205,7 +5252,7 @@ Podemos hacer gráficas más interesantes si creamos nuevas variables:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-119-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-121-1} \end{center}
 
 En el código de arriba utilizamos las funciones \texttt{group\_by}, \texttt{filter} y \texttt{mutate}
 que estudiaremos más adelante. Por ahora concentremonos en \texttt{gather} y \texttt{spread}.
@@ -5327,7 +5374,7 @@ Nuevamente, podemos hacer gráficas facilmente.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-123-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-125-1} \end{center}
 
 \hypertarget{una-columna-asociada-a-muxe1s-de-una-variable}{%
 \subsection*{Una columna asociada a más de una variable}\label{una-columna-asociada-a-muxe1s-de-una-variable}}
@@ -5751,11 +5798,11 @@ En las buenas prácticas es importante tomar en cuenta los siguientes puntos:
   RStudio.
 \end{itemize}
 
-\hypertarget{tarea-1}{%
-\chapter{Tarea 1}\label{tarea-1}}
+\hypertarget{tarea}{%
+\chapter{Tarea}\label{tarea}}
 
-\hypertarget{estructuras-de-datos}{%
-\section{Estructuras de Datos}\label{estructuras-de-datos}}
+\hypertarget{tarea-1-estructuras-de-datos}{%
+\section{Tarea 1: Estructuras de Datos}\label{tarea-1-estructuras-de-datos}}
 
 \begin{itemize}
 \tightlist
@@ -5786,6 +5833,214 @@ En las buenas prácticas es importante tomar en cuenta los siguientes puntos:
 \item
   ¿Cuál fue el tipo de delitos con mayor y menor incidencia?
 \end{itemize}
+
+\hypertarget{respuesta-tarea-1-estructuras-de-datos}{%
+\section{Respuesta Tarea 1: Estructuras de Datos}\label{respuesta-tarea-1-estructuras-de-datos}}
+
+Carga la librería \textbf{readr}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(readr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Utiliza la función \textbf{read\_csv} para cargar el archivo ``crimen\_mexico.csv''. Ojo: recuerda asignarlo a una variable \textbf{datos \textless- read\_csv(``path al archivo'')}.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{datos }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/crimen\_mexico.csv"}\NormalTok{)}
+\CommentTok{\#\textgreater{} Rows: 75264 Columns: 6}
+\CommentTok{\#\textgreater{} {-}{-} Column specification {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\CommentTok{\#\textgreater{} Delimiter: ","}
+\CommentTok{\#\textgreater{} chr  (3): entidad, tipo\_delito, mes}
+\CommentTok{\#\textgreater{} dbl  (2): año, total\_Delitos}
+\CommentTok{\#\textgreater{} date (1): fecha}
+\CommentTok{\#\textgreater{} }
+\CommentTok{\#\textgreater{} i Use \textasciigrave{}spec()\textasciigrave{} to retrieve the full column specification for this data.}
+\CommentTok{\#\textgreater{} i Specify the column types or set \textasciigrave{}show\_col\_types = FALSE\textasciigrave{} to quiet this message.}
+\FunctionTok{head}\NormalTok{(datos)}
+\CommentTok{\#\textgreater{} \# A tibble: 6 x 6}
+\CommentTok{\#\textgreater{}     año entidad        tipo\_delito mes     fecha      total\_Delitos}
+\CommentTok{\#\textgreater{}   \textless{}dbl\textgreater{} \textless{}chr\textgreater{}          \textless{}chr\textgreater{}       \textless{}chr\textgreater{}   \textless{}date\textgreater{}             \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{} 1  2021 Aguascalientes Homicidio   Enero   2021{-}01{-}01             2}
+\CommentTok{\#\textgreater{} 2  2021 Aguascalientes Homicidio   Febrero 2021{-}02{-}01             1}
+\CommentTok{\#\textgreater{} 3  2021 Aguascalientes Homicidio   Marzo   2021{-}03{-}01             4}
+\CommentTok{\#\textgreater{} 4  2021 Aguascalientes Homicidio   Abril   2021{-}04{-}01             3}
+\CommentTok{\#\textgreater{} 5  2021 Aguascalientes Homicidio   Mayo    2021{-}05{-}01             4}
+\CommentTok{\#\textgreater{} 6  2021 Aguascalientes Homicidio   Junio   2021{-}06{-}01             2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Utiliza la función \textbf{summary()} para ver qué variables tienen NA.
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(datos)}
+\CommentTok{\#\textgreater{}       año         entidad          tipo\_delito            mes           }
+\CommentTok{\#\textgreater{}  Min.   :2021   Length:75264       Length:75264       Length:75264      }
+\CommentTok{\#\textgreater{}  1st Qu.:2021   Class :character   Class :character   Class :character  }
+\CommentTok{\#\textgreater{}  Median :2022   Mode  :character   Mode  :character   Mode  :character  }
+\CommentTok{\#\textgreater{}  Mean   :2022                                                           }
+\CommentTok{\#\textgreater{}  3rd Qu.:2022                                                           }
+\CommentTok{\#\textgreater{}  Max.   :2022                                                           }
+\CommentTok{\#\textgreater{}                                                                         }
+\CommentTok{\#\textgreater{}      fecha            total\_Delitos    }
+\CommentTok{\#\textgreater{}  Min.   :2021{-}01{-}01   Min.   :   0.00  }
+\CommentTok{\#\textgreater{}  1st Qu.:2021{-}06{-}23   1st Qu.:   0.00  }
+\CommentTok{\#\textgreater{}  Median :2021{-}12{-}16   Median :   2.00  }
+\CommentTok{\#\textgreater{}  Mean   :2021{-}12{-}16   Mean   :  55.53  }
+\CommentTok{\#\textgreater{}  3rd Qu.:2022{-}06{-}08   3rd Qu.:  30.00  }
+\CommentTok{\#\textgreater{}  Max.   :2022{-}12{-}01   Max.   :8421.00  }
+\CommentTok{\#\textgreater{}                       NA\textquotesingle{}s   :1233}
+\end{Highlighting}
+\end{Shaded}
+
+Usa lo visto en clase para quitar las filas con variables faltantes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Usando complete\_cases}
+
+\NormalTok{completos }\OtherTok{\textless{}{-}} \FunctionTok{complete.cases}\NormalTok{(datos)}
+
+\NormalTok{datos }\OtherTok{\textless{}{-}}\NormalTok{ datos[completos,] }
+\FunctionTok{summary}\NormalTok{(datos)}
+\CommentTok{\#\textgreater{}       año         entidad          tipo\_delito            mes           }
+\CommentTok{\#\textgreater{}  Min.   :2021   Length:74031       Length:74031       Length:74031      }
+\CommentTok{\#\textgreater{}  1st Qu.:2021   Class :character   Class :character   Class :character  }
+\CommentTok{\#\textgreater{}  Median :2021   Mode  :character   Mode  :character   Mode  :character  }
+\CommentTok{\#\textgreater{}  Mean   :2021                                                           }
+\CommentTok{\#\textgreater{}  3rd Qu.:2022                                                           }
+\CommentTok{\#\textgreater{}  Max.   :2022                                                           }
+\CommentTok{\#\textgreater{}      fecha            total\_Delitos    }
+\CommentTok{\#\textgreater{}  Min.   :2021{-}01{-}01   Min.   :   0.00  }
+\CommentTok{\#\textgreater{}  1st Qu.:2021{-}06{-}01   1st Qu.:   0.00  }
+\CommentTok{\#\textgreater{}  Median :2021{-}12{-}01   Median :   2.00  }
+\CommentTok{\#\textgreater{}  Mean   :2021{-}12{-}15   Mean   :  55.53  }
+\CommentTok{\#\textgreater{}  3rd Qu.:2022{-}06{-}01   3rd Qu.:  30.00  }
+\CommentTok{\#\textgreater{}  Max.   :2022{-}12{-}01   Max.   :8421.00}
+\end{Highlighting}
+\end{Shaded}
+
+¿De qué años hay información?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{datos2021 }\OtherTok{\textless{}{-}}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(datos, año}\SpecialCharTok{==}\DecValTok{2021}\NormalTok{)}
+\NormalTok{datos2022 }\OtherTok{\textless{}{-}}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(datos, año}\SpecialCharTok{==}\DecValTok{2022}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(datos2021)}
+\CommentTok{\#\textgreater{} [1] 37039     6}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(datos2022)}
+\CommentTok{\#\textgreater{} [1] 36992     6}
+\end{Highlighting}
+\end{Shaded}
+
+¿Cuál fue el total de crimenes en 2022 y 2021?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(datos2021}\SpecialCharTok{$}\NormalTok{total\_Delitos)}
+\CommentTok{\#\textgreater{} [1] 2012957}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(datos2022}\SpecialCharTok{$}\NormalTok{total\_Delitos)}
+\CommentTok{\#\textgreater{} [1] 2098318}
+\end{Highlighting}
+\end{Shaded}
+
+Haz un subset de datos considerando solamente los datos de 2022.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{datos2022 }\OtherTok{\textless{}{-}}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(datos, año}\SpecialCharTok{==}\DecValTok{2022}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+¿Cuál fue el total de delitos por estado?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Aguascalientes }\OtherTok{\textless{}{-}}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(datos2022, entidad}\SpecialCharTok{==}\StringTok{"Aguascalientes"}\NormalTok{)}
+\FunctionTok{sum}\NormalTok{(Aguascalientes}\SpecialCharTok{$}\NormalTok{total\_Delitos)}
+\CommentTok{\#\textgreater{} [1] 38854}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Baja\_California }\OtherTok{\textless{}{-}}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(datos2022, entidad}\SpecialCharTok{==}\StringTok{"Baja California"}\NormalTok{)}
+\FunctionTok{sum}\NormalTok{(Baja\_California}\SpecialCharTok{$}\NormalTok{total\_Delitos)}
+\CommentTok{\#\textgreater{} [1] 106005}
+\end{Highlighting}
+\end{Shaded}
+
+¿Cuál fue el promedio de delitos por mes?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{enero }\OtherTok{\textless{}{-}}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(datos2022, mes}\SpecialCharTok{==}\StringTok{"Enero"}\NormalTok{)}
+\FunctionTok{sum}\NormalTok{(enero}\SpecialCharTok{$}\NormalTok{total\_Delitos)}
+\CommentTok{\#\textgreater{} [1] 156081}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{febrero }\OtherTok{\textless{}{-}}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{filter}\NormalTok{(datos, mes}\SpecialCharTok{==}\StringTok{"Febrero"}\NormalTok{)}
+\FunctionTok{sum}\NormalTok{(febrero}\SpecialCharTok{$}\NormalTok{total\_Delitos)}
+\CommentTok{\#\textgreater{} [1] 303313}
+\end{Highlighting}
+\end{Shaded}
+
+¿Cuál fue el tipo de delitos con mayor y menor incidencia?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+
+\NormalTok{datos2022 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(tipo\_delito) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{total\_Delitos=}\FunctionTok{sum}\NormalTok{(total\_Delitos))}
+\CommentTok{\#\textgreater{} \# A tibble: 40 x 2}
+\CommentTok{\#\textgreater{}    tipo\_delito                               total\_Delitos}
+\CommentTok{\#\textgreater{}    \textless{}chr\textgreater{}                                             \textless{}dbl\textgreater{}}
+\CommentTok{\#\textgreater{}  1 Aborto                                              808}
+\CommentTok{\#\textgreater{}  2 Abuso de confianza                                30632}
+\CommentTok{\#\textgreater{}  3 Abuso sexual                                      32831}
+\CommentTok{\#\textgreater{}  4 Acoso sexual                                      10908}
+\CommentTok{\#\textgreater{}  5 Allanamiento de morada                            13786}
+\CommentTok{\#\textgreater{}  6 Amenazas                                         132652}
+\CommentTok{\#\textgreater{}  7 Contra el medio ambiente                           2298}
+\CommentTok{\#\textgreater{}  8 Corrupción de menores                              2911}
+\CommentTok{\#\textgreater{}  9 Daño a la propiedad                              144829}
+\CommentTok{\#\textgreater{} 10 Delitos cometidos por servidores públicos         20145}
+\CommentTok{\#\textgreater{} \# ... with 30 more rows}
+\end{Highlighting}
+\end{Shaded}
+
 
   \bibliography{book.bib,packages.bib}
 
