@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.8)  9 MAR 2023 11:43
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.8)  6 JUN 2023 12:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -717,11 +717,11 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 3.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 3.
-)
+[3])
 \tf@toc=\write5
 \openout5 = `_main.toc'.
 
-[3] [4] [5
+[4] [5
 
 ] [6]
 Chapter 1.
@@ -754,18 +754,18 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 497--497
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 515--515
+Overfull \hbox (6.75pt too wide) in paragraph at lines 517--517
 []\TU/lmtt/m/n/10 ##  [1] "_book"               "_bookdown_files"     "_bookdown.yml"[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 515--515
+Overfull \hbox (1.5pt too wide) in paragraph at lines 517--517
 []\TU/lmtt/m/n/10 ##  [7] "_output.yml"         "01_manipulacion.Rmd" "02_tarea.Rmd"[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 515--515
-[]\TU/lmtt/m/n/10 ## [16] "imagenes"            "index.Rmd"           "packages.bib"[] 
+Overfull \hbox (33.0pt too wide) in paragraph at lines 517--517
+[]\TU/lmtt/m/n/10 ## [10] "03_graficas.Rmd"     "book.bib"            "capacitacion.Rproj"[] 
  []
 
 File: imagenes/09.png Graphic file (type bmp)
@@ -776,75 +776,75 @@ File: imagenes/10.png Graphic file (type bmp)
 [17] [18] [19] [20]
 Chapter 2.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 653.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 655.
 
 LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 653.
+(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 655.
 
 [21
 
 ] [22] [23]
-Overfull \hbox (59.25pt too wide) in paragraph at lines 876--876
+Overfull \hbox (59.25pt too wide) in paragraph at lines 878--878
 []\TU/lmtt/m/n/10 ## Warning in x + y: longer object length is not a multiple of shorter object[] 
  []
 
 [24] [25] [26]
-Underfull \hbox (badness 1354) in paragraph at lines 1089--1090
+Underfull \hbox (badness 1354) in paragraph at lines 1091--1092
 []\TU/lmr/m/n/10 Por último, podemos evaluar el tipo/clase de objeto con las funciones
  []
 
 [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76]
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3614--3614
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3616--3616
 []\TU/lmtt/m/n/10 ##   c..Economía....ADE....Sociología....Magisterio.. c.25..27..25..24.[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3614--3614
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3616--3616
 []\TU/lmtt/m/n/10 ## 1                                         Economía                25[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3614--3614
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3616--3616
 []\TU/lmtt/m/n/10 ## 2                                              ADE                27[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3614--3614
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3616--3616
 []\TU/lmtt/m/n/10 ## 3                                       Sociología                25[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 3614--3614
+Overfull \hbox (27.75pt too wide) in paragraph at lines 3616--3616
 []\TU/lmtt/m/n/10 ## 4                                       Magisterio                24[] 
  []
 
 [77] [78] [79]
-Overfull \hbox (6.75pt too wide) in paragraph at lines 3809--3809
+Overfull \hbox (6.75pt too wide) in paragraph at lines 3811--3811
 []\TU/lmtt/m/n/10 ##  Min.   :  1.00   Min.   :  7.0   Min.   : 1.700   Min.   :56.00[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 3809--3809
+Overfull \hbox (6.75pt too wide) in paragraph at lines 3811--3811
 []\TU/lmtt/m/n/10 ##  1st Qu.: 18.00   1st Qu.:115.8   1st Qu.: 7.400   1st Qu.:72.00[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 3809--3809
+Overfull \hbox (6.75pt too wide) in paragraph at lines 3811--3811
 []\TU/lmtt/m/n/10 ##  Median : 31.50   Median :205.0   Median : 9.700   Median :79.00[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 3809--3809
+Overfull \hbox (6.75pt too wide) in paragraph at lines 3811--3811
 []\TU/lmtt/m/n/10 ##  Mean   : 42.13   Mean   :185.9   Mean   : 9.958   Mean   :77.88[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 3809--3809
+Overfull \hbox (6.75pt too wide) in paragraph at lines 3811--3811
 []\TU/lmtt/m/n/10 ##  3rd Qu.: 63.25   3rd Qu.:258.8   3rd Qu.:11.500   3rd Qu.:85.00[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 3809--3809
+Overfull \hbox (6.75pt too wide) in paragraph at lines 3811--3811
 []\TU/lmtt/m/n/10 ##  Max.   :168.00   Max.   :334.0   Max.   :20.700   Max.   :97.00[] 
  []
 
@@ -852,99 +852,99 @@ Overfull \hbox (6.75pt too wide) in paragraph at lines 3809--3809
 File: imagenes/analisis.png Graphic file (type bmp)
 <imagenes/analisis.png>
 [82]
-Underfull \hbox (badness 2126) in paragraph at lines 3975--3981
+Underfull \hbox (badness 2126) in paragraph at lines 3977--3983
 \TU/lmtt/m/n/10 install.packages("nombre_paquete")\TU/lmr/m/n/10 ). Una vez instalados, podemos
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (38.25pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ## function (file, col_names = TRUE, col_types = NULL, col_select = NULL,[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (75.0pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ##     id = NULL, locale = default_locale(), na = c("", "NA"), quoted_na = TRUE,[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (38.25pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ##     quote = "\"", comment = "", trim_ws = TRUE, skip = 0, n_max = Inf,[] 
  []
 
 
-Overfull \hbox (132.75pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (132.75pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ##     guess_max = min(1000, n_max), name_repair = "unique", num_threads = readr_threads(),[] 
  []
 
 
-Overfull \hbox (33.0pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (33.0pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ##     progress = show_progress(), show_col_types = should_show_types(),[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (17.25pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ##         tokenizer <- tokenizer_csv(na = na, quoted_na = quoted_na,[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (6.75pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ##             quote = quote, comment = comment, trim_ws = trim_ws,[] 
  []
 
 
-Overfull \hbox (33.0pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (33.0pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ##         return(read_delimited(file, tokenizer, col_names = col_names,[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (6.75pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ##             col_types = col_types, locale = locale, skip = skip,[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ##             skip_empty_rows = skip_empty_rows, comment = comment,[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (38.25pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ##             n_max = n_max, guess_max = guess_max, progress = progress,[] 
  []
 
 [83]
-Overfull \hbox (64.5pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (64.5pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ##         lifecycle::deprecate_soft("2.0.0", "readr::read_csv(quoted_na = )")[] 
  []
 
 
-Overfull \hbox (96.0pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (96.0pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ##     vroom::vroom(file, delim = ",", col_names = col_names, col_types = col_types,[] 
  []
 
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ##         n_max = n_max, na = na, quote = quote, comment = comment,[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (48.75pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ##         escape_double = TRUE, escape_backslash = FALSE, locale = locale,[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (1.5pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ##         guess_max = guess_max, show_col_types = show_col_types,[] 
  []
 
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 4026--4026
+Overfull \hbox (38.25pt too wide) in paragraph at lines 4028--4028
 []\TU/lmtt/m/n/10 ##         progress = progress, altrep = lazy, num_threads = num_threads)[] 
  []
 
 File: imagenes/tidyverse.png Graphic file (type bmp)
 <imagenes/tidyverse.png>
 
-Overfull \hbox (693.37077pt too wide) in paragraph at lines 4049--4050
+Overfull \hbox (693.37077pt too wide) in paragraph at lines 4051--4052
 [][] 
  []
 
@@ -959,283 +959,283 @@ Chapter 3.
 File: imagenes/tidy.png Graphic file (type bmp)
 <imagenes/tidy.png>
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4120--4120
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4122--4122
 []\TU/lmtt/m/n/10 #>     Año Clave_Ent Entidad    Bien ~1 Tipo ~2 Subti~3 Modal~4 Enero Febrero Marzo[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4120--4120
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4122--4122
 []\TU/lmtt/m/n/10 #>   <dbl>     <dbl> <chr>      <chr>   <chr>   <chr>   <chr>   <dbl>   <dbl> <dbl>[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4120--4120
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4122--4122
 []\TU/lmtt/m/n/10 #> 1  2021         1 Aguascali~ La vid~ Homici~ Homici~ Con ar~     2       1     4[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4120--4120
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4122--4122
 []\TU/lmtt/m/n/10 #> 2  2021         1 Aguascali~ La vid~ Homici~ Homici~ Con ar~     1       1     1[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4120--4120
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4122--4122
 []\TU/lmtt/m/n/10 #> 3  2021         1 Aguascali~ La vid~ Homici~ Homici~ Con ot~     0       3     1[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4120--4120
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4122--4122
 []\TU/lmtt/m/n/10 #> 4  2021         1 Aguascali~ La vid~ Homici~ Homici~ No esp~     0       0     0[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4120--4120
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4122--4122
 []\TU/lmtt/m/n/10 #> 5  2021         1 Aguascali~ La vid~ Homici~ Homici~ Con ar~     0       0     0[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4120--4120
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4122--4122
 []\TU/lmtt/m/n/10 #> 6  2021         1 Aguascali~ La vid~ Homici~ Homici~ Con ar~     0       0     0[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 4120--4120
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4122--4122
 []\TU/lmtt/m/n/10 #> # ... with 9 more variables: Abril <dbl>, Mayo <dbl>, Junio <dbl>, Julio <dbl>,[] 
  []
 
 
-Overfull \hbox (22.5pt too wide) in paragraph at lines 4120--4120
+Overfull \hbox (22.5pt too wide) in paragraph at lines 4122--4122
 []\TU/lmtt/m/n/10 #> #   Agosto <dbl>, Septiembre <dbl>, Octubre <dbl>, Noviembre <dbl>,[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 4120--4120
+Overfull \hbox (75.0pt too wide) in paragraph at lines 4122--4122
 []\TU/lmtt/m/n/10 #> #   1: `Bien jurídico afectado`, 2: `Tipo de delito`, 3: `Subtipo de delito`,[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #>      Año Clave_Ent Entidad        Bien j~1 Tipo ~2 Subti~3 Modal~4 mes   total~5[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #>    <dbl>     <dbl> <chr>          <chr>    <chr>   <chr>   <chr>   <chr>   <dbl>[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #>  1  2021         1 Aguascalientes La vida~ Homici~ Homici~ Con ar~ Enero       2[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #>  2  2021         1 Aguascalientes La vida~ Homici~ Homici~ Con ar~ Enero       1[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #>  3  2021         1 Aguascalientes La vida~ Homici~ Homici~ Con ot~ Enero       0[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #>  4  2021         1 Aguascalientes La vida~ Homici~ Homici~ No esp~ Enero       0[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #>  5  2021         1 Aguascalientes La vida~ Homici~ Homici~ Con ar~ Enero       0[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #>  6  2021         1 Aguascalientes La vida~ Homici~ Homici~ Con ar~ Enero       0[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #>  7  2021         1 Aguascalientes La vida~ Homici~ Homici~ En acc~ Enero       8[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #>  8  2021         1 Aguascalientes La vida~ Homici~ Homici~ Con ot~ Enero       0[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #>  9  2021         1 Aguascalientes La vida~ Homici~ Homici~ No esp~ Enero       0[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #> 10  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ Con ar~ Enero       5[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #> 11  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ Con ar~ Enero       7[] 
  []
 
 [88]
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #> 12  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ Con ot~ Enero     160[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #> 13  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ No esp~ Enero      56[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #> 14  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ Con ar~ Enero       0[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #> 15  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ Con ar~ Enero       0[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #> 16  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ En acc~ Enero      59[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #> 17  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ Con ot~ Enero       0[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #> 18  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ No esp~ Enero      18[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #> 19  2021         1 Aguascalientes La vida~ Femini~ Femini~ Con ar~ Enero       0[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #> 20  2021         1 Aguascalientes La vida~ Femini~ Femini~ Con ar~ Enero       1[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (17.25pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #> # ... with abbreviated variable names 1: `Bien jurídico afectado`,[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 4148--4148
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4150--4150
 []\TU/lmtt/m/n/10 #> #   2: `Tipo de delito`, 3: `Subtipo de delito`, 4: Modalidad, 5: total_delitos[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #>    Tipo de del~1 Aguas~2 Baja ~3 Baja ~4 Campe~5 Chiapas Chihu~6 Ciuda~7 Coahu~8[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #>    <chr>           <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #>  1 Aborto              0       1       1       0       3       1       8       0[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #>  2 Abuso de con~      50      29      12       0       4      60     302      52[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #>  3 Abuso sexual        0      70      20       3      17     103     206      46[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #>  4 Acoso sexual        0       0       8       0       7       0      86      15[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #>  5 Allanamiento~      35     185       9       6       8      70      47      39[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #>  6 Amenazas          227     324     102       5      26     248    1110     359[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #>  7 Contra el me~       2       0       0       0       1      18      45       0[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #>  8 Corrupción d~       5      50       3       0       3       5      21       3[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #>  9 Daño a la pr~     317     576      85      12      67     656     697     459[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (90.75pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #> 10 Delitos come~      47      69      18       0      10     134     307      13[] 
  []
 
 
-Overfull \hbox (48.75pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (48.75pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #> # ... with 30 more rows, 24 more variables: Colima <dbl>, Durango <dbl>,[] 
  []
 
 
-Overfull \hbox (22.5pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (22.5pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #> #   Guanajuato <dbl>, Guerrero <dbl>, Hidalgo <dbl>, Jalisco <dbl>,[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (69.75pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #> #   México <dbl>, `Michoacán de Ocampo` <dbl>, Morelos <dbl>, Nayarit <dbl>,[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (27.75pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #> #   `Nuevo León` <dbl>, Oaxaca <dbl>, Puebla <dbl>, Querétaro <dbl>,[] 
  []
 
 
-Overfull \hbox (85.5pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (85.5pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #> #   `Quintana Roo` <dbl>, `San Luis Potosí` <dbl>, Sinaloa <dbl>, Sonora <dbl>,[] 
  []
 
 
-Overfull \hbox (1.5pt too wide) in paragraph at lines 4172--4172
+Overfull \hbox (1.5pt too wide) in paragraph at lines 4174--4174
 []\TU/lmtt/m/n/10 #> #   `Veracruz de Ignacio de la Llave` <dbl>, Yucatán <dbl>, ...[] 
  []
 
 
-Package natbib Warning: Citation `plyr' on page 89 undefined on input line 4189.
+Package natbib Warning: Citation `plyr' on page 89 undefined on input line 4191.
 
 
 Underfull \vbox (badness 2189) has occurred while \output is active []
 
 [89]
-Underfull \hbox (badness 10000) in paragraph at lines 4199--4201
+Underfull \hbox (badness 10000) in paragraph at lines 4201--4203
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4201--4203
+Underfull \hbox (badness 10000) in paragraph at lines 4203--4205
 
  []
 
@@ -1245,26 +1245,26 @@ File: imagenes/split-apply-combine.png Graphic file (type bmp)
 File: imagenes/importar_RStudio.png Graphic file (type bmp)
 <imagenes/importar_RStudio.png>
 [91]
-Underfull \vbox (badness 10000) detected at line 4364
+Underfull \vbox (badness 10000) detected at line 4366
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4364
+Underfull \vbox (badness 10000) detected at line 4366
  []
 
 [92]
-Underfull \vbox (badness 10000) detected at line 4364
+Underfull \vbox (badness 10000) detected at line 4366
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4364
+Underfull \vbox (badness 10000) detected at line 4366
  []
 
 [93] [94] [95]
 File: imagenes/transform-logical.png Graphic file (type bmp)
 <imagenes/transform-logical.png>
 
-Overfull \hbox (212.88542pt too wide) in paragraph at lines 4477--4477
+Overfull \hbox (212.88542pt too wide) in paragraph at lines 4479--4479
  [] 
  []
 
@@ -1283,7 +1283,7 @@ File: imagenes/manicule2.jpg Graphic file (type bmp)
 File: imagenes/manicule2.jpg Graphic file (type bmp)
 <imagenes/manicule2.jpg>
 
-Underfull \hbox (badness 10000) in paragraph at lines 4786--4791
+Underfull \hbox (badness 10000) in paragraph at lines 4788--4793
 \TU/lmtt/m/n/10 este  orden, de manera que un parámetro que precede a la función
  []
 
@@ -1291,41 +1291,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 4786--4791
 File: imagenes/manicule2.jpg Graphic file (type bmp)
 <imagenes/manicule2.jpg>
 [102] [103]
-Underfull \vbox (badness 10000) detected at line 4960
+Underfull \vbox (badness 10000) detected at line 4962
  []
 
 
-Underfull \vbox (badness 10000) detected at line 4960
+Underfull \vbox (badness 10000) detected at line 4962
  []
 
 [104] [105]
 File: imagenes/manicule2.jpg Graphic file (type bmp)
 <imagenes/manicule2.jpg>
 
-Package natbib Warning: Citation `tidy' on page 106 undefined on input line 5042.
+Package natbib Warning: Citation `tidy' on page 106 undefined on input line 5044.
 
 [106]
-Underfull \hbox (badness 10000) in paragraph at lines 5123--5126
+Underfull \hbox (badness 10000) in paragraph at lines 5125--5128
 
  []
 
 [107]
-Underfull \hbox (badness 10000) in paragraph at lines 5154--5157
+Underfull \hbox (badness 10000) in paragraph at lines 5156--5159
 
  []
 
 [108]
-Underfull \hbox (badness 10000) in paragraph at lines 5226--5228
+Underfull \hbox (badness 10000) in paragraph at lines 5228--5230
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5228--5231
+Underfull \hbox (badness 10000) in paragraph at lines 5230--5233
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5231--5234
+Underfull \hbox (badness 10000) in paragraph at lines 5233--5236
 
  []
 
@@ -1336,7 +1336,7 @@ File: _main_files/figure-latex/unnamed-chunk-122-1.pdf Graphic file (type pdf)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [110]
-Overfull \vbox (1.45401pt too high) detected at line 5313
+Overfull \vbox (1.45401pt too high) detected at line 5315
  []
 
 [111]
@@ -1351,19 +1351,111 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [114] [115]
 File: imagenes/manicule2.jpg Graphic file (type bmp)
 <imagenes/manicule2.jpg>
-[116] [117]
-Underfull \vbox (badness 1048) has occurred while \output is active []
-
-[118] [119] [120] [121] [122]
+[116] [117] [118] [119] [120] [121] [122]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 5863--5865
+Underfull \hbox (badness 10000) in paragraph at lines 5868--5870
 
  []
 
 [123
 
-] [124] [125] (./_main.bbl [126]
+] [124] [125] [126]
+Chapter 5.
+[127
+
+]
+File: _main_files/figure-latex/unnamed-chunk-157-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-157-1.pdf>
+[128]
+File: _main_files/figure-latex/unnamed-chunk-158-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-158-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[129]
+File: _main_files/figure-latex/unnamed-chunk-159-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-159-1.pdf>
+[130]
+File: _main_files/figure-latex/unnamed-chunk-160-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-160-1.pdf>
+[131]
+File: _main_files/figure-latex/unnamed-chunk-161-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-161-1.pdf>
+File: _main_files/figure-latex/unnamed-chunk-162-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-162-1.pdf>
+
+Underfull \vbox (badness 2359) has occurred while \output is active []
+
+[132]
+File: _main_files/figure-latex/unnamed-chunk-163-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-163-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[133]
+File: _main_files/figure-latex/unnamed-chunk-164-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-164-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[134]
+File: _main_files/figure-latex/unnamed-chunk-165-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-165-1.pdf>
+[135]
+File: _main_files/figure-latex/unnamed-chunk-166-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-166-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[136]
+File: _main_files/figure-latex/unnamed-chunk-167-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-167-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[137]
+File: _main_files/figure-latex/unnamed-chunk-168-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-168-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[138]
+File: _main_files/figure-latex/unnamed-chunk-169-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-169-1.pdf>
+
+Underfull \vbox (badness 2626) has occurred while \output is active []
+
+[139]
+File: _main_files/figure-latex/unnamed-chunk-170-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-170-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[140]
+File: _main_files/figure-latex/unnamed-chunk-171-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-171-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[141]
+File: _main_files/figure-latex/unnamed-chunk-172-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-172-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[142]
+File: _main_files/figure-latex/unnamed-chunk-173-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-173-1.pdf>
+[143]
+File: _main_files/figure-latex/unnamed-chunk-174-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-174-1.pdf>
+[144]
+File: _main_files/figure-latex/unnamed-chunk-175-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/unnamed-chunk-175-1.pdf>
+(./_main.bbl [145] [146
+
+]
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
@@ -1371,19 +1463,17 @@ Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
 Package natbib Warning: There were undefined citations.
 
-[127
-
-] (./_main.aux)
+[147] (./_main.aux)
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 9B61FBFB2E97F4B0F57E8D708F5F7BEE;3682.
+(rerunfilecheck)             Checksum: B00765F67340A689EAD6948900A40123;4780.
  ) 
 Here is how much of TeX's memory you used:
- 17671 strings out of 478683
- 325402 string characters out of 5848287
- 1874018 words of memory out of 5000000
- 37515 multiletter control sequences out of 15000+600000
+ 17875 strings out of 478683
+ 335433 string characters out of 5848287
+ 1875018 words of memory out of 5000000
+ 37700 multiletter control sequences out of 15000+600000
  518778 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,6n,121p,581b,474s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.pdf (127 pages).
+Output written on _main.pdf (147 pages).

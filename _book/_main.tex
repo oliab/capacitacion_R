@@ -117,7 +117,7 @@
 
 \title{AIS: Capacitación de R}
 \author{Oliab Herrera Coria}
-\date{2023-03-09}
+\date{2023-06-06}
 
 \begin{document}
 \maketitle
@@ -508,10 +508,12 @@ Para obtener un listado de los archivos que contiene la ruta establecida se usa 
 ##  [1] "_book"               "_bookdown_files"     "_bookdown.yml"      
 ##  [4] "_main_files"         "_main.log"           "_main.Rmd"          
 ##  [7] "_output.yml"         "01_manipulacion.Rmd" "02_tarea.Rmd"       
-## [10] "book.bib"            "capacitacion.Rproj"  "clase_2.R"          
-## [13] "clase2.R"            "css"                 "data"               
-## [16] "imagenes"            "index.Rmd"           "packages.bib"       
-## [19] "preamble.tex"        "README.md"           "style.css"
+## [10] "03_graficas.Rmd"     "book.bib"            "capacitacion.Rproj" 
+## [13] "clase_03.R"          "clase_2.R"           "clase2.R"           
+## [16] "clase3.R"            "css"                 "data"               
+## [19] "datos_nuevos"        "imagenes"            "index.Rmd"          
+## [22] "packages.bib"        "preamble.tex"        "README.md"          
+## [25] "script_prueba.R"     "style.css"
 \end{verbatim}
 
 \hypertarget{opciuxf3n-2-proyecto-de-r.}{%
@@ -4021,7 +4023,7 @@ paquete \texttt{readr} hacemos:
 ##         guess_max = guess_max, show_col_types = show_col_types, 
 ##         progress = progress, altrep = lazy, num_threads = num_threads)
 ## }
-## <bytecode: 0x7f812ff77f50>
+## <bytecode: 0x7fed16141d20>
 ## <environment: namespace:readr>
 \end{verbatim}
 
@@ -5450,6 +5452,9 @@ información esta por grupo demográfico de acuerdo a sexo (m, f), y edad (0-4,
 \NormalTok{tb }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/tb.csv"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{tbl\_df}\NormalTok{()}
 \CommentTok{\#\textgreater{} Warning: \textasciigrave{}tbl\_df()\textasciigrave{} was deprecated in dplyr 1.0.0.}
 \CommentTok{\#\textgreater{} i Please use \textasciigrave{}tibble::as\_tibble()\textasciigrave{} instead.}
+\CommentTok{\#\textgreater{} This warning is displayed once every 8 hours.}
+\CommentTok{\#\textgreater{} Call \textasciigrave{}lifecycle::last\_lifecycle\_warnings()\textasciigrave{} to see where this warning was}
+\CommentTok{\#\textgreater{} generated.}
 \NormalTok{tb}
 \CommentTok{\#\textgreater{} \# A tibble: 5,769 x 22}
 \CommentTok{\#\textgreater{}    iso2   year new\_sp\_\textasciitilde{}1 new\_s\textasciitilde{}2 new\_s\textasciitilde{}3 new\_s\textasciitilde{}4 new\_s\textasciitilde{}5 new\_s\textasciitilde{}6 new\_s\textasciitilde{}7 new\_s\textasciitilde{}8}
@@ -6092,6 +6097,420 @@ Haz un subset de datos considerando solamente los datos de 2022.
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{gruxe1ficas-ggplot2}{%
+\chapter{Gráficas: GGPLOT2}\label{gruxe1ficas-ggplot2}}
+
+\hypertarget{visualizaciuxf3n-con-ggplot2}{%
+\section{Visualización con ggplot2}\label{visualizaciuxf3n-con-ggplot2}}
+
+Utilizaremos el paquete ggplot2, fue desarrollado por Hadley Wickham y es una implementación de la gramática de las gráficas (Wilkinson et al.~2005).
+
+Un gráfico realizado con ggplot2 presenta, al menos, tres elementos:
+
+1.- Datos (Data) que queremos representar (que serán un data frame).
+
+2.- Características estéticas (aesthetic mappings) que describen cómo queremos que los datos se vean en el gráfico. Para más información podemos consultar la vignette (vignette(``ggplot2-specs'')). Como luego veremos, se introducen con la función aes() y se refieren a:
+
+\begin{itemize}
+\item
+  posición (en los ejes)
+\item
+  color exterior (color)
+\item
+  color de relleno (fill)
+\item
+  forma de puntos (shape)
+\item
+  tipo de línea (linetype)
+\item
+  tamaño (size)
+  3.- Objetos geométricos (Geom) representan lo que vemos en un gráficos (puntos, líneas, etc.). Todo gráfico tiene, como mínimo, una geometría. La geometría determina el tipo de gráfico:
+\item
+  geom\_point (para puntos)
+\item
+  geom\_lines (para lineas)
+\item
+  geom\_histogram (para histograma)
+\item
+  geom\_boxplot (para boxplot)
+\item
+  geom\_bar (para barras)
+\item
+  geom\_smooth (líneas suavizadas)
+\item
+  geom\_polygons (para polígonos en un mapa)
+\item
+  etc. (si ejecutáis el comando help.search(``geom\_'', package = ``ggplot2'') podéis ver el listado de objetos geométricos)
+\end{itemize}
+
+Por tanto, para construir un gráfico con ggplot2 comenzamos con la siguiente estructura de código, usando + como nexo entre argumentos:
+
+\textbf{ggplot(datos, aes() ) + geom\_tipo()}
+
+A partir de esta estructura básica puede mejorarse la presentación de los gráficos introduciendo, por ejemplo, características estéticas en los objetos geométricos, rotulando los gráficos, etc.
+
+Otros elementos que conviene tener presente en un gráfico de ggplot2 son:
+
+1.- Stat (Stat), transformaciones estadísticas para, generalmente, resumir datos (por ejemplo: contar frecuencias, número de intervalos en los histogramas, etc.).
+Escalas (Scale). Las escalas, por ejemplo, convierten datos en características estéticas (colores, etc.), crean leyendas\ldots{} .
+2.- Coordenadas (coord): sistema de coordenadas cartesianas, polares, proyecciones, etc.
+3.- Faceting (Faceting), permite representar gráficos separados para subconjuntos de los datos originales.
+Vamos a realizar algunos gráficos con ggplot2. Para ello, cargamos la librería. Si no está instalado el paquete lo instalamos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#install.packages("ggplot2")}
+\CommentTok{\#install.packages("dslabs")}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(dslabs)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{geom_point-o-gruxe1ficos-de-dispersion-scatter-plots}{%
+\subsection{geom\_point o gráficos de dispersion (scatter plots)}\label{geom_point-o-gruxe1ficos-de-dispersion-scatter-plots}}
+
+Veamos cómo ha evolucionado la esperanza de vida en Europa
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{aa }\OtherTok{\textless{}{-}}\NormalTok{ gapminder }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(continent}\SpecialCharTok{==}\StringTok{"Europe"}\NormalTok{)}
+\NormalTok{p }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ aa, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ life\_expectancy, }\AttributeTok{x =}\NormalTok{ year )) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-157-1} \end{center}
+
+o, podemos transformar el eje Y para ver la evolución frente a la media
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pp }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(aa, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ life\_expectancy }\SpecialCharTok{{-}} \FunctionTok{mean}\NormalTok{(life\_expectancy ), }\AttributeTok{x =}\NormalTok{ year )) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}
+\NormalTok{pp}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-158-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(aa, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ life\_expectancy, }\AttributeTok{x =}\NormalTok{ year ,}\AttributeTok{color=}\NormalTok{population)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-159-1} \end{center}
+
+\hypertarget{suavizados-geom_smooth}{%
+\subsection{Suavizados (geom\_smooth())}\label{suavizados-geom_smooth}}
+
+El geom\_smooth() añade una aproximación de los datos ``x'' e ``y'', e incluye una cinta con el margen de confianza.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\SpecialCharTok{+}  \FunctionTok{geom\_smooth}\NormalTok{() }
+\CommentTok{\#\textgreater{} \textasciigrave{}geom\_smooth()\textasciigrave{} using method = \textquotesingle{}gam\textquotesingle{} and formula = \textquotesingle{}y \textasciitilde{} s(x, bs = "cs")\textquotesingle{}}
+\CommentTok{\#\textgreater{} Warning: The following aesthetics were dropped during statistical transformation: colour}
+\CommentTok{\#\textgreater{} i This can happen when ggplot fails to infer the correct grouping structure in}
+\CommentTok{\#\textgreater{}   the data.}
+\CommentTok{\#\textgreater{} i Did you forget to specify a \textasciigrave{}group\textasciigrave{} aesthetic or to convert a numerical}
+\CommentTok{\#\textgreater{}   variable into a factor?}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-160-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# \textasciigrave{}geom\_smooth()\textasciigrave{} using method = \textquotesingle{}loess\textquotesingle{} and formula \textquotesingle{}y \textasciitilde{} x\textquotesingle{}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{texto-geom_text}{%
+\subsection{Texto (geom\_text())}\label{texto-geom_text}}
+
+Podemos añadir unas etiquetas a los puntos del gráfico de dispersión con el objeto geom\_text().
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\SpecialCharTok{+}  \FunctionTok{geom\_smooth}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{label=}\NormalTok{country))}
+\CommentTok{\#\textgreater{} \textasciigrave{}geom\_smooth()\textasciigrave{} using method = \textquotesingle{}gam\textquotesingle{} and formula = \textquotesingle{}y \textasciitilde{} s(x, bs = "cs")\textquotesingle{}}
+\CommentTok{\#\textgreater{} Warning: The following aesthetics were dropped during statistical transformation: colour}
+\CommentTok{\#\textgreater{} i This can happen when ggplot fails to infer the correct grouping structure in}
+\CommentTok{\#\textgreater{}   the data.}
+\CommentTok{\#\textgreater{} i Did you forget to specify a \textasciigrave{}group\textasciigrave{} aesthetic or to convert a numerical}
+\CommentTok{\#\textgreater{}   variable into a factor?}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-161-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# \textasciigrave{}geom\_smooth()\textasciigrave{} using method = \textquotesingle{}loess\textquotesingle{} and formula \textquotesingle{}y \textasciitilde{} x\textquotesingle{}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{aesteticos-vs.-asignacion}{%
+\subsection{Aesteticos vs.~asignacion}\label{aesteticos-vs.-asignacion}}
+
+Dentro de aes() debemos poner las variables aestéticas, mientras que valores fijos para todas las variables las podemos poner fuera.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{p }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{size =} \DecValTok{2}\NormalTok{),}\CommentTok{\# incorrecto! 2 no es una variable}
+             \AttributeTok{color=}\StringTok{"red"}\NormalTok{) }\CommentTok{\# correcto, todos los puntos en rojo}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-162-1} \end{center}
+
+La manera correcta sería esta:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size =} \DecValTok{2}\NormalTok{,}\CommentTok{\# correcto, todos los puntos de tamaño 2}
+             \AttributeTok{color=}\StringTok{"red"}\NormalTok{) }\CommentTok{\# correcto, todos los puntos en rojo}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-163-1} \end{center}
+
+\hypertarget{incluir-varios-aesteticos}{%
+\subsection{Incluir varios aesteticos}\label{incluir-varios-aesteticos}}
+
+Se pueden mapear otros aestéticos, como ``x'' e ``y'', para visualizar algunas cosas concretas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{size=}\NormalTok{population))}
+\CommentTok{\#\textgreater{} Warning: Removed 39 rows containing missing values (\textasciigrave{}geom\_point()\textasciigrave{}).}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-164-1} \end{center}
+
+\hypertarget{ejercicio-1}{%
+\section{Ejercicio}\label{ejercicio-1}}
+
+Usa la base de datos data(``mtcars'')
+
+Hay que crear un gráfico con los siguientes parámetros:
+
+\begin{itemize}
+\tightlist
+\item
+  Crear un gráfico de dispersión con el mpg en el eje X y el wt en el eje Y.
+\item
+  Colorea los puntos en azul.
+\item
+  Mapea el color de los puntos a la variable cyl.
+\item
+  Haz los puntos más grandes poniendo un tamaño de 2.
+\item
+  Mapera el tamaño de los puntos en base a disp.
+\item
+  Incluye un suavizado de los datos.
+\end{itemize}
+
+\hypertarget{geom_line-graficos-de-lineas}{%
+\section{geom\_line() graficos de lineas}\label{geom_line-graficos-de-lineas}}
+
+Para hacer un gráfico de líneas usaremos una sintaxis muy parecida, pero tendremos que tener en cuenta que R va hacer una línea de punto a punto
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bb }\OtherTok{\textless{}{-}}\NormalTok{ gapminder }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(country }\SpecialCharTok{==} \StringTok{"Spain"}\NormalTok{)}
+\NormalTok{p }\OtherTok{=} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ bb, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ life\_expectancy, }\AttributeTok{x =}\NormalTok{ year )) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{()}
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-165-1} \end{center}
+
+¿Qué ocurriría si tenemos varios países para cada año?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cc }\OtherTok{\textless{}{-}}\NormalTok{ gapminder }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(continent }\SpecialCharTok{==} \StringTok{"Oceania"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ cc, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ life\_expectancy, }\AttributeTok{x =}\NormalTok{ year )) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-166-1} \end{center}
+
+Mmmmmmm, ¿qué ha pasado?
+
+ggplot2() ha juntado todos los valores del año. ¿Cómo podemos arreglar esto?
+
+Démosle un color para que nos separe por países por ejemplo:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ cc, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ life\_expectancy, }\AttributeTok{x =}\NormalTok{ year ,}\AttributeTok{color=}\NormalTok{country)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-167-1} \end{center}
+
+O también podemos separarlo en diferentes figuras:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ cc, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ life\_expectancy, }\AttributeTok{x =}\NormalTok{ year )) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{country)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-168-1} \end{center}
+
+\hypertarget{ejercicio-2}{%
+\subsection{Ejercicio}\label{ejercicio-2}}
+
+Usa la base de datos gapminder para:
+
+\begin{itemize}
+\tightlist
+\item
+  Crear un gráfico de la evolución de la esperanza media y máxima de vida en el mundo.
+\item
+  Colorea las líneas de color diferente.
+\item
+  Crear un gráfico de la evolución de la esperanza media por continente.
+\end{itemize}
+
+\hypertarget{geom_boxplot-diagramas-de-caja}{%
+\section{geom\_boxplot() Diagramas de caja}\label{geom_boxplot-diagramas-de-caja}}
+
+Para realizar un diagrama de caja utilizamos la geometría:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ gapminder, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ life\_expectancy, }\AttributeTok{x =}\NormalTok{ country )) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{()  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-169-1} \end{center}
+
+Podemos colorear las cajas del gráfico incluyendo en las características estéticas la variable que utilizaremos para el relleno. Automáticamente se crea una leyenda para facilitar la lectura del gráfico, que podemos cambiar de posición o eliminar si se considera que no aporta información relevante.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Diagrama de caja con color de relleno}
+\FunctionTok{ggplot}\NormalTok{(gapminder, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y=}\NormalTok{life\_expectancy, }\AttributeTok{x=}\NormalTok{continent, }\AttributeTok{fill=}\NormalTok{continent)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"País"}\NormalTok{, }\AttributeTok{y=}\StringTok{"Esperanza de vida"}\NormalTok{, }\AttributeTok{fill=}\StringTok{"Continente"}\NormalTok{)   }\CommentTok{\# título, ejes y leyenda}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-170-1} \end{center}
+
+Podemos añadir estadísticas que nos puedan interesar
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(gapminder, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y=}\NormalTok{life\_expectancy, }\AttributeTok{x=}\NormalTok{continent, }\AttributeTok{fill=}\NormalTok{continent)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"Continente"}\NormalTok{, }\AttributeTok{y=}\StringTok{"Esperanza de vida"}\NormalTok{, }\AttributeTok{fill=}\StringTok{"Continente"}\NormalTok{) }\SpecialCharTok{+}  
+\FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{stat=} \StringTok{"summary"}\NormalTok{, }\AttributeTok{fun.y=}\NormalTok{mean, }\AttributeTok{shape=}\DecValTok{16}\NormalTok{, }\AttributeTok{size=}\DecValTok{4}\NormalTok{, }\AttributeTok{color=}\StringTok{"red"}\NormalTok{)}
+\CommentTok{\#\textgreater{} Warning in geom\_point(stat = "summary", fun.y = mean, shape = 16, size = 4, :}
+\CommentTok{\#\textgreater{} Ignoring unknown parameters: \textasciigrave{}fun.y\textasciigrave{}}
+\CommentTok{\#\textgreater{} No summary function supplied, defaulting to \textasciigrave{}mean\_se()\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-171-1} \end{center}
+
+Y entre otras muchas cosas, podemos cambiar los ejes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(gapminder, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y=}\NormalTok{life\_expectancy, }\AttributeTok{x=}\NormalTok{continent, }\AttributeTok{fill=}\NormalTok{continent)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"Continente"}\NormalTok{, }\AttributeTok{y=}\StringTok{"Esperanza de vida"}\NormalTok{, }\AttributeTok{fill=}\StringTok{"Continente"}\NormalTok{) }\SpecialCharTok{+}  
+\FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{stat=} \StringTok{"summary"}\NormalTok{, }\AttributeTok{fun.y=}\NormalTok{mean, }\AttributeTok{shape=}\DecValTok{16}\NormalTok{, }\AttributeTok{size=}\DecValTok{4}\NormalTok{, }\AttributeTok{color=}\StringTok{"red"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_flip}\NormalTok{()}
+\CommentTok{\#\textgreater{} Warning in geom\_point(stat = "summary", fun.y = mean, shape = 16, size = 4, :}
+\CommentTok{\#\textgreater{} Ignoring unknown parameters: \textasciigrave{}fun.y\textasciigrave{}}
+\CommentTok{\#\textgreater{} No summary function supplied, defaulting to \textasciigrave{}mean\_se()\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-172-1} \end{center}
+
+\hypertarget{ejercicio-3}{%
+\subsection{Ejercicio}\label{ejercicio-3}}
+
+Usa la base de datos mpg para:
+
+\begin{itemize}
+\tightlist
+\item
+  Crear un gráfico de cajas para ver como cambia hwy frente a class.
+\item
+  Colorea por tipo drv.
+\item
+  Inlcuye un punto para mostrar dónde está la media de hmy en cada gráfico de cajas.
+\end{itemize}
+
+\hypertarget{geom_bar-diagrama-de-barras}{%
+\section{geom\_bar() diagrama de barras}\label{geom_bar-diagrama-de-barras}}
+
+El diagrama de barras, como ya sabemos, puede utilizarse para representar variables categóricas (atributos u ordinales) y variables cuantitativas discretas.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{n\_country }\OtherTok{=}\NormalTok{ gapminder }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(country,continent) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(continent) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{duplicated}\NormalTok{(country)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ungroup}\NormalTok{()}
+
+\FunctionTok{ggplot}\NormalTok{(n\_country) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{continent))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-173-1} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(n\_country) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y=}\NormalTok{continent))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-174-1} \end{center}
+
+o usando la base de datos mpg
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{\# número de coches en cada clase}
+\NormalTok{g }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(mpg, }\FunctionTok{aes}\NormalTok{(class)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{()}
+\CommentTok{\#Si queremos ver diferentes propiedades dentro de cada clase:}
+
+\NormalTok{g }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ manufacturer))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-175-1} \end{center}
 
   \bibliography{book.bib,packages.bib}
 

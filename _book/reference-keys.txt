@@ -40,3 +40,15 @@ datos-limpios
 tarea
 tarea-1-estructuras-de-datos
 respuesta-tarea-1-estructuras-de-datos
+gráficas-ggplot2
+visualización-con-ggplot2
+geom_point-o-gráficos-de-dispersion-scatter-plots
+texto-geom_text
+aesteticos-vs.-asignacion
+incluir-varios-aesteticos
+ejercicio-1
+geom_line-graficos-de-lineas
+ejercicio-2
+geom_boxplot-diagramas-de-caja
+ejercicio-3
+geom_bar-diagrama-de-barras

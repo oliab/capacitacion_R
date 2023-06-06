@@ -1,0 +1,298 @@
+# Gráficas: GGPLOT2
+
+## Visualización con ggplot2
+
+Utilizaremos el paquete ggplot2, fue desarrollado por Hadley Wickham y es una implementación de la gramática de las gráficas (Wilkinson et al. 2005).
+
+Un gráfico realizado con ggplot2 presenta, al menos, tres elementos:
+
+1.- Datos (Data) que queremos representar (que serán un data frame). 
+
+2.- Características estéticas (aesthetic mappings) que describen cómo queremos que los datos se vean en el gráfico. Para más información podemos consultar la vignette (vignette(“ggplot2-specs”)). Como luego veremos, se introducen con la función aes() y se refieren a: 
+
+- posición (en los ejes)
+- color exterior (color)
+- color de relleno (fill)
+- forma de puntos (shape)
+- tipo de línea (linetype)
+- tamaño (size)
+3.- Objetos geométricos (Geom) representan lo que vemos en un gráficos (puntos, líneas, etc.). Todo gráfico tiene, como mínimo, una geometría. La geometría determina el tipo de gráfico: 
+
+- geom_point (para puntos)
+- geom_lines (para lineas)
+- geom_histogram (para histograma)
+- geom_boxplot (para boxplot)
+- geom_bar (para barras)
+- geom_smooth (líneas suavizadas)
+- geom_polygons (para polígonos en un mapa)
+- etc. (si ejecutáis el comando help.search("geom_", package = "ggplot2") podéis ver el listado de objetos geométricos)
+
+Por tanto, para construir un gráfico con ggplot2 comenzamos con la siguiente estructura de código, usando + como nexo entre argumentos:
+
+**ggplot(datos, aes() ) + geom_tipo()**
+
+A partir de esta estructura básica puede mejorarse la presentación de los gráficos introduciendo, por ejemplo, características estéticas en los objetos geométricos, rotulando los gráficos, etc.
+
+Otros elementos que conviene tener presente en un gráfico de ggplot2 son:
+
+1.- Stat (Stat), transformaciones estadísticas para, generalmente, resumir datos (por ejemplo: contar frecuencias, número de intervalos en los histogramas, etc.).
+Escalas (Scale). Las escalas, por ejemplo, convierten datos en características estéticas (colores, etc.), crean leyendas… .
+2.- Coordenadas (coord): sistema de coordenadas cartesianas, polares, proyecciones, etc.
+3.- Faceting (Faceting), permite representar gráficos separados para subconjuntos de los datos originales.
+Vamos a realizar algunos gráficos con ggplot2. Para ello, cargamos la librería. Si no está instalado el paquete lo instalamos.
+
+```{r}
+#install.packages("ggplot2")
+#install.packages("dslabs")
+library(ggplot2)
+library(dslabs)
+library(tidyverse)
+```
+
+
+### geom_point o gráficos de dispersion (scatter plots)
+
+Veamos cómo ha evolucionado la esperanza de vida en Europa
+
+```{r}
+aa <- gapminder %>% filter(continent=="Europe")
+p = ggplot(data = aa, aes(y = life_expectancy, x = year )) +
+  geom_point()
+p
+```
+
+o, podemos transformar el eje Y para ver la evolución frente a la media
+
+```{r}
+pp = ggplot(aa, aes(y = life_expectancy - mean(life_expectancy ), x = year )) +
+  geom_point()
+pp
+```
+
+
+```{r}
+p = ggplot(aa, aes(y = life_expectancy, x = year ,color=population)) +
+  geom_point()
+p
+```
+### Suavizados (geom_smooth())
+El geom_smooth() añade una aproximación de los datos “x” e “y”, e incluye una cinta con el margen de confianza.
+
+```{r}
+p +  geom_smooth() 
+## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+
+```
+
+
+
+###  Texto (geom_text())
+Podemos añadir unas etiquetas a los puntos del gráfico de dispersión con el objeto geom_text().
+
+```{r}
+p +  geom_smooth() + 
+  geom_text(aes(label=country))
+## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+
+```
+
+
+
+### Aesteticos vs. asignacion
+Dentro de aes() debemos poner las variables aestéticas, mientras que valores fijos para todas las variables las podemos poner fuera.
+
+```{r}
+
+p +
+  geom_point(aes(size = 2),# incorrecto! 2 no es una variable
+             color="red") # correcto, todos los puntos en rojo
+
+
+```
+
+
+
+La manera correcta sería esta:
+
+```{r}
+p +
+  geom_point(size = 2,# correcto, todos los puntos de tamaño 2
+             color="red") # correcto, todos los puntos en rojo
+
+```
+
+
+
+
+### Incluir varios aesteticos
+Se pueden mapear otros aestéticos, como “x” e “y”, para visualizar algunas cosas concretas.
+
+```{r}
+p +
+  geom_point(aes(size=population))
+```
+
+
+## Ejercicio
+Usa la base de datos data("mtcars")
+
+Hay que crear un gráfico con los siguientes parámetros:
+
+- Crear un gráfico de dispersión con el mpg en el eje X y el wt en el eje Y.
+- Colorea los puntos en azul.
+- Mapea el color de los puntos a la variable cyl.
+- Haz los puntos más grandes poniendo un tamaño de 2.
+- Mapera el tamaño de los puntos en base a disp.
+- Incluye un suavizado de los datos.
+
+
+## geom_line() graficos de lineas
+Para hacer un gráfico de líneas usaremos una sintaxis muy parecida, pero tendremos que tener en cuenta que R va hacer una línea de punto a punto
+
+```{r}
+bb <- gapminder %>% filter(country == "Spain")
+p = ggplot(data = bb, aes(y = life_expectancy, x = year )) +
+  geom_line()
+p
+```
+
+
+
+
+
+¿Qué ocurriría si tenemos varios países para cada año?
+
+```{r}
+cc <- gapminder %>% filter(continent == "Oceania")
+ggplot(data = cc, aes(y = life_expectancy, x = year )) +
+  geom_line()
+```
+
+
+
+
+Mmmmmmm, ¿qué ha pasado?
+
+ggplot2() ha juntado todos los valores del año. ¿Cómo podemos arreglar esto?
+
+Démosle un color para que nos separe por países por ejemplo:
+
+```{r}
+ggplot(data = cc, aes(y = life_expectancy, x = year ,color=country)) +
+  geom_line() +
+  geom_point()
+```
+
+
+
+
+O también podemos separarlo en diferentes figuras:
+
+```{r}
+ggplot(data = cc, aes(y = life_expectancy, x = year )) +
+  geom_line() +
+  facet_wrap(~country)
+```
+
+
+
+
+### Ejercicio
+Usa la base de datos gapminder para:
+
+- Crear un gráfico de la evolución de la esperanza media y máxima de vida en el mundo.
+- Colorea las líneas de color diferente.
+- Crear un gráfico de la evolución de la esperanza media por continente.
+
+
+## geom_boxplot() Diagramas de caja
+Para realizar un diagrama de caja utilizamos la geometría:
+
+```{r}
+
+ggplot(data = gapminder, aes(y = life_expectancy, x = country )) +
+  geom_boxplot()  
+```
+
+
+
+
+Podemos colorear las cajas del gráfico incluyendo en las características estéticas la variable que utilizaremos para el relleno. Automáticamente se crea una leyenda para facilitar la lectura del gráfico, que podemos cambiar de posición o eliminar si se considera que no aporta información relevante.
+
+```{r}
+# Diagrama de caja con color de relleno
+ggplot(gapminder, aes(y=life_expectancy, x=continent, fill=continent)) +
+  geom_boxplot() +
+  labs(x="País", y="Esperanza de vida", fill="Continente")   # título, ejes y leyenda
+
+```
+
+
+
+Podemos añadir estadísticas que nos puedan interesar
+```{r}
+ggplot(gapminder, aes(y=life_expectancy, x=continent, fill=continent)) +
+  geom_boxplot() +
+  labs(x="Continente", y="Esperanza de vida", fill="Continente") +  
+geom_point(stat= "summary", fun.y=mean, shape=16, size=4, color="red")
+
+```
+
+
+
+
+
+Y entre otras muchas cosas, podemos cambiar los ejes
+
+```{r}
+ggplot(gapminder, aes(y=life_expectancy, x=continent, fill=continent)) +
+  geom_boxplot() +
+  labs(x="Continente", y="Esperanza de vida", fill="Continente") +  
+geom_point(stat= "summary", fun.y=mean, shape=16, size=4, color="red") +
+  coord_flip()
+```
+
+
+
+
+### Ejercicio
+Usa la base de datos mpg para:
+
+- Crear un gráfico de cajas para ver como cambia hwy frente a class.
+- Colorea por tipo drv.
+- Inlcuye un punto para mostrar dónde está la media de hmy en cada gráfico de cajas.
+
+
+## geom_bar() diagrama de barras
+El diagrama de barras, como ya sabemos, puede utilizarse para representar variables categóricas (atributos u ordinales) y variables cuantitativas discretas.
+
+```{r}
+n_country = gapminder %>% 
+  select(country,continent) %>%
+  group_by(continent) %>% 
+  filter(!duplicated(country)) %>% 
+  ungroup()
+
+ggplot(n_country) + 
+  geom_bar(aes(x=continent))
+
+```
+
+```{r}
+ggplot(n_country) + geom_bar(aes(y=continent))
+```
+
+o usando la base de datos mpg
+
+```{r}
+
+# número de coches en cada clase
+g <- ggplot(mpg, aes(class)) + geom_bar()
+#Si queremos ver diferentes propiedades dentro de cada clase:
+
+g + geom_bar(aes(fill = manufacturer))
+
+
+```
+
+
