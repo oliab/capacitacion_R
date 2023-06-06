@@ -117,7 +117,7 @@
 
 \title{AIS: Capacitación de R}
 \author{Oliab Herrera Coria}
-\date{2023-02-15}
+\date{2023-03-09}
 
 \begin{document}
 \maketitle
@@ -508,10 +508,10 @@ Para obtener un listado de los archivos que contiene la ruta establecida se usa 
 ##  [1] "_book"               "_bookdown_files"     "_bookdown.yml"      
 ##  [4] "_main_files"         "_main.log"           "_main.Rmd"          
 ##  [7] "_output.yml"         "01_manipulacion.Rmd" "02_tarea.Rmd"       
-## [10] "book.bib"            "capacitacion.Rproj"  "css"                
-## [13] "data"                "imagenes"            "index.Rmd"          
-## [16] "packages.bib"        "preamble.tex"        "README.md"          
-## [19] "style.css"
+## [10] "book.bib"            "capacitacion.Rproj"  "clase_2.R"          
+## [13] "clase2.R"            "css"                 "data"               
+## [16] "imagenes"            "index.Rmd"           "packages.bib"       
+## [19] "preamble.tex"        "README.md"           "style.css"
 \end{verbatim}
 
 \hypertarget{opciuxf3n-2-proyecto-de-r.}{%
@@ -4021,7 +4021,7 @@ paquete \texttt{readr} hacemos:
 ##         guess_max = guess_max, show_col_types = show_col_types, 
 ##         progress = progress, altrep = lazy, num_threads = num_threads)
 ## }
-## <bytecode: 0x7fb0f71c16f8>
+## <bytecode: 0x7f812ff77f50>
 ## <environment: namespace:readr>
 \end{verbatim}
 
@@ -4096,16 +4096,22 @@ En general, la forma en que representaríamos una base de datos tidy en R es usa
 
 Por ejemplo, los datos del Secretariado ejecutivo:
 
+\begin{itemize}
+\tightlist
+\item
+  Datos con la misma variable en diferentes columnas
+\end{itemize}
+
 \begin{verbatim}
 #> # A tibble: 6 x 19
 #>     Año Clave_Ent Entidad    Bien ~1 Tipo ~2 Subti~3 Modal~4 Enero Febrero Marzo
 #>   <dbl>     <dbl> <chr>      <chr>   <chr>   <chr>   <chr>   <dbl>   <dbl> <dbl>
-#> 1  2015         1 Aguascali~ La vid~ Homici~ Homici~ Con ar~     3       0     2
-#> 2  2015         1 Aguascali~ La vid~ Homici~ Homici~ Con ar~     1       1     0
-#> 3  2015         1 Aguascali~ La vid~ Homici~ Homici~ Con ot~     0       0     2
-#> 4  2015         1 Aguascali~ La vid~ Homici~ Homici~ No esp~     2       0     0
-#> 5  2015         1 Aguascali~ La vid~ Homici~ Homici~ Con ar~     0       0     0
-#> 6  2015         1 Aguascali~ La vid~ Homici~ Homici~ Con ar~     0       0     0
+#> 1  2021         1 Aguascali~ La vid~ Homici~ Homici~ Con ar~     2       1     4
+#> 2  2021         1 Aguascali~ La vid~ Homici~ Homici~ Con ar~     1       1     1
+#> 3  2021         1 Aguascali~ La vid~ Homici~ Homici~ Con ot~     0       3     1
+#> 4  2021         1 Aguascali~ La vid~ Homici~ Homici~ No esp~     0       0     0
+#> 5  2021         1 Aguascali~ La vid~ Homici~ Homici~ Con ar~     0       0     0
+#> 6  2021         1 Aguascali~ La vid~ Homici~ Homici~ Con ar~     0       0     0
 #> # ... with 9 more variables: Abril <dbl>, Mayo <dbl>, Junio <dbl>, Julio <dbl>,
 #> #   Agosto <dbl>, Septiembre <dbl>, Octubre <dbl>, Noviembre <dbl>,
 #> #   Diciembre <dbl>, and abbreviated variable names
@@ -4113,13 +4119,67 @@ Por ejemplo, los datos del Secretariado ejecutivo:
 #> #   4: Modalidad
 \end{verbatim}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{print}\NormalTok{(datos }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{gather}\NormalTok{(}\StringTok{"mes"}\NormalTok{,}\StringTok{"total\_delitos"}\NormalTok{,Enero}\SpecialCharTok{:}\NormalTok{Diciembre) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{head}\NormalTok{(}\DecValTok{20}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
+\begin{verbatim}
+#> # A tibble: 20 x 9
+#>      Año Clave_Ent Entidad        Bien j~1 Tipo ~2 Subti~3 Modal~4 mes   total~5
+#>    <dbl>     <dbl> <chr>          <chr>    <chr>   <chr>   <chr>   <chr>   <dbl>
+#>  1  2021         1 Aguascalientes La vida~ Homici~ Homici~ Con ar~ Enero       2
+#>  2  2021         1 Aguascalientes La vida~ Homici~ Homici~ Con ar~ Enero       1
+#>  3  2021         1 Aguascalientes La vida~ Homici~ Homici~ Con ot~ Enero       0
+#>  4  2021         1 Aguascalientes La vida~ Homici~ Homici~ No esp~ Enero       0
+#>  5  2021         1 Aguascalientes La vida~ Homici~ Homici~ Con ar~ Enero       0
+#>  6  2021         1 Aguascalientes La vida~ Homici~ Homici~ Con ar~ Enero       0
+#>  7  2021         1 Aguascalientes La vida~ Homici~ Homici~ En acc~ Enero       8
+#>  8  2021         1 Aguascalientes La vida~ Homici~ Homici~ Con ot~ Enero       0
+#>  9  2021         1 Aguascalientes La vida~ Homici~ Homici~ No esp~ Enero       0
+#> 10  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ Con ar~ Enero       5
+#> 11  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ Con ar~ Enero       7
+#> 12  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ Con ot~ Enero     160
+#> 13  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ No esp~ Enero      56
+#> 14  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ Con ar~ Enero       0
+#> 15  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ Con ar~ Enero       0
+#> 16  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ En acc~ Enero      59
+#> 17  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ Con ot~ Enero       0
+#> 18  2021         1 Aguascalientes La vida~ Lesion~ Lesion~ No esp~ Enero      18
+#> 19  2021         1 Aguascalientes La vida~ Femini~ Femini~ Con ar~ Enero       0
+#> 20  2021         1 Aguascalientes La vida~ Femini~ Femini~ Con ar~ Enero       1
+#> # ... with abbreviated variable names 1: `Bien jurídico afectado`,
+#> #   2: `Tipo de delito`, 3: `Subtipo de delito`, 4: Modalidad, 5: total_delitos
+\end{verbatim}
+
+\begin{verbatim}
+#> # A tibble: 40 x 33
+#> # Groups:   Tipo de delito [40]
+#>    Tipo de del~1 Aguas~2 Baja ~3 Baja ~4 Campe~5 Chiapas Chihu~6 Ciuda~7 Coahu~8
+#>    <chr>           <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+#>  1 Aborto              0       1       1       0       3       1       8       0
+#>  2 Abuso de con~      50      29      12       0       4      60     302      52
+#>  3 Abuso sexual        0      70      20       3      17     103     206      46
+#>  4 Acoso sexual        0       0       8       0       7       0      86      15
+#>  5 Allanamiento~      35     185       9       6       8      70      47      39
+#>  6 Amenazas          227     324     102       5      26     248    1110     359
+#>  7 Contra el me~       2       0       0       0       1      18      45       0
+#>  8 Corrupción d~       5      50       3       0       3       5      21       3
+#>  9 Daño a la pr~     317     576      85      12      67     656     697     459
+#> 10 Delitos come~      47      69      18       0      10     134     307      13
+#> # ... with 30 more rows, 24 more variables: Colima <dbl>, Durango <dbl>,
+#> #   Guanajuato <dbl>, Guerrero <dbl>, Hidalgo <dbl>, Jalisco <dbl>,
+#> #   México <dbl>, `Michoacán de Ocampo` <dbl>, Morelos <dbl>, Nayarit <dbl>,
+#> #   `Nuevo León` <dbl>, Oaxaca <dbl>, Puebla <dbl>, Querétaro <dbl>,
+#> #   `Quintana Roo` <dbl>, `San Luis Potosí` <dbl>, Sinaloa <dbl>, Sonora <dbl>,
+#> #   Tabasco <dbl>, Tamaulipas <dbl>, Tlaxcala <dbl>,
+#> #   `Veracruz de Ignacio de la Llave` <dbl>, Yucatán <dbl>, ...
+\end{verbatim}
+
+\begin{verbatim}
+#>             estado municipio     mes total_delitos
+#> 1 Estado de México      <NA>   Enero           143
+#> 2 Estado de México      <NA> Febrero           234
+#> 3 Estado de México      <NA>   Marzo           532
+#> 4             <NA>    Toluca   Enero            12
+#> 5             <NA>    Toluca Febrero             4
+#> 6             <NA>    Toluca   Marzo            55
+\end{verbatim}
 
 \hypertarget{separa-aplica-combina-split-apply-combine}{%
 \subsection*{\texorpdfstring{Separa-aplica-combina (\emph{split-apply-combine})}{Separa-aplica-combina (split-apply-combine)}}\label{separa-aplica-combina-split-apply-combine}}
@@ -5220,7 +5280,7 @@ construir gráficas y resúmenes.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-120-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-122-1} \end{center}
 
 Podemos hacer gráficas más interesantes si creamos nuevas variables:
 
@@ -5252,7 +5312,7 @@ Podemos hacer gráficas más interesantes si creamos nuevas variables:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-121-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-123-1} \end{center}
 
 En el código de arriba utilizamos las funciones \texttt{group\_by}, \texttt{filter} y \texttt{mutate}
 que estudiaremos más adelante. Por ahora concentremonos en \texttt{gather} y \texttt{spread}.
@@ -5374,7 +5434,7 @@ Nuevamente, podemos hacer gráficas facilmente.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-125-1} \end{center}
+\begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-127-1} \end{center}
 
 \hypertarget{una-columna-asociada-a-muxe1s-de-una-variable}{%
 \subsection*{Una columna asociada a más de una variable}\label{una-columna-asociada-a-muxe1s-de-una-variable}}
@@ -5744,21 +5804,12 @@ los combina en un data frame.
 \NormalTok{specdata }\OtherTok{\textless{}{-}}\NormalTok{ specdata\_us }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{mutate}\NormalTok{(}\AttributeTok{monitor =} \FunctionTok{parse\_number}\NormalTok{(filename)) }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{select}\NormalTok{(}\AttributeTok{id =}\NormalTok{ ID, monitor, }\AttributeTok{date =}\NormalTok{ Date, sulfate, nitrate)}
+\CommentTok{\#\textgreater{} Error in \textasciigrave{}mutate()\textasciigrave{}:}
+\CommentTok{\#\textgreater{} ! Problem while computing \textasciigrave{}monitor = parse\_number(filename)\textasciigrave{}.}
+\CommentTok{\#\textgreater{} Caused by error in \textasciigrave{}stopifnot()\textasciigrave{}:}
+\CommentTok{\#\textgreater{} ! object \textquotesingle{}filename\textquotesingle{} not found}
 \NormalTok{specdata}
-\CommentTok{\#\textgreater{} \# A tibble: 772,087 x 5}
-\CommentTok{\#\textgreater{}       id monitor date                sulfate nitrate}
-\CommentTok{\#\textgreater{}    \textless{}int\textgreater{}   \textless{}dbl\textgreater{} \textless{}dttm\textgreater{}                \textless{}dbl\textgreater{}   \textless{}dbl\textgreater{}}
-\CommentTok{\#\textgreater{}  1     1       1 2003{-}01{-}01 00:00:00      NA      NA}
-\CommentTok{\#\textgreater{}  2     1       1 2003{-}01{-}02 00:00:00      NA      NA}
-\CommentTok{\#\textgreater{}  3     1       1 2003{-}01{-}03 00:00:00      NA      NA}
-\CommentTok{\#\textgreater{}  4     1       1 2003{-}01{-}04 00:00:00      NA      NA}
-\CommentTok{\#\textgreater{}  5     1       1 2003{-}01{-}05 00:00:00      NA      NA}
-\CommentTok{\#\textgreater{}  6     1       1 2003{-}01{-}06 00:00:00      NA      NA}
-\CommentTok{\#\textgreater{}  7     1       1 2003{-}01{-}07 00:00:00      NA      NA}
-\CommentTok{\#\textgreater{}  8     1       1 2003{-}01{-}08 00:00:00      NA      NA}
-\CommentTok{\#\textgreater{}  9     1       1 2003{-}01{-}09 00:00:00      NA      NA}
-\CommentTok{\#\textgreater{} 10     1       1 2003{-}01{-}10 00:00:00      NA      NA}
-\CommentTok{\#\textgreater{} \# ... with 772,077 more rows}
+\CommentTok{\#\textgreater{} Error in eval(expr, envir, enclos): object \textquotesingle{}specdata\textquotesingle{} not found}
 \end{Highlighting}
 \end{Shaded}
 

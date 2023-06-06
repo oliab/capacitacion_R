@@ -29,7 +29,7 @@ set in the _output.yml file.</p>" />
 <meta name="author" content="Oliab Herrera Coria" />
 
 
-<meta name="date" content="2023-02-15" />
+<meta name="date" content="2023-03-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -270,120 +270,120 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="respuesta-tarea-1-estructuras-de-datos" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Respuesta Tarea 1: Estructuras de Datos<a href="tarea.html#respuesta-tarea-1-estructuras-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Carga la librería <strong>readr</strong></p>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="tarea.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code></pre></div>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="tarea.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code></pre></div>
 <ul>
 <li>Utiliza la función <strong>read_csv</strong> para cargar el archivo “crimen_mexico.csv”. Ojo: recuerda asignarlo a una variable <strong>datos &lt;- read_csv(“path al archivo”)</strong>.</li>
 </ul>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="tarea.html#cb265-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/crimen_mexico.csv&quot;</span>)</span>
-<span id="cb265-2"><a href="tarea.html#cb265-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Rows: 75264 Columns: 6</span></span>
-<span id="cb265-3"><a href="tarea.html#cb265-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ── Column specification ────────────────────────────────────────────────────────</span></span>
-<span id="cb265-4"><a href="tarea.html#cb265-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Delimiter: &quot;,&quot;</span></span>
-<span id="cb265-5"><a href="tarea.html#cb265-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; chr  (3): entidad, tipo_delito, mes</span></span>
-<span id="cb265-6"><a href="tarea.html#cb265-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; dbl  (2): año, total_Delitos</span></span>
-<span id="cb265-7"><a href="tarea.html#cb265-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; date (1): fecha</span></span>
-<span id="cb265-8"><a href="tarea.html#cb265-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb265-9"><a href="tarea.html#cb265-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.</span></span>
-<span id="cb265-10"><a href="tarea.html#cb265-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</span></span>
-<span id="cb265-11"><a href="tarea.html#cb265-11" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos)</span>
-<span id="cb265-12"><a href="tarea.html#cb265-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 6 × 6</span></span>
-<span id="cb265-13"><a href="tarea.html#cb265-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     año entidad        tipo_delito mes     fecha      total_Delitos</span></span>
-<span id="cb265-14"><a href="tarea.html#cb265-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;       &lt;chr&gt;   &lt;date&gt;             &lt;dbl&gt;</span></span>
-<span id="cb265-15"><a href="tarea.html#cb265-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  2021 Aguascalientes Homicidio   Enero   2021-01-01             2</span></span>
-<span id="cb265-16"><a href="tarea.html#cb265-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  2021 Aguascalientes Homicidio   Febrero 2021-02-01             1</span></span>
-<span id="cb265-17"><a href="tarea.html#cb265-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  2021 Aguascalientes Homicidio   Marzo   2021-03-01             4</span></span>
-<span id="cb265-18"><a href="tarea.html#cb265-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  2021 Aguascalientes Homicidio   Abril   2021-04-01             3</span></span>
-<span id="cb265-19"><a href="tarea.html#cb265-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  2021 Aguascalientes Homicidio   Mayo    2021-05-01             4</span></span>
-<span id="cb265-20"><a href="tarea.html#cb265-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  2021 Aguascalientes Homicidio   Junio   2021-06-01             2</span></span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="tarea.html#cb267-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/crimen_mexico.csv&quot;</span>)</span>
+<span id="cb267-2"><a href="tarea.html#cb267-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Rows: 75264 Columns: 6</span></span>
+<span id="cb267-3"><a href="tarea.html#cb267-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ── Column specification ────────────────────────────────────────────────────────</span></span>
+<span id="cb267-4"><a href="tarea.html#cb267-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Delimiter: &quot;,&quot;</span></span>
+<span id="cb267-5"><a href="tarea.html#cb267-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; chr  (3): entidad, tipo_delito, mes</span></span>
+<span id="cb267-6"><a href="tarea.html#cb267-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; dbl  (2): año, total_Delitos</span></span>
+<span id="cb267-7"><a href="tarea.html#cb267-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; date (1): fecha</span></span>
+<span id="cb267-8"><a href="tarea.html#cb267-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb267-9"><a href="tarea.html#cb267-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.</span></span>
+<span id="cb267-10"><a href="tarea.html#cb267-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</span></span>
+<span id="cb267-11"><a href="tarea.html#cb267-11" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos)</span>
+<span id="cb267-12"><a href="tarea.html#cb267-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 6 × 6</span></span>
+<span id="cb267-13"><a href="tarea.html#cb267-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     año entidad        tipo_delito mes     fecha      total_Delitos</span></span>
+<span id="cb267-14"><a href="tarea.html#cb267-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;       &lt;chr&gt;   &lt;date&gt;             &lt;dbl&gt;</span></span>
+<span id="cb267-15"><a href="tarea.html#cb267-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  2021 Aguascalientes Homicidio   Enero   2021-01-01             2</span></span>
+<span id="cb267-16"><a href="tarea.html#cb267-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  2021 Aguascalientes Homicidio   Febrero 2021-02-01             1</span></span>
+<span id="cb267-17"><a href="tarea.html#cb267-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  2021 Aguascalientes Homicidio   Marzo   2021-03-01             4</span></span>
+<span id="cb267-18"><a href="tarea.html#cb267-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  2021 Aguascalientes Homicidio   Abril   2021-04-01             3</span></span>
+<span id="cb267-19"><a href="tarea.html#cb267-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  2021 Aguascalientes Homicidio   Mayo    2021-05-01             4</span></span>
+<span id="cb267-20"><a href="tarea.html#cb267-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  2021 Aguascalientes Homicidio   Junio   2021-06-01             2</span></span></code></pre></div>
 <ul>
 <li>Utiliza la función <strong>summary()</strong> para ver qué variables tienen NA.</li>
 </ul>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="tarea.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(datos)</span>
-<span id="cb266-2"><a href="tarea.html#cb266-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       año         entidad          tipo_delito            mes           </span></span>
-<span id="cb266-3"><a href="tarea.html#cb266-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Min.   :2021   Length:75264       Length:75264       Length:75264      </span></span>
-<span id="cb266-4"><a href="tarea.html#cb266-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1st Qu.:2021   Class :character   Class :character   Class :character  </span></span>
-<span id="cb266-5"><a href="tarea.html#cb266-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Median :2022   Mode  :character   Mode  :character   Mode  :character  </span></span>
-<span id="cb266-6"><a href="tarea.html#cb266-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Mean   :2022                                                           </span></span>
-<span id="cb266-7"><a href="tarea.html#cb266-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.:2022                                                           </span></span>
-<span id="cb266-8"><a href="tarea.html#cb266-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Max.   :2022                                                           </span></span>
-<span id="cb266-9"><a href="tarea.html#cb266-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                                                                         </span></span>
-<span id="cb266-10"><a href="tarea.html#cb266-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      fecha            total_Delitos    </span></span>
-<span id="cb266-11"><a href="tarea.html#cb266-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Min.   :2021-01-01   Min.   :   0.00  </span></span>
-<span id="cb266-12"><a href="tarea.html#cb266-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1st Qu.:2021-06-23   1st Qu.:   0.00  </span></span>
-<span id="cb266-13"><a href="tarea.html#cb266-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Median :2021-12-16   Median :   2.00  </span></span>
-<span id="cb266-14"><a href="tarea.html#cb266-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Mean   :2021-12-16   Mean   :  55.53  </span></span>
-<span id="cb266-15"><a href="tarea.html#cb266-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.:2022-06-08   3rd Qu.:  30.00  </span></span>
-<span id="cb266-16"><a href="tarea.html#cb266-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Max.   :2022-12-01   Max.   :8421.00  </span></span>
-<span id="cb266-17"><a href="tarea.html#cb266-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                       NA&#39;s   :1233</span></span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="tarea.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(datos)</span>
+<span id="cb268-2"><a href="tarea.html#cb268-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       año         entidad          tipo_delito            mes           </span></span>
+<span id="cb268-3"><a href="tarea.html#cb268-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Min.   :2021   Length:75264       Length:75264       Length:75264      </span></span>
+<span id="cb268-4"><a href="tarea.html#cb268-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1st Qu.:2021   Class :character   Class :character   Class :character  </span></span>
+<span id="cb268-5"><a href="tarea.html#cb268-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Median :2022   Mode  :character   Mode  :character   Mode  :character  </span></span>
+<span id="cb268-6"><a href="tarea.html#cb268-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Mean   :2022                                                           </span></span>
+<span id="cb268-7"><a href="tarea.html#cb268-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.:2022                                                           </span></span>
+<span id="cb268-8"><a href="tarea.html#cb268-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Max.   :2022                                                           </span></span>
+<span id="cb268-9"><a href="tarea.html#cb268-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                                                                         </span></span>
+<span id="cb268-10"><a href="tarea.html#cb268-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      fecha            total_Delitos    </span></span>
+<span id="cb268-11"><a href="tarea.html#cb268-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Min.   :2021-01-01   Min.   :   0.00  </span></span>
+<span id="cb268-12"><a href="tarea.html#cb268-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1st Qu.:2021-06-23   1st Qu.:   0.00  </span></span>
+<span id="cb268-13"><a href="tarea.html#cb268-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Median :2021-12-16   Median :   2.00  </span></span>
+<span id="cb268-14"><a href="tarea.html#cb268-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Mean   :2021-12-16   Mean   :  55.53  </span></span>
+<span id="cb268-15"><a href="tarea.html#cb268-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.:2022-06-08   3rd Qu.:  30.00  </span></span>
+<span id="cb268-16"><a href="tarea.html#cb268-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Max.   :2022-12-01   Max.   :8421.00  </span></span>
+<span id="cb268-17"><a href="tarea.html#cb268-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                       NA&#39;s   :1233</span></span></code></pre></div>
 <p>Usa lo visto en clase para quitar las filas con variables faltantes.</p>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="tarea.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Usando complete_cases</span></span>
-<span id="cb267-2"><a href="tarea.html#cb267-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb267-3"><a href="tarea.html#cb267-3" aria-hidden="true" tabindex="-1"></a>completos <span class="ot">&lt;-</span> <span class="fu">complete.cases</span>(datos)</span>
-<span id="cb267-4"><a href="tarea.html#cb267-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb267-5"><a href="tarea.html#cb267-5" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> datos[completos,] </span>
-<span id="cb267-6"><a href="tarea.html#cb267-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(datos)</span>
-<span id="cb267-7"><a href="tarea.html#cb267-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       año         entidad          tipo_delito            mes           </span></span>
-<span id="cb267-8"><a href="tarea.html#cb267-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Min.   :2021   Length:74031       Length:74031       Length:74031      </span></span>
-<span id="cb267-9"><a href="tarea.html#cb267-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1st Qu.:2021   Class :character   Class :character   Class :character  </span></span>
-<span id="cb267-10"><a href="tarea.html#cb267-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Median :2021   Mode  :character   Mode  :character   Mode  :character  </span></span>
-<span id="cb267-11"><a href="tarea.html#cb267-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Mean   :2021                                                           </span></span>
-<span id="cb267-12"><a href="tarea.html#cb267-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.:2022                                                           </span></span>
-<span id="cb267-13"><a href="tarea.html#cb267-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Max.   :2022                                                           </span></span>
-<span id="cb267-14"><a href="tarea.html#cb267-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      fecha            total_Delitos    </span></span>
-<span id="cb267-15"><a href="tarea.html#cb267-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Min.   :2021-01-01   Min.   :   0.00  </span></span>
-<span id="cb267-16"><a href="tarea.html#cb267-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1st Qu.:2021-06-01   1st Qu.:   0.00  </span></span>
-<span id="cb267-17"><a href="tarea.html#cb267-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Median :2021-12-01   Median :   2.00  </span></span>
-<span id="cb267-18"><a href="tarea.html#cb267-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Mean   :2021-12-15   Mean   :  55.53  </span></span>
-<span id="cb267-19"><a href="tarea.html#cb267-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.:2022-06-01   3rd Qu.:  30.00  </span></span>
-<span id="cb267-20"><a href="tarea.html#cb267-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Max.   :2022-12-01   Max.   :8421.00</span></span></code></pre></div>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="tarea.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Usando complete_cases</span></span>
+<span id="cb269-2"><a href="tarea.html#cb269-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb269-3"><a href="tarea.html#cb269-3" aria-hidden="true" tabindex="-1"></a>completos <span class="ot">&lt;-</span> <span class="fu">complete.cases</span>(datos)</span>
+<span id="cb269-4"><a href="tarea.html#cb269-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb269-5"><a href="tarea.html#cb269-5" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> datos[completos,] </span>
+<span id="cb269-6"><a href="tarea.html#cb269-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(datos)</span>
+<span id="cb269-7"><a href="tarea.html#cb269-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       año         entidad          tipo_delito            mes           </span></span>
+<span id="cb269-8"><a href="tarea.html#cb269-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Min.   :2021   Length:74031       Length:74031       Length:74031      </span></span>
+<span id="cb269-9"><a href="tarea.html#cb269-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1st Qu.:2021   Class :character   Class :character   Class :character  </span></span>
+<span id="cb269-10"><a href="tarea.html#cb269-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Median :2021   Mode  :character   Mode  :character   Mode  :character  </span></span>
+<span id="cb269-11"><a href="tarea.html#cb269-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Mean   :2021                                                           </span></span>
+<span id="cb269-12"><a href="tarea.html#cb269-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.:2022                                                           </span></span>
+<span id="cb269-13"><a href="tarea.html#cb269-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Max.   :2022                                                           </span></span>
+<span id="cb269-14"><a href="tarea.html#cb269-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      fecha            total_Delitos    </span></span>
+<span id="cb269-15"><a href="tarea.html#cb269-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Min.   :2021-01-01   Min.   :   0.00  </span></span>
+<span id="cb269-16"><a href="tarea.html#cb269-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1st Qu.:2021-06-01   1st Qu.:   0.00  </span></span>
+<span id="cb269-17"><a href="tarea.html#cb269-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Median :2021-12-01   Median :   2.00  </span></span>
+<span id="cb269-18"><a href="tarea.html#cb269-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Mean   :2021-12-15   Mean   :  55.53  </span></span>
+<span id="cb269-19"><a href="tarea.html#cb269-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3rd Qu.:2022-06-01   3rd Qu.:  30.00  </span></span>
+<span id="cb269-20"><a href="tarea.html#cb269-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Max.   :2022-12-01   Max.   :8421.00</span></span></code></pre></div>
 <p>¿De qué años hay información?</p>
-<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="tarea.html#cb268-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb268-2"><a href="tarea.html#cb268-2" aria-hidden="true" tabindex="-1"></a>datos2021 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(datos, año<span class="sc">==</span><span class="dv">2021</span>)</span>
-<span id="cb268-3"><a href="tarea.html#cb268-3" aria-hidden="true" tabindex="-1"></a>datos2022 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(datos, año<span class="sc">==</span><span class="dv">2022</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="tarea.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(datos2021)</span>
-<span id="cb269-2"><a href="tarea.html#cb269-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 37039     6</span></span></code></pre></div>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="tarea.html#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(datos2022)</span>
-<span id="cb270-2"><a href="tarea.html#cb270-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 36992     6</span></span></code></pre></div>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="tarea.html#cb270-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb270-2"><a href="tarea.html#cb270-2" aria-hidden="true" tabindex="-1"></a>datos2021 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(datos, año<span class="sc">==</span><span class="dv">2021</span>)</span>
+<span id="cb270-3"><a href="tarea.html#cb270-3" aria-hidden="true" tabindex="-1"></a>datos2022 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(datos, año<span class="sc">==</span><span class="dv">2022</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="tarea.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(datos2021)</span>
+<span id="cb271-2"><a href="tarea.html#cb271-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 37039     6</span></span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="tarea.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(datos2022)</span>
+<span id="cb272-2"><a href="tarea.html#cb272-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 36992     6</span></span></code></pre></div>
 <p>¿Cuál fue el total de crimenes en 2022 y 2021?</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="tarea.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(datos2021<span class="sc">$</span>total_Delitos)</span>
-<span id="cb271-2"><a href="tarea.html#cb271-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2012957</span></span></code></pre></div>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="tarea.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(datos2022<span class="sc">$</span>total_Delitos)</span>
-<span id="cb272-2"><a href="tarea.html#cb272-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2098318</span></span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="tarea.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(datos2021<span class="sc">$</span>total_Delitos)</span>
+<span id="cb273-2"><a href="tarea.html#cb273-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2012957</span></span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="tarea.html#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(datos2022<span class="sc">$</span>total_Delitos)</span>
+<span id="cb274-2"><a href="tarea.html#cb274-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2098318</span></span></code></pre></div>
 <p>Haz un subset de datos considerando solamente los datos de 2022.</p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="tarea.html#cb273-1" aria-hidden="true" tabindex="-1"></a>datos2022 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(datos, año<span class="sc">==</span><span class="dv">2022</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="tarea.html#cb275-1" aria-hidden="true" tabindex="-1"></a>datos2022 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(datos, año<span class="sc">==</span><span class="dv">2022</span>)</span></code></pre></div>
 <p>¿Cuál fue el total de delitos por estado?</p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="tarea.html#cb274-1" aria-hidden="true" tabindex="-1"></a>Aguascalientes <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(datos2022, entidad<span class="sc">==</span><span class="st">&quot;Aguascalientes&quot;</span>)</span>
-<span id="cb274-2"><a href="tarea.html#cb274-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(Aguascalientes<span class="sc">$</span>total_Delitos)</span>
-<span id="cb274-3"><a href="tarea.html#cb274-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 38854</span></span></code></pre></div>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="tarea.html#cb275-1" aria-hidden="true" tabindex="-1"></a>Baja_California <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(datos2022, entidad<span class="sc">==</span><span class="st">&quot;Baja California&quot;</span>)</span>
-<span id="cb275-2"><a href="tarea.html#cb275-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(Baja_California<span class="sc">$</span>total_Delitos)</span>
-<span id="cb275-3"><a href="tarea.html#cb275-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 106005</span></span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="tarea.html#cb276-1" aria-hidden="true" tabindex="-1"></a>Aguascalientes <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(datos2022, entidad<span class="sc">==</span><span class="st">&quot;Aguascalientes&quot;</span>)</span>
+<span id="cb276-2"><a href="tarea.html#cb276-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(Aguascalientes<span class="sc">$</span>total_Delitos)</span>
+<span id="cb276-3"><a href="tarea.html#cb276-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 38854</span></span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="tarea.html#cb277-1" aria-hidden="true" tabindex="-1"></a>Baja_California <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(datos2022, entidad<span class="sc">==</span><span class="st">&quot;Baja California&quot;</span>)</span>
+<span id="cb277-2"><a href="tarea.html#cb277-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(Baja_California<span class="sc">$</span>total_Delitos)</span>
+<span id="cb277-3"><a href="tarea.html#cb277-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 106005</span></span></code></pre></div>
 <p>¿Cuál fue el promedio de delitos por mes?</p>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="tarea.html#cb276-1" aria-hidden="true" tabindex="-1"></a>enero <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(datos2022, mes<span class="sc">==</span><span class="st">&quot;Enero&quot;</span>)</span>
-<span id="cb276-2"><a href="tarea.html#cb276-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(enero<span class="sc">$</span>total_Delitos)</span>
-<span id="cb276-3"><a href="tarea.html#cb276-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 156081</span></span></code></pre></div>
-<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="tarea.html#cb277-1" aria-hidden="true" tabindex="-1"></a>febrero <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(datos, mes<span class="sc">==</span><span class="st">&quot;Febrero&quot;</span>)</span>
-<span id="cb277-2"><a href="tarea.html#cb277-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(febrero<span class="sc">$</span>total_Delitos)</span>
-<span id="cb277-3"><a href="tarea.html#cb277-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 303313</span></span></code></pre></div>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="tarea.html#cb278-1" aria-hidden="true" tabindex="-1"></a>enero <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(datos2022, mes<span class="sc">==</span><span class="st">&quot;Enero&quot;</span>)</span>
+<span id="cb278-2"><a href="tarea.html#cb278-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(enero<span class="sc">$</span>total_Delitos)</span>
+<span id="cb278-3"><a href="tarea.html#cb278-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 156081</span></span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="tarea.html#cb279-1" aria-hidden="true" tabindex="-1"></a>febrero <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(datos, mes<span class="sc">==</span><span class="st">&quot;Febrero&quot;</span>)</span>
+<span id="cb279-2"><a href="tarea.html#cb279-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(febrero<span class="sc">$</span>total_Delitos)</span>
+<span id="cb279-3"><a href="tarea.html#cb279-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 303313</span></span></code></pre></div>
 <p>¿Cuál fue el tipo de delitos con mayor y menor incidencia?</p>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="tarea.html#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb278-2"><a href="tarea.html#cb278-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb278-3"><a href="tarea.html#cb278-3" aria-hidden="true" tabindex="-1"></a>datos2022 <span class="sc">%&gt;%</span> </span>
-<span id="cb278-4"><a href="tarea.html#cb278-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(tipo_delito) <span class="sc">%&gt;%</span> </span>
-<span id="cb278-5"><a href="tarea.html#cb278-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_Delitos=</span><span class="fu">sum</span>(total_Delitos))</span>
-<span id="cb278-6"><a href="tarea.html#cb278-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 40 × 2</span></span>
-<span id="cb278-7"><a href="tarea.html#cb278-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    tipo_delito                               total_Delitos</span></span>
-<span id="cb278-8"><a href="tarea.html#cb278-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                                             &lt;dbl&gt;</span></span>
-<span id="cb278-9"><a href="tarea.html#cb278-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1 Aborto                                              808</span></span>
-<span id="cb278-10"><a href="tarea.html#cb278-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2 Abuso de confianza                                30632</span></span>
-<span id="cb278-11"><a href="tarea.html#cb278-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3 Abuso sexual                                      32831</span></span>
-<span id="cb278-12"><a href="tarea.html#cb278-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4 Acoso sexual                                      10908</span></span>
-<span id="cb278-13"><a href="tarea.html#cb278-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5 Allanamiento de morada                            13786</span></span>
-<span id="cb278-14"><a href="tarea.html#cb278-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6 Amenazas                                         132652</span></span>
-<span id="cb278-15"><a href="tarea.html#cb278-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7 Contra el medio ambiente                           2298</span></span>
-<span id="cb278-16"><a href="tarea.html#cb278-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 Corrupción de menores                              2911</span></span>
-<span id="cb278-17"><a href="tarea.html#cb278-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 Daño a la propiedad                              144829</span></span>
-<span id="cb278-18"><a href="tarea.html#cb278-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 Delitos cometidos por servidores públicos         20145</span></span>
-<span id="cb278-19"><a href="tarea.html#cb278-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 30 more rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="tarea.html#cb280-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb280-2"><a href="tarea.html#cb280-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb280-3"><a href="tarea.html#cb280-3" aria-hidden="true" tabindex="-1"></a>datos2022 <span class="sc">%&gt;%</span> </span>
+<span id="cb280-4"><a href="tarea.html#cb280-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(tipo_delito) <span class="sc">%&gt;%</span> </span>
+<span id="cb280-5"><a href="tarea.html#cb280-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_Delitos=</span><span class="fu">sum</span>(total_Delitos))</span>
+<span id="cb280-6"><a href="tarea.html#cb280-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 40 × 2</span></span>
+<span id="cb280-7"><a href="tarea.html#cb280-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    tipo_delito                               total_Delitos</span></span>
+<span id="cb280-8"><a href="tarea.html#cb280-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                                             &lt;dbl&gt;</span></span>
+<span id="cb280-9"><a href="tarea.html#cb280-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1 Aborto                                              808</span></span>
+<span id="cb280-10"><a href="tarea.html#cb280-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2 Abuso de confianza                                30632</span></span>
+<span id="cb280-11"><a href="tarea.html#cb280-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3 Abuso sexual                                      32831</span></span>
+<span id="cb280-12"><a href="tarea.html#cb280-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4 Acoso sexual                                      10908</span></span>
+<span id="cb280-13"><a href="tarea.html#cb280-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5 Allanamiento de morada                            13786</span></span>
+<span id="cb280-14"><a href="tarea.html#cb280-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6 Amenazas                                         132652</span></span>
+<span id="cb280-15"><a href="tarea.html#cb280-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7 Contra el medio ambiente                           2298</span></span>
+<span id="cb280-16"><a href="tarea.html#cb280-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 Corrupción de menores                              2911</span></span>
+<span id="cb280-17"><a href="tarea.html#cb280-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 Daño a la propiedad                              144829</span></span>
+<span id="cb280-18"><a href="tarea.html#cb280-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 Delitos cometidos por servidores públicos         20145</span></span>
+<span id="cb280-19"><a href="tarea.html#cb280-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 30 more rows</span></span></code></pre></div>
 
 </div>
 </div>
